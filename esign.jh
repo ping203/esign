@@ -58,7 +58,18 @@ entity MsgSubTask{
     useridList String,
     taskId Long,
     time Instant,
-    rsp String
+    rspMsg String,
+    status Long,
+    progressInPercent Long,
+    subTaskStatus MessageStatus,
+    invalidUserIdList String,
+    forbiddenUserIdList String,
+    failedUserIdList String,
+    readUserIdList String,
+    unreadUserIdList String,
+    invalidDeptIdList String,
+    withdraw Boolean
+    
 }
 
 enum DdMessageType {
