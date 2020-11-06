@@ -1,11 +1,11 @@
-id;title;dept_id_list;userid_list;to_all_user;msg;execute_time;agent_id;type;status
-1;France Savings Account repurpose;indexing program;invoice stable;true;Guam panel;2020-11-05T10:37:18;46632;Markdown;NotSentYet
-2;Rapid withdrawal Persistent;yellow Wyoming;Rustic Cotton Bacon;true;paradigms Investment Account Refined;2020-11-06T01:27:52;814;Text;NotSentYet
-3;24 hour streamline;Montenegro;5th generation;false;needs-based;2020-11-06T01:20:57;82462;Text;SentSuccessfully
-4;Fall;interface Granite matrix;time-frame Unbranded;true;Ergonomic Licensed;2020-11-06T03:03:03;56080;File;NotSentYet
-5;matrix;Avon Toys;Tools users;true;Holy See (Vatican City State);2020-11-05T16:26:17;1525;Oa;SentSuccessfully
-6;Dynamic directional;tan Mandatory;collaborative;false;Place SSL Associate;2020-11-06T01:19:05;79199;Text;SentSuccessfully
-7;azure;empower Virginia;Soft connecting Shoes;true;Sleek Concrete Ball payment;2020-11-05T22:33:36;2548;ActionCard;SentSuccessfully
-8;Baby SMS;Corporate parse;COM;true;French Polynesia Strategist Refined Rubber Tuna;2020-11-06T04:34:05;97607;Text;Sending
-9;Money Market Account;Alabama;Handcrafted Plastic Tuna Gibraltar Pound;false;Gorgeous Wooden Shoes Kentucky;2020-11-06T02:22:41;2297;Image;Sending
-10;eyeballs;strategize United States of America Sports;e-services firewall GB;false;RSS Tasty;2020-11-05T11:16:28;62698;Oa;SentSuccessfully
+id;title;dept_id_list;userid_list;to_all_user;markdown;single_title;single_url;cover_url;number_of_shards;complete_sharding;msg;execute_time;agent_id;type;status
+1;France Savings Account repurpose;indexing program;invoice stable;true;Guam panel;Summit reboot withdrawal;Incredible Fresh Keyboard;Brazilian Real;42354;true;sensor Philippine Peso dedicated;2020-11-05T15:00:02;51012;Image;NotSentYet
+2;paradigms Investment Account Refined;Health;Accountability;true;architectures Cook Islands transmitting;24 hour streamline;Montenegro;5th generation;30764;false;Chilean Peso Unidades de fomento;2020-11-05T09:27:52;65499;File;Sending
+3;Sleek Concrete Chips;embrace Buckinghamshire Administrator;Brand;true;California Wooden bypass;Incredible Niue;Program;Front-line Home Loan Account Avon;1588;true;Tools users;2020-11-05T12:11:18;20600;Voice;SentSuccessfully
+4;withdrawal Awesome Fresh Mouse;incremental;Bedfordshire;false;collaborative;sensor Personal Loan Account;Associate;1080p;84445;false;Technician transmitter capacitor;2020-11-05T14:34:26;60417;File;SentSuccessfully
+5;connecting Shoes Identity;Fall;payment;false;optical;pink parsing Steel;compressing deposit;SMS invoice;14157;true;systematic New Zealand haptic;2020-11-05T22:01:17;98391;Oa;SentSuccessfully
+6;innovative Alabama;Handcrafted Plastic Tuna Gibraltar Pound;Arizona clear-thinking;false;attitude Computers;Union US Dollar Cheese;invoice Dominican Republic;Sharable strategize;53073;true;parsing;2020-11-05T19:14:23;33975;Oa;Sending
+7;knowledge base Borders haptic;Land Throughway;Grocery eco-centric;false;Borders;Cameroon;Books Neck;neural;93758;true;Computers;2020-11-05T12:44:00;9410;Oa;Sending
+8;robust;Sleek Soft Sausages;Central Nepalese Rupee reboot;false;Port;Nevada Brunei Dollar;Salad;cyan RSS JSON;8283;true;hub back-end;2020-11-05T19:23:49;98119;Link;SentSuccessfully
+9;productize Computer;networks;maroon;true;California;unleash;Incredible;PNG Garden bleeding-edge;24243;false;interface SMS;2020-11-05T12:49:30;19062;Voice;NotSentYet
+10;Division portals Bahrain;Bacon;Buckinghamshire;true;Investment Account 24/365;Games;strategize Generic Soft Shoes;Curve quantify;50040;false;IB Legacy;2020-11-05T09:39:37;23017;File;SentSuccessfully

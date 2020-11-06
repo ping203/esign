@@ -18,6 +18,30 @@
       "fieldType": "Boolean"
     },
     {
+      "fieldName": "markdown",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "singleTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "singleUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "coverUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numberOfShards",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "completeSharding",
+      "fieldType": "Boolean"
+    },
+    {
       "fieldName": "msg",
       "fieldType": "String"
     },
