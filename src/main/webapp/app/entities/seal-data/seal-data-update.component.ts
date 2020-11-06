@@ -86,6 +86,20 @@ export default class SealDataUpdate extends mixins(JhiDataUtils) {
     this.$router.go(-1);
   }
 
+  public clearInputImage(field, fieldContentType, idInput): void {
+    if (this.sealData && field && fieldContentType) {
+      if (this.sealData.hasOwnProperty(field)) {
+        this.sealData[field] = null;
+      }
+      if (this.sealData.hasOwnProperty(fieldContentType)) {
+        this.sealData[fieldContentType] = null;
+      }
+      if (idInput) {
+        (<any>this).$refs[idInput] = null;
+      }
+    }
+  }
+
   public initRelationships(): void {
     this.pdfSignService()
       .retrieve()

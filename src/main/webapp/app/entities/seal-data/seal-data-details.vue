@@ -9,7 +9,9 @@
                     </dt>
                     <dd>
                         <div v-if="sealData.base64Str">
-                            <a v-on:click="openFile(sealData.base64StrContentType, sealData.base64Str)" v-text="$t('entity.action.open')">open</a>
+                            <a v-on:click="openFile(sealData.base64StrContentType, sealData.base64Str)">
+                                <img v-bind:src="'data:' + sealData.base64StrContentType + ';base64,' + sealData.base64Str" style="max-width: 100%;" alt="sealData image"/>
+                            </a>
                             {{sealData.base64StrContentType}}, {{byteSize(sealData.base64Str)}}
                         </div>
                     </dd>

@@ -37,7 +37,9 @@
                         <router-link :to="{name: 'SealDataView', params: {sealDataId: sealData.id}}">{{sealData.id}}</router-link>
                     </td>
                     <td>
-                        <a v-if="sealData.base64Str" v-on:click="openFile(sealData.base64StrContentType, sealData.base64Str)" v-text="$t('entity.action.open')">open</a>
+                        <a v-if="sealData.base64Str" v-on:click="openFile(sealData.base64StrContentType, sealData.base64Str)">
+                            <img v-bind:src="'data:' + sealData.base64StrContentType + ';base64,' + sealData.base64Str" style="max-height: 30px;" alt="sealData image"/>
+                        </a>
                         <span v-if="sealData.base64Str">{{sealData.base64StrContentType}}, {{byteSize(sealData.base64Str)}}</span>
                     </td>
                     <td>

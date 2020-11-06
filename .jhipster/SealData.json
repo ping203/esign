@@ -4,7 +4,7 @@
     {
       "fieldName": "base64Str",
       "fieldType": "byte[]",
-      "fieldTypeBlobContent": "any"
+      "fieldTypeBlobContent": "image"
     }
   ],
   "relationships": [

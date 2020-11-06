@@ -12,15 +12,14 @@
                     <div class="form-group">
                         <label class="form-control-label" v-text="$t('esignApp.sealData.base64Str')" for="seal-data-base64Str">Base 64 Str</label>
                         <div>
+                            <img v-bind:src="'data:' + sealData.base64StrContentType + ';base64,' + sealData.base64Str" style="max-height: 100px;" v-if="sealData.base64Str" alt="sealData image"/>
                             <div v-if="sealData.base64Str" class="form-text text-danger clearfix">
-                                <a class="pull-left" v-on:click="openFile(sealData.base64StrContentType, sealData.base64Str)" v-text="$t('entity.action.open')">open</a><br>
                                 <span class="pull-left">{{sealData.base64StrContentType}}, {{byteSize(sealData.base64Str)}}</span>
-                                <button type="button" v-on:click="sealData.base64Str=null;sealData.base64StrContentType=null;"
-                                        class="btn btn-secondary btn-xs pull-right">
+                                <button type="button" v-on:click="clearInputImage('base64Str', 'base64StrContentType', 'file_base64Str')" class="btn btn-secondary btn-xs pull-right">
                                     <font-awesome-icon icon="times"></font-awesome-icon>
                                 </button>
                             </div>
-                            <input type="file" ref="file_base64Str" id="file_base64Str" v-on:change="setFileData($event, sealData, 'base64Str', false)" v-text="$t('entity.action.addblob')"/>
+                            <input type="file" ref="file_base64Str" id="file_base64Str" v-on:change="setFileData($event, sealData, 'base64Str', true)" accept="image/*" v-text="$t('entity.action.addimage')"/>
                         </div>
                         <input type="hidden" class="form-control" name="base64Str" id="seal-data-base64Str"
                             :class="{'valid': !$v.sealData.base64Str.$invalid, 'invalid': $v.sealData.base64Str.$invalid }" v-model="$v.sealData.base64Str.$model" />
