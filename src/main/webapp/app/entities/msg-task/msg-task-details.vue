@@ -29,6 +29,42 @@
                         <span>{{msgTask.toAllUser}}</span>
                     </dd>
                     <dt>
+                        <span v-text="$t('esignApp.msgTask.markdown')">Markdown</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgTask.markdown}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgTask.singleTitle')">Single Title</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgTask.singleTitle}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgTask.singleUrl')">Single Url</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgTask.singleUrl}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgTask.coverUrl')">Cover Url</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgTask.coverUrl}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgTask.numberOfShards')">Number Of Shards</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgTask.numberOfShards}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgTask.completeSharding')">Complete Sharding</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgTask.completeSharding}}</span>
+                    </dd>
+                    <dt>
                         <span v-text="$t('esignApp.msgTask.msg')">Msg</span>
                     </dt>
                     <dd>

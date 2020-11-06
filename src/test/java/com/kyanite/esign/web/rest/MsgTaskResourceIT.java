@@ -46,6 +46,24 @@ public class MsgTaskResourceIT {
     private static final Boolean DEFAULT_TO_ALL_USER = false;
     private static final Boolean UPDATED_TO_ALL_USER = true;
 
+    private static final String DEFAULT_MARKDOWN = "AAAAAAAAAA";
+    private static final String UPDATED_MARKDOWN = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SINGLE_TITLE = "AAAAAAAAAA";
+    private static final String UPDATED_SINGLE_TITLE = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SINGLE_URL = "AAAAAAAAAA";
+    private static final String UPDATED_SINGLE_URL = "BBBBBBBBBB";
+
+    private static final String DEFAULT_COVER_URL = "AAAAAAAAAA";
+    private static final String UPDATED_COVER_URL = "BBBBBBBBBB";
+
+    private static final Long DEFAULT_NUMBER_OF_SHARDS = 1L;
+    private static final Long UPDATED_NUMBER_OF_SHARDS = 2L;
+
+    private static final Boolean DEFAULT_COMPLETE_SHARDING = false;
+    private static final Boolean UPDATED_COMPLETE_SHARDING = true;
+
     private static final String DEFAULT_MSG = "AAAAAAAAAA";
     private static final String UPDATED_MSG = "BBBBBBBBBB";
 
@@ -87,6 +105,12 @@ public class MsgTaskResourceIT {
             .deptIdList(DEFAULT_DEPT_ID_LIST)
             .useridList(DEFAULT_USERID_LIST)
             .toAllUser(DEFAULT_TO_ALL_USER)
+            .markdown(DEFAULT_MARKDOWN)
+            .singleTitle(DEFAULT_SINGLE_TITLE)
+            .singleUrl(DEFAULT_SINGLE_URL)
+            .coverUrl(DEFAULT_COVER_URL)
+            .numberOfShards(DEFAULT_NUMBER_OF_SHARDS)
+            .completeSharding(DEFAULT_COMPLETE_SHARDING)
             .msg(DEFAULT_MSG)
             .executeTime(DEFAULT_EXECUTE_TIME)
             .agentId(DEFAULT_AGENT_ID)
@@ -106,6 +130,12 @@ public class MsgTaskResourceIT {
             .deptIdList(UPDATED_DEPT_ID_LIST)
             .useridList(UPDATED_USERID_LIST)
             .toAllUser(UPDATED_TO_ALL_USER)
+            .markdown(UPDATED_MARKDOWN)
+            .singleTitle(UPDATED_SINGLE_TITLE)
+            .singleUrl(UPDATED_SINGLE_URL)
+            .coverUrl(UPDATED_COVER_URL)
+            .numberOfShards(UPDATED_NUMBER_OF_SHARDS)
+            .completeSharding(UPDATED_COMPLETE_SHARDING)
             .msg(UPDATED_MSG)
             .executeTime(UPDATED_EXECUTE_TIME)
             .agentId(UPDATED_AGENT_ID)
@@ -137,6 +167,12 @@ public class MsgTaskResourceIT {
         assertThat(testMsgTask.getDeptIdList()).isEqualTo(DEFAULT_DEPT_ID_LIST);
         assertThat(testMsgTask.getUseridList()).isEqualTo(DEFAULT_USERID_LIST);
         assertThat(testMsgTask.isToAllUser()).isEqualTo(DEFAULT_TO_ALL_USER);
+        assertThat(testMsgTask.getMarkdown()).isEqualTo(DEFAULT_MARKDOWN);
+        assertThat(testMsgTask.getSingleTitle()).isEqualTo(DEFAULT_SINGLE_TITLE);
+        assertThat(testMsgTask.getSingleUrl()).isEqualTo(DEFAULT_SINGLE_URL);
+        assertThat(testMsgTask.getCoverUrl()).isEqualTo(DEFAULT_COVER_URL);
+        assertThat(testMsgTask.getNumberOfShards()).isEqualTo(DEFAULT_NUMBER_OF_SHARDS);
+        assertThat(testMsgTask.isCompleteSharding()).isEqualTo(DEFAULT_COMPLETE_SHARDING);
         assertThat(testMsgTask.getMsg()).isEqualTo(DEFAULT_MSG);
         assertThat(testMsgTask.getExecuteTime()).isEqualTo(DEFAULT_EXECUTE_TIME);
         assertThat(testMsgTask.getAgentId()).isEqualTo(DEFAULT_AGENT_ID);
@@ -179,6 +215,12 @@ public class MsgTaskResourceIT {
             .andExpect(jsonPath("$.[*].deptIdList").value(hasItem(DEFAULT_DEPT_ID_LIST)))
             .andExpect(jsonPath("$.[*].useridList").value(hasItem(DEFAULT_USERID_LIST)))
             .andExpect(jsonPath("$.[*].toAllUser").value(hasItem(DEFAULT_TO_ALL_USER.booleanValue())))
+            .andExpect(jsonPath("$.[*].markdown").value(hasItem(DEFAULT_MARKDOWN)))
+            .andExpect(jsonPath("$.[*].singleTitle").value(hasItem(DEFAULT_SINGLE_TITLE)))
+            .andExpect(jsonPath("$.[*].singleUrl").value(hasItem(DEFAULT_SINGLE_URL)))
+            .andExpect(jsonPath("$.[*].coverUrl").value(hasItem(DEFAULT_COVER_URL)))
+            .andExpect(jsonPath("$.[*].numberOfShards").value(hasItem(DEFAULT_NUMBER_OF_SHARDS.intValue())))
+            .andExpect(jsonPath("$.[*].completeSharding").value(hasItem(DEFAULT_COMPLETE_SHARDING.booleanValue())))
             .andExpect(jsonPath("$.[*].msg").value(hasItem(DEFAULT_MSG)))
             .andExpect(jsonPath("$.[*].executeTime").value(hasItem(DEFAULT_EXECUTE_TIME.toString())))
             .andExpect(jsonPath("$.[*].agentId").value(hasItem(DEFAULT_AGENT_ID.intValue())))
@@ -201,6 +243,12 @@ public class MsgTaskResourceIT {
             .andExpect(jsonPath("$.deptIdList").value(DEFAULT_DEPT_ID_LIST))
             .andExpect(jsonPath("$.useridList").value(DEFAULT_USERID_LIST))
             .andExpect(jsonPath("$.toAllUser").value(DEFAULT_TO_ALL_USER.booleanValue()))
+            .andExpect(jsonPath("$.markdown").value(DEFAULT_MARKDOWN))
+            .andExpect(jsonPath("$.singleTitle").value(DEFAULT_SINGLE_TITLE))
+            .andExpect(jsonPath("$.singleUrl").value(DEFAULT_SINGLE_URL))
+            .andExpect(jsonPath("$.coverUrl").value(DEFAULT_COVER_URL))
+            .andExpect(jsonPath("$.numberOfShards").value(DEFAULT_NUMBER_OF_SHARDS.intValue()))
+            .andExpect(jsonPath("$.completeSharding").value(DEFAULT_COMPLETE_SHARDING.booleanValue()))
             .andExpect(jsonPath("$.msg").value(DEFAULT_MSG))
             .andExpect(jsonPath("$.executeTime").value(DEFAULT_EXECUTE_TIME.toString()))
             .andExpect(jsonPath("$.agentId").value(DEFAULT_AGENT_ID.intValue()))
@@ -232,6 +280,12 @@ public class MsgTaskResourceIT {
             .deptIdList(UPDATED_DEPT_ID_LIST)
             .useridList(UPDATED_USERID_LIST)
             .toAllUser(UPDATED_TO_ALL_USER)
+            .markdown(UPDATED_MARKDOWN)
+            .singleTitle(UPDATED_SINGLE_TITLE)
+            .singleUrl(UPDATED_SINGLE_URL)
+            .coverUrl(UPDATED_COVER_URL)
+            .numberOfShards(UPDATED_NUMBER_OF_SHARDS)
+            .completeSharding(UPDATED_COMPLETE_SHARDING)
             .msg(UPDATED_MSG)
             .executeTime(UPDATED_EXECUTE_TIME)
             .agentId(UPDATED_AGENT_ID)
@@ -251,6 +305,12 @@ public class MsgTaskResourceIT {
         assertThat(testMsgTask.getDeptIdList()).isEqualTo(UPDATED_DEPT_ID_LIST);
         assertThat(testMsgTask.getUseridList()).isEqualTo(UPDATED_USERID_LIST);
         assertThat(testMsgTask.isToAllUser()).isEqualTo(UPDATED_TO_ALL_USER);
+        assertThat(testMsgTask.getMarkdown()).isEqualTo(UPDATED_MARKDOWN);
+        assertThat(testMsgTask.getSingleTitle()).isEqualTo(UPDATED_SINGLE_TITLE);
+        assertThat(testMsgTask.getSingleUrl()).isEqualTo(UPDATED_SINGLE_URL);
+        assertThat(testMsgTask.getCoverUrl()).isEqualTo(UPDATED_COVER_URL);
+        assertThat(testMsgTask.getNumberOfShards()).isEqualTo(UPDATED_NUMBER_OF_SHARDS);
+        assertThat(testMsgTask.isCompleteSharding()).isEqualTo(UPDATED_COMPLETE_SHARDING);
         assertThat(testMsgTask.getMsg()).isEqualTo(UPDATED_MSG);
         assertThat(testMsgTask.getExecuteTime()).isEqualTo(UPDATED_EXECUTE_TIME);
         assertThat(testMsgTask.getAgentId()).isEqualTo(UPDATED_AGENT_ID);

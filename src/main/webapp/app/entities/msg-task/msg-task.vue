@@ -29,6 +29,12 @@
                     <th v-on:click="changeOrder('deptIdList')"><span v-text="$t('esignApp.msgTask.deptIdList')">Dept Id List</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'deptIdList'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('useridList')"><span v-text="$t('esignApp.msgTask.useridList')">Userid List</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'useridList'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('toAllUser')"><span v-text="$t('esignApp.msgTask.toAllUser')">To All User</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'toAllUser'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('markdown')"><span v-text="$t('esignApp.msgTask.markdown')">Markdown</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'markdown'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('singleTitle')"><span v-text="$t('esignApp.msgTask.singleTitle')">Single Title</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'singleTitle'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('singleUrl')"><span v-text="$t('esignApp.msgTask.singleUrl')">Single Url</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'singleUrl'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('coverUrl')"><span v-text="$t('esignApp.msgTask.coverUrl')">Cover Url</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'coverUrl'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('numberOfShards')"><span v-text="$t('esignApp.msgTask.numberOfShards')">Number Of Shards</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'numberOfShards'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('completeSharding')"><span v-text="$t('esignApp.msgTask.completeSharding')">Complete Sharding</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'completeSharding'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('msg')"><span v-text="$t('esignApp.msgTask.msg')">Msg</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'msg'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('executeTime')"><span v-text="$t('esignApp.msgTask.executeTime')">Execute Time</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'executeTime'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('agentId')"><span v-text="$t('esignApp.msgTask.agentId')">Agent Id</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'agentId'"></jhi-sort-indicator></th>
@@ -47,6 +53,12 @@
                     <td>{{msgTask.deptIdList}}</td>
                     <td>{{msgTask.useridList}}</td>
                     <td>{{msgTask.toAllUser}}</td>
+                    <td>{{msgTask.markdown}}</td>
+                    <td>{{msgTask.singleTitle}}</td>
+                    <td>{{msgTask.singleUrl}}</td>
+                    <td>{{msgTask.coverUrl}}</td>
+                    <td>{{msgTask.numberOfShards}}</td>
+                    <td>{{msgTask.completeSharding}}</td>
                     <td>{{msgTask.msg}}</td>
                     <td>{{msgTask.executeTime ? $d(Date.parse(msgTask.executeTime), 'short') : ''}}</td>
                     <td>{{msgTask.agentId}}</td>

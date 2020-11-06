@@ -40,6 +40,24 @@ public class MsgTask implements Serializable {
     @Column(name = "to_all_user")
     private Boolean toAllUser;
 
+    @Column(name = "markdown")
+    private String markdown;
+
+    @Column(name = "single_title")
+    private String singleTitle;
+
+    @Column(name = "single_url")
+    private String singleUrl;
+
+    @Column(name = "cover_url")
+    private String coverUrl;
+
+    @Column(name = "number_of_shards")
+    private Long numberOfShards;
+
+    @Column(name = "complete_sharding")
+    private Boolean completeSharding;
+
     @Column(name = "msg")
     private String msg;
 
@@ -120,6 +138,84 @@ public class MsgTask implements Serializable {
 
     public void setToAllUser(Boolean toAllUser) {
         this.toAllUser = toAllUser;
+    }
+
+    public String getMarkdown() {
+        return markdown;
+    }
+
+    public MsgTask markdown(String markdown) {
+        this.markdown = markdown;
+        return this;
+    }
+
+    public void setMarkdown(String markdown) {
+        this.markdown = markdown;
+    }
+
+    public String getSingleTitle() {
+        return singleTitle;
+    }
+
+    public MsgTask singleTitle(String singleTitle) {
+        this.singleTitle = singleTitle;
+        return this;
+    }
+
+    public void setSingleTitle(String singleTitle) {
+        this.singleTitle = singleTitle;
+    }
+
+    public String getSingleUrl() {
+        return singleUrl;
+    }
+
+    public MsgTask singleUrl(String singleUrl) {
+        this.singleUrl = singleUrl;
+        return this;
+    }
+
+    public void setSingleUrl(String singleUrl) {
+        this.singleUrl = singleUrl;
+    }
+
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+
+    public MsgTask coverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+        return this;
+    }
+
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+    }
+
+    public Long getNumberOfShards() {
+        return numberOfShards;
+    }
+
+    public MsgTask numberOfShards(Long numberOfShards) {
+        this.numberOfShards = numberOfShards;
+        return this;
+    }
+
+    public void setNumberOfShards(Long numberOfShards) {
+        this.numberOfShards = numberOfShards;
+    }
+
+    public Boolean isCompleteSharding() {
+        return completeSharding;
+    }
+
+    public MsgTask completeSharding(Boolean completeSharding) {
+        this.completeSharding = completeSharding;
+        return this;
+    }
+
+    public void setCompleteSharding(Boolean completeSharding) {
+        this.completeSharding = completeSharding;
     }
 
     public String getMsg() {
@@ -238,6 +334,12 @@ public class MsgTask implements Serializable {
             ", deptIdList='" + getDeptIdList() + "'" +
             ", useridList='" + getUseridList() + "'" +
             ", toAllUser='" + isToAllUser() + "'" +
+            ", markdown='" + getMarkdown() + "'" +
+            ", singleTitle='" + getSingleTitle() + "'" +
+            ", singleUrl='" + getSingleUrl() + "'" +
+            ", coverUrl='" + getCoverUrl() + "'" +
+            ", numberOfShards=" + getNumberOfShards() +
+            ", completeSharding='" + isCompleteSharding() + "'" +
             ", msg='" + getMsg() + "'" +
             ", executeTime='" + getExecuteTime() + "'" +
             ", agentId=" + getAgentId() +

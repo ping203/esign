@@ -28,6 +28,24 @@
             <column name="to_all_user" type="boolean">
                 <constraints nullable="true" />
             </column>
+            <column name="markdown" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="single_title" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="single_url" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cover_url" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="number_of_shards" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="complete_sharding" type="boolean">
+                <constraints nullable="true" />
+            </column>
             <column name="msg" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -71,6 +89,12 @@
             <column name="dept_id_list" type="string"/>
             <column name="userid_list" type="string"/>
             <column name="to_all_user" type="boolean"/>
+            <column name="markdown" type="string"/>
+            <column name="single_title" type="string"/>
+            <column name="single_url" type="string"/>
+            <column name="cover_url" type="string"/>
+            <column name="number_of_shards" type="numeric"/>
+            <column name="complete_sharding" type="boolean"/>
             <column name="msg" type="string"/>
             <column name="execute_time" type="datetime"/>
             <column name="agent_id" type="numeric"/>

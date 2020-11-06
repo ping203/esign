@@ -30,6 +30,36 @@
                             :class="{'valid': !$v.msgTask.toAllUser.$invalid, 'invalid': $v.msgTask.toAllUser.$invalid }" v-model="$v.msgTask.toAllUser.$model" />
                     </div>
                     <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.msgTask.markdown')" for="msg-task-markdown">Markdown</label>
+                        <input type="text" class="form-control" name="markdown" id="msg-task-markdown"
+                            :class="{'valid': !$v.msgTask.markdown.$invalid, 'invalid': $v.msgTask.markdown.$invalid }" v-model="$v.msgTask.markdown.$model" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.msgTask.singleTitle')" for="msg-task-singleTitle">Single Title</label>
+                        <input type="text" class="form-control" name="singleTitle" id="msg-task-singleTitle"
+                            :class="{'valid': !$v.msgTask.singleTitle.$invalid, 'invalid': $v.msgTask.singleTitle.$invalid }" v-model="$v.msgTask.singleTitle.$model" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.msgTask.singleUrl')" for="msg-task-singleUrl">Single Url</label>
+                        <input type="text" class="form-control" name="singleUrl" id="msg-task-singleUrl"
+                            :class="{'valid': !$v.msgTask.singleUrl.$invalid, 'invalid': $v.msgTask.singleUrl.$invalid }" v-model="$v.msgTask.singleUrl.$model" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.msgTask.coverUrl')" for="msg-task-coverUrl">Cover Url</label>
+                        <input type="text" class="form-control" name="coverUrl" id="msg-task-coverUrl"
+                            :class="{'valid': !$v.msgTask.coverUrl.$invalid, 'invalid': $v.msgTask.coverUrl.$invalid }" v-model="$v.msgTask.coverUrl.$model" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.msgTask.numberOfShards')" for="msg-task-numberOfShards">Number Of Shards</label>
+                        <input type="number" class="form-control" name="numberOfShards" id="msg-task-numberOfShards"
+                            :class="{'valid': !$v.msgTask.numberOfShards.$invalid, 'invalid': $v.msgTask.numberOfShards.$invalid }" v-model.number="$v.msgTask.numberOfShards.$model" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.msgTask.completeSharding')" for="msg-task-completeSharding">Complete Sharding</label>
+                        <input type="checkbox" class="form-check" name="completeSharding" id="msg-task-completeSharding"
+                            :class="{'valid': !$v.msgTask.completeSharding.$invalid, 'invalid': $v.msgTask.completeSharding.$invalid }" v-model="$v.msgTask.completeSharding.$model" />
+                    </div>
+                    <div class="form-group">
                         <label class="form-control-label" v-text="$t('esignApp.msgTask.msg')" for="msg-task-msg">Msg</label>
                         <input type="text" class="form-control" name="msg" id="msg-task-msg"
                             :class="{'valid': !$v.msgTask.msg.$invalid, 'invalid': $v.msgTask.msg.$invalid }" v-model="$v.msgTask.msg.$model" />

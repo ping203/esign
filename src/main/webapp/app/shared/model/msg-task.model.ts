@@ -23,6 +23,12 @@ export interface IMsgTask {
   deptIdList?: string;
   useridList?: string;
   toAllUser?: boolean;
+  markdown?: string;
+  singleTitle?: string;
+  singleUrl?: string;
+  coverUrl?: string;
+  numberOfShards?: number;
+  completeSharding?: boolean;
   msg?: string;
   executeTime?: Date;
   agentId?: number;
@@ -38,6 +44,12 @@ export class MsgTask implements IMsgTask {
     public deptIdList?: string,
     public useridList?: string,
     public toAllUser?: boolean,
+    public markdown?: string,
+    public singleTitle?: string,
+    public singleUrl?: string,
+    public coverUrl?: string,
+    public numberOfShards?: number,
+    public completeSharding?: boolean,
     public msg?: string,
     public executeTime?: Date,
     public agentId?: number,
@@ -46,5 +58,6 @@ export class MsgTask implements IMsgTask {
     public msgSubTasks?: IMsgSubTask[]
   ) {
     this.toAllUser = this.toAllUser || false;
+    this.completeSharding = this.completeSharding || false;
   }
 }
