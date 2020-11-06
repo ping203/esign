@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import * as config from '@/shared/config/config';
 import { DATE_TIME_FORMAT } from '@/shared/date/filters';
 import MsgSubTaskService from '@/entities/msg-sub-task/msg-sub-task.service';
-import { MsgSubTask } from '@/shared/model/msg-sub-task.model';
+import { MsgSubTask, MessageStatus } from '@/shared/model/msg-sub-task.model';
 
 const mockedAxios: any = axios;
 const error = {
@@ -33,7 +33,23 @@ describe('Service Tests', () => {
       service = new MsgSubTaskService();
       currentDate = new Date();
 
-      elemDefault = new MsgSubTask(0, 'AAAAAAA', 0, currentDate, 'AAAAAAA');
+      elemDefault = new MsgSubTask(
+        0,
+        'AAAAAAA',
+        0,
+        currentDate,
+        'AAAAAAA',
+        0,
+        0,
+        MessageStatus.SentSuccessfully,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        false
+      );
     });
 
     describe('Service methods', () => {
@@ -99,7 +115,17 @@ describe('Service Tests', () => {
             useridList: 'BBBBBB',
             taskId: 1,
             time: format(currentDate, DATE_TIME_FORMAT),
-            rsp: 'BBBBBB',
+            rspMsg: 'BBBBBB',
+            status: 1,
+            progressInPercent: 1,
+            subTaskStatus: 'BBBBBB',
+            invalidUserIdList: 'BBBBBB',
+            forbiddenUserIdList: 'BBBBBB',
+            failedUserIdList: 'BBBBBB',
+            readUserIdList: 'BBBBBB',
+            unreadUserIdList: 'BBBBBB',
+            invalidDeptIdList: 'BBBBBB',
+            withdraw: true,
           },
           elemDefault
         );
@@ -134,7 +160,17 @@ describe('Service Tests', () => {
             useridList: 'BBBBBB',
             taskId: 1,
             time: format(currentDate, DATE_TIME_FORMAT),
-            rsp: 'BBBBBB',
+            rspMsg: 'BBBBBB',
+            status: 1,
+            progressInPercent: 1,
+            subTaskStatus: 'BBBBBB',
+            invalidUserIdList: 'BBBBBB',
+            forbiddenUserIdList: 'BBBBBB',
+            failedUserIdList: 'BBBBBB',
+            readUserIdList: 'BBBBBB',
+            unreadUserIdList: 'BBBBBB',
+            invalidDeptIdList: 'BBBBBB',
+            withdraw: true,
           },
           elemDefault
         );

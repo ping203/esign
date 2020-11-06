@@ -18,7 +18,17 @@ const validations: any = {
     useridList: {},
     taskId: {},
     time: {},
-    rsp: {},
+    rspMsg: {},
+    status: {},
+    progressInPercent: {},
+    subTaskStatus: {},
+    invalidUserIdList: {},
+    forbiddenUserIdList: {},
+    failedUserIdList: {},
+    readUserIdList: {},
+    unreadUserIdList: {},
+    invalidDeptIdList: {},
+    withdraw: {},
   },
 };
 
