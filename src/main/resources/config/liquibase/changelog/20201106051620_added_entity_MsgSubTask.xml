@@ -25,7 +25,37 @@
             <column name="time" type="datetime">
                 <constraints nullable="true" />
             </column>
-            <column name="rsp" type="varchar(255)">
+            <column name="rsp_msg" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="progress_in_percent" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="sub_task_status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="invalid_user_id_list" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="forbidden_user_id_list" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="failed_user_id_list" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="read_user_id_list" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="unread_user_id_list" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="invalid_dept_id_list" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="withdraw" type="boolean">
                 <constraints nullable="true" />
             </column>
             <column name="msg_task_id" type="bigint">
@@ -58,7 +88,17 @@
             <column name="userid_list" type="string"/>
             <column name="task_id" type="numeric"/>
             <column name="time" type="datetime"/>
-            <column name="rsp" type="string"/>
+            <column name="rsp_msg" type="string"/>
+            <column name="status" type="numeric"/>
+            <column name="progress_in_percent" type="numeric"/>
+            <column name="sub_task_status" type="string"/>
+            <column name="invalid_user_id_list" type="string"/>
+            <column name="forbidden_user_id_list" type="string"/>
+            <column name="failed_user_id_list" type="string"/>
+            <column name="read_user_id_list" type="string"/>
+            <column name="unread_user_id_list" type="string"/>
+            <column name="invalid_dept_id_list" type="string"/>
+            <column name="withdraw" type="boolean"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

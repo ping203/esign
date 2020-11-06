@@ -23,10 +23,70 @@
                         <span v-if="msgSubTask.time">{{$d(Date.parse(msgSubTask.time), 'long') }}</span>
                     </dd>
                     <dt>
-                        <span v-text="$t('esignApp.msgSubTask.rsp')">Rsp</span>
+                        <span v-text="$t('esignApp.msgSubTask.rspMsg')">Rsp Msg</span>
                     </dt>
                     <dd>
-                        <span>{{msgSubTask.rsp}}</span>
+                        <span>{{msgSubTask.rspMsg}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgSubTask.status')">Status</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgSubTask.status}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgSubTask.progressInPercent')">Progress In Percent</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgSubTask.progressInPercent}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgSubTask.subTaskStatus')">Sub Task Status</span>
+                    </dt>
+                    <dd>
+                        <span v-text="$t('esignApp.MessageStatus.' + msgSubTask.subTaskStatus)">{{msgSubTask.subTaskStatus}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgSubTask.invalidUserIdList')">Invalid User Id List</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgSubTask.invalidUserIdList}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgSubTask.forbiddenUserIdList')">Forbidden User Id List</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgSubTask.forbiddenUserIdList}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgSubTask.failedUserIdList')">Failed User Id List</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgSubTask.failedUserIdList}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgSubTask.readUserIdList')">Read User Id List</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgSubTask.readUserIdList}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgSubTask.unreadUserIdList')">Unread User Id List</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgSubTask.unreadUserIdList}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgSubTask.invalidDeptIdList')">Invalid Dept Id List</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgSubTask.invalidDeptIdList}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgSubTask.withdraw')">Withdraw</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgSubTask.withdraw}}</span>
                     </dd>
                     <dt>
                         <span v-text="$t('esignApp.msgSubTask.msgTask')">Msg Task</span>

@@ -14,8 +14,49 @@
       "fieldType": "Instant"
     },
     {
-      "fieldName": "rsp",
+      "fieldName": "rspMsg",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "progressInPercent",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "subTaskStatus",
+      "fieldType": "MessageStatus",
+      "fieldValues": "SentSuccessfully,Sending,NotSentYet"
+    },
+    {
+      "fieldName": "invalidUserIdList",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "forbiddenUserIdList",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "failedUserIdList",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "readUserIdList",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "unreadUserIdList",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "invalidDeptIdList",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "withdraw",
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [

@@ -28,7 +28,17 @@
                     <th v-on:click="changeOrder('useridList')"><span v-text="$t('esignApp.msgSubTask.useridList')">Userid List</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'useridList'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('taskId')"><span v-text="$t('esignApp.msgSubTask.taskId')">Task Id</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'taskId'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('time')"><span v-text="$t('esignApp.msgSubTask.time')">Time</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'time'"></jhi-sort-indicator></th>
-                    <th v-on:click="changeOrder('rsp')"><span v-text="$t('esignApp.msgSubTask.rsp')">Rsp</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'rsp'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('rspMsg')"><span v-text="$t('esignApp.msgSubTask.rspMsg')">Rsp Msg</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'rspMsg'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('status')"><span v-text="$t('esignApp.msgSubTask.status')">Status</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'status'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('progressInPercent')"><span v-text="$t('esignApp.msgSubTask.progressInPercent')">Progress In Percent</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'progressInPercent'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('subTaskStatus')"><span v-text="$t('esignApp.msgSubTask.subTaskStatus')">Sub Task Status</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'subTaskStatus'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('invalidUserIdList')"><span v-text="$t('esignApp.msgSubTask.invalidUserIdList')">Invalid User Id List</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'invalidUserIdList'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('forbiddenUserIdList')"><span v-text="$t('esignApp.msgSubTask.forbiddenUserIdList')">Forbidden User Id List</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'forbiddenUserIdList'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('failedUserIdList')"><span v-text="$t('esignApp.msgSubTask.failedUserIdList')">Failed User Id List</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'failedUserIdList'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('readUserIdList')"><span v-text="$t('esignApp.msgSubTask.readUserIdList')">Read User Id List</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'readUserIdList'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('unreadUserIdList')"><span v-text="$t('esignApp.msgSubTask.unreadUserIdList')">Unread User Id List</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'unreadUserIdList'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('invalidDeptIdList')"><span v-text="$t('esignApp.msgSubTask.invalidDeptIdList')">Invalid Dept Id List</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'invalidDeptIdList'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('withdraw')"><span v-text="$t('esignApp.msgSubTask.withdraw')">Withdraw</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'withdraw'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('msgTask.id')"><span v-text="$t('esignApp.msgSubTask.msgTask')">Msg Task</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'msgTask.id'"></jhi-sort-indicator></th>
                     <th></th>
                 </tr>
@@ -42,7 +52,17 @@
                     <td>{{msgSubTask.useridList}}</td>
                     <td>{{msgSubTask.taskId}}</td>
                     <td>{{msgSubTask.time ? $d(Date.parse(msgSubTask.time), 'short') : ''}}</td>
-                    <td>{{msgSubTask.rsp}}</td>
+                    <td>{{msgSubTask.rspMsg}}</td>
+                    <td>{{msgSubTask.status}}</td>
+                    <td>{{msgSubTask.progressInPercent}}</td>
+                    <td v-text="$t('esignApp.MessageStatus.' + msgSubTask.subTaskStatus)">{{msgSubTask.subTaskStatus}}</td>
+                    <td>{{msgSubTask.invalidUserIdList}}</td>
+                    <td>{{msgSubTask.forbiddenUserIdList}}</td>
+                    <td>{{msgSubTask.failedUserIdList}}</td>
+                    <td>{{msgSubTask.readUserIdList}}</td>
+                    <td>{{msgSubTask.unreadUserIdList}}</td>
+                    <td>{{msgSubTask.invalidDeptIdList}}</td>
+                    <td>{{msgSubTask.withdraw}}</td>
                     <td>
                         <div v-if="msgSubTask.msgTask">
                             <router-link :to="{name: 'MsgTaskView', params: {msgTaskId: msgSubTask.msgTask.id}}">{{msgSubTask.msgTask.id}}</router-link>

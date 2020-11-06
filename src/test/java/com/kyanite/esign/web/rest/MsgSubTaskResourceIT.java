@@ -24,6 +24,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import com.kyanite.esign.domain.enumeration.MessageStatus;
 /**
  * Integration tests for the {@link MsgSubTaskResource} REST controller.
  */
@@ -41,8 +42,38 @@ public class MsgSubTaskResourceIT {
     private static final Instant DEFAULT_TIME = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_TIME = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
-    private static final String DEFAULT_RSP = "AAAAAAAAAA";
-    private static final String UPDATED_RSP = "BBBBBBBBBB";
+    private static final String DEFAULT_RSP_MSG = "AAAAAAAAAA";
+    private static final String UPDATED_RSP_MSG = "BBBBBBBBBB";
+
+    private static final Long DEFAULT_STATUS = 1L;
+    private static final Long UPDATED_STATUS = 2L;
+
+    private static final Long DEFAULT_PROGRESS_IN_PERCENT = 1L;
+    private static final Long UPDATED_PROGRESS_IN_PERCENT = 2L;
+
+    private static final MessageStatus DEFAULT_SUB_TASK_STATUS = MessageStatus.SentSuccessfully;
+    private static final MessageStatus UPDATED_SUB_TASK_STATUS = MessageStatus.Sending;
+
+    private static final String DEFAULT_INVALID_USER_ID_LIST = "AAAAAAAAAA";
+    private static final String UPDATED_INVALID_USER_ID_LIST = "BBBBBBBBBB";
+
+    private static final String DEFAULT_FORBIDDEN_USER_ID_LIST = "AAAAAAAAAA";
+    private static final String UPDATED_FORBIDDEN_USER_ID_LIST = "BBBBBBBBBB";
+
+    private static final String DEFAULT_FAILED_USER_ID_LIST = "AAAAAAAAAA";
+    private static final String UPDATED_FAILED_USER_ID_LIST = "BBBBBBBBBB";
+
+    private static final String DEFAULT_READ_USER_ID_LIST = "AAAAAAAAAA";
+    private static final String UPDATED_READ_USER_ID_LIST = "BBBBBBBBBB";
+
+    private static final String DEFAULT_UNREAD_USER_ID_LIST = "AAAAAAAAAA";
+    private static final String UPDATED_UNREAD_USER_ID_LIST = "BBBBBBBBBB";
+
+    private static final String DEFAULT_INVALID_DEPT_ID_LIST = "AAAAAAAAAA";
+    private static final String UPDATED_INVALID_DEPT_ID_LIST = "BBBBBBBBBB";
+
+    private static final Boolean DEFAULT_WITHDRAW = false;
+    private static final Boolean UPDATED_WITHDRAW = true;
 
     @Autowired
     private MsgSubTaskRepository msgSubTaskRepository;
@@ -69,7 +100,17 @@ public class MsgSubTaskResourceIT {
             .useridList(DEFAULT_USERID_LIST)
             .taskId(DEFAULT_TASK_ID)
             .time(DEFAULT_TIME)
-            .rsp(DEFAULT_RSP);
+            .rspMsg(DEFAULT_RSP_MSG)
+            .status(DEFAULT_STATUS)
+            .progressInPercent(DEFAULT_PROGRESS_IN_PERCENT)
+            .subTaskStatus(DEFAULT_SUB_TASK_STATUS)
+            .invalidUserIdList(DEFAULT_INVALID_USER_ID_LIST)
+            .forbiddenUserIdList(DEFAULT_FORBIDDEN_USER_ID_LIST)
+            .failedUserIdList(DEFAULT_FAILED_USER_ID_LIST)
+            .readUserIdList(DEFAULT_READ_USER_ID_LIST)
+            .unreadUserIdList(DEFAULT_UNREAD_USER_ID_LIST)
+            .invalidDeptIdList(DEFAULT_INVALID_DEPT_ID_LIST)
+            .withdraw(DEFAULT_WITHDRAW);
         return msgSubTask;
     }
     /**
@@ -83,7 +124,17 @@ public class MsgSubTaskResourceIT {
             .useridList(UPDATED_USERID_LIST)
             .taskId(UPDATED_TASK_ID)
             .time(UPDATED_TIME)
-            .rsp(UPDATED_RSP);
+            .rspMsg(UPDATED_RSP_MSG)
+            .status(UPDATED_STATUS)
+            .progressInPercent(UPDATED_PROGRESS_IN_PERCENT)
+            .subTaskStatus(UPDATED_SUB_TASK_STATUS)
+            .invalidUserIdList(UPDATED_INVALID_USER_ID_LIST)
+            .forbiddenUserIdList(UPDATED_FORBIDDEN_USER_ID_LIST)
+            .failedUserIdList(UPDATED_FAILED_USER_ID_LIST)
+            .readUserIdList(UPDATED_READ_USER_ID_LIST)
+            .unreadUserIdList(UPDATED_UNREAD_USER_ID_LIST)
+            .invalidDeptIdList(UPDATED_INVALID_DEPT_ID_LIST)
+            .withdraw(UPDATED_WITHDRAW);
         return msgSubTask;
     }
 
@@ -109,7 +160,17 @@ public class MsgSubTaskResourceIT {
         assertThat(testMsgSubTask.getUseridList()).isEqualTo(DEFAULT_USERID_LIST);
         assertThat(testMsgSubTask.getTaskId()).isEqualTo(DEFAULT_TASK_ID);
         assertThat(testMsgSubTask.getTime()).isEqualTo(DEFAULT_TIME);
-        assertThat(testMsgSubTask.getRsp()).isEqualTo(DEFAULT_RSP);
+        assertThat(testMsgSubTask.getRspMsg()).isEqualTo(DEFAULT_RSP_MSG);
+        assertThat(testMsgSubTask.getStatus()).isEqualTo(DEFAULT_STATUS);
+        assertThat(testMsgSubTask.getProgressInPercent()).isEqualTo(DEFAULT_PROGRESS_IN_PERCENT);
+        assertThat(testMsgSubTask.getSubTaskStatus()).isEqualTo(DEFAULT_SUB_TASK_STATUS);
+        assertThat(testMsgSubTask.getInvalidUserIdList()).isEqualTo(DEFAULT_INVALID_USER_ID_LIST);
+        assertThat(testMsgSubTask.getForbiddenUserIdList()).isEqualTo(DEFAULT_FORBIDDEN_USER_ID_LIST);
+        assertThat(testMsgSubTask.getFailedUserIdList()).isEqualTo(DEFAULT_FAILED_USER_ID_LIST);
+        assertThat(testMsgSubTask.getReadUserIdList()).isEqualTo(DEFAULT_READ_USER_ID_LIST);
+        assertThat(testMsgSubTask.getUnreadUserIdList()).isEqualTo(DEFAULT_UNREAD_USER_ID_LIST);
+        assertThat(testMsgSubTask.getInvalidDeptIdList()).isEqualTo(DEFAULT_INVALID_DEPT_ID_LIST);
+        assertThat(testMsgSubTask.isWithdraw()).isEqualTo(DEFAULT_WITHDRAW);
     }
 
     @Test
@@ -146,7 +207,17 @@ public class MsgSubTaskResourceIT {
             .andExpect(jsonPath("$.[*].useridList").value(hasItem(DEFAULT_USERID_LIST)))
             .andExpect(jsonPath("$.[*].taskId").value(hasItem(DEFAULT_TASK_ID.intValue())))
             .andExpect(jsonPath("$.[*].time").value(hasItem(DEFAULT_TIME.toString())))
-            .andExpect(jsonPath("$.[*].rsp").value(hasItem(DEFAULT_RSP)));
+            .andExpect(jsonPath("$.[*].rspMsg").value(hasItem(DEFAULT_RSP_MSG)))
+            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.intValue())))
+            .andExpect(jsonPath("$.[*].progressInPercent").value(hasItem(DEFAULT_PROGRESS_IN_PERCENT.intValue())))
+            .andExpect(jsonPath("$.[*].subTaskStatus").value(hasItem(DEFAULT_SUB_TASK_STATUS.toString())))
+            .andExpect(jsonPath("$.[*].invalidUserIdList").value(hasItem(DEFAULT_INVALID_USER_ID_LIST)))
+            .andExpect(jsonPath("$.[*].forbiddenUserIdList").value(hasItem(DEFAULT_FORBIDDEN_USER_ID_LIST)))
+            .andExpect(jsonPath("$.[*].failedUserIdList").value(hasItem(DEFAULT_FAILED_USER_ID_LIST)))
+            .andExpect(jsonPath("$.[*].readUserIdList").value(hasItem(DEFAULT_READ_USER_ID_LIST)))
+            .andExpect(jsonPath("$.[*].unreadUserIdList").value(hasItem(DEFAULT_UNREAD_USER_ID_LIST)))
+            .andExpect(jsonPath("$.[*].invalidDeptIdList").value(hasItem(DEFAULT_INVALID_DEPT_ID_LIST)))
+            .andExpect(jsonPath("$.[*].withdraw").value(hasItem(DEFAULT_WITHDRAW.booleanValue())));
     }
     
     @Test
@@ -163,7 +234,17 @@ public class MsgSubTaskResourceIT {
             .andExpect(jsonPath("$.useridList").value(DEFAULT_USERID_LIST))
             .andExpect(jsonPath("$.taskId").value(DEFAULT_TASK_ID.intValue()))
             .andExpect(jsonPath("$.time").value(DEFAULT_TIME.toString()))
-            .andExpect(jsonPath("$.rsp").value(DEFAULT_RSP));
+            .andExpect(jsonPath("$.rspMsg").value(DEFAULT_RSP_MSG))
+            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.intValue()))
+            .andExpect(jsonPath("$.progressInPercent").value(DEFAULT_PROGRESS_IN_PERCENT.intValue()))
+            .andExpect(jsonPath("$.subTaskStatus").value(DEFAULT_SUB_TASK_STATUS.toString()))
+            .andExpect(jsonPath("$.invalidUserIdList").value(DEFAULT_INVALID_USER_ID_LIST))
+            .andExpect(jsonPath("$.forbiddenUserIdList").value(DEFAULT_FORBIDDEN_USER_ID_LIST))
+            .andExpect(jsonPath("$.failedUserIdList").value(DEFAULT_FAILED_USER_ID_LIST))
+            .andExpect(jsonPath("$.readUserIdList").value(DEFAULT_READ_USER_ID_LIST))
+            .andExpect(jsonPath("$.unreadUserIdList").value(DEFAULT_UNREAD_USER_ID_LIST))
+            .andExpect(jsonPath("$.invalidDeptIdList").value(DEFAULT_INVALID_DEPT_ID_LIST))
+            .andExpect(jsonPath("$.withdraw").value(DEFAULT_WITHDRAW.booleanValue()));
     }
     @Test
     @Transactional
@@ -189,7 +270,17 @@ public class MsgSubTaskResourceIT {
             .useridList(UPDATED_USERID_LIST)
             .taskId(UPDATED_TASK_ID)
             .time(UPDATED_TIME)
-            .rsp(UPDATED_RSP);
+            .rspMsg(UPDATED_RSP_MSG)
+            .status(UPDATED_STATUS)
+            .progressInPercent(UPDATED_PROGRESS_IN_PERCENT)
+            .subTaskStatus(UPDATED_SUB_TASK_STATUS)
+            .invalidUserIdList(UPDATED_INVALID_USER_ID_LIST)
+            .forbiddenUserIdList(UPDATED_FORBIDDEN_USER_ID_LIST)
+            .failedUserIdList(UPDATED_FAILED_USER_ID_LIST)
+            .readUserIdList(UPDATED_READ_USER_ID_LIST)
+            .unreadUserIdList(UPDATED_UNREAD_USER_ID_LIST)
+            .invalidDeptIdList(UPDATED_INVALID_DEPT_ID_LIST)
+            .withdraw(UPDATED_WITHDRAW);
 
         restMsgSubTaskMockMvc.perform(put("/api/msg-sub-tasks")
             .contentType(MediaType.APPLICATION_JSON)
@@ -203,7 +294,17 @@ public class MsgSubTaskResourceIT {
         assertThat(testMsgSubTask.getUseridList()).isEqualTo(UPDATED_USERID_LIST);
         assertThat(testMsgSubTask.getTaskId()).isEqualTo(UPDATED_TASK_ID);
         assertThat(testMsgSubTask.getTime()).isEqualTo(UPDATED_TIME);
-        assertThat(testMsgSubTask.getRsp()).isEqualTo(UPDATED_RSP);
+        assertThat(testMsgSubTask.getRspMsg()).isEqualTo(UPDATED_RSP_MSG);
+        assertThat(testMsgSubTask.getStatus()).isEqualTo(UPDATED_STATUS);
+        assertThat(testMsgSubTask.getProgressInPercent()).isEqualTo(UPDATED_PROGRESS_IN_PERCENT);
+        assertThat(testMsgSubTask.getSubTaskStatus()).isEqualTo(UPDATED_SUB_TASK_STATUS);
+        assertThat(testMsgSubTask.getInvalidUserIdList()).isEqualTo(UPDATED_INVALID_USER_ID_LIST);
+        assertThat(testMsgSubTask.getForbiddenUserIdList()).isEqualTo(UPDATED_FORBIDDEN_USER_ID_LIST);
+        assertThat(testMsgSubTask.getFailedUserIdList()).isEqualTo(UPDATED_FAILED_USER_ID_LIST);
+        assertThat(testMsgSubTask.getReadUserIdList()).isEqualTo(UPDATED_READ_USER_ID_LIST);
+        assertThat(testMsgSubTask.getUnreadUserIdList()).isEqualTo(UPDATED_UNREAD_USER_ID_LIST);
+        assertThat(testMsgSubTask.getInvalidDeptIdList()).isEqualTo(UPDATED_INVALID_DEPT_ID_LIST);
+        assertThat(testMsgSubTask.isWithdraw()).isEqualTo(UPDATED_WITHDRAW);
     }
 
     @Test

@@ -19,7 +19,17 @@
       "useridList": "Userid List",
       "taskId": "Task Id",
       "time": "Time",
-      "rsp": "Rsp",
+      "rspMsg": "Rsp Msg",
+      "status": "Status",
+      "progressInPercent": "Progress In Percent",
+      "subTaskStatus": "Sub Task Status",
+      "invalidUserIdList": "Invalid User Id List",
+      "forbiddenUserIdList": "Forbidden User Id List",
+      "failedUserIdList": "Failed User Id List",
+      "readUserIdList": "Read User Id List",
+      "unreadUserIdList": "Unread User Id List",
+      "invalidDeptIdList": "Invalid Dept Id List",
+      "withdraw": "Withdraw",
       "msgTask": "Msg Task"
     }
   }
