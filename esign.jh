@@ -1,0 +1,136 @@
+
+
+
+entity DdUser {
+        unionid String,
+        remark String,
+        userid  String,
+        isLeaderInDepts  String,
+        isBoss  Boolean,
+        hiredDate BigDecimal,
+        isSenior  Boolean,
+        tel  String,
+        department String,
+        workPlace  String ,
+        orderInDepts  String,
+        mobile  String ,
+        errmsg  String ,
+        active  Boolean,
+        avatar  String ,
+        isAdmin Boolean,
+        isHide Boolean,
+        jobnumber  String,
+        name  String,
+        extattr String,
+        stateCode  String,
+        position  String,
+        roles  String,
+        accountId String,
+        idNumber String 
+}
+
+
+
+
+
+
+
+
+entity MsgTask{
+	title String,
+	deptIdList String,
+    useridList String,
+    toAllUser Boolean,
+    msg String,
+    executeTime Instant,
+    agentId Long,
+    type DdMessageType,
+    status MessageStatus
+}
+
+entity MsgSubTask{
+    useridList String,
+    taskId Long,
+    time Instant,
+    rsp String
+}
+
+enum DdMessageType {
+	Voice , ActionCard, Markdown, Oa, Link, File , Text , Image
+}
+
+enum MessageStatus {
+	 SentSuccessfully , Sending, NotSentYet
+}
+
+entity PdfFile{
+	name String,
+    mediaType String,
+    objName String,
+    fileUrl String
+
+}
+
+
+entity PdfSign{
+	channelNo String,
+    accountId String,
+    pdfUrl String,
+    fileName String,
+    key String,
+    posType String,
+    posX Long,
+    posY Long,
+    width Long,
+    signType String,
+    requestNo String,
+    requestTime Instant
+}
+
+entity SealData{
+	base64Str Blob
+}
+
+
+entity ESignConfig{
+	name String,
+    time Instant,
+    channelNo String,
+    accessId String,
+    accessKeySecret String
+}
+
+
+
+
+
+
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	DdUser to PdfSign,
+
+	PdfSign to SealData,
+    
+    PdfFile to PdfSign,
+    
+    MsgTask to MsgSubTask
+}
+
+
+
+
+
+
+paginate * with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

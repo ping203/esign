@@ -30,6 +30,13 @@ import ConfigurationService from '@/admin/configuration/configuration.service';
 import TrackerService from './admin/tracker/tracker.service';
 /* tslint:disable */
 
+import DdUserService from '@/entities/dd-user/dd-user.service';
+import MsgTaskService from '@/entities/msg-task/msg-task.service';
+import MsgSubTaskService from '@/entities/msg-sub-task/msg-sub-task.service';
+import PdfFileService from '@/entities/pdf-file/pdf-file.service';
+import PdfSignService from '@/entities/pdf-sign/pdf-sign.service';
+import SealDataService from '@/entities/seal-data/seal-data.service';
+import ESignConfigService from '@/entities/e-sign-config/e-sign-config.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -94,6 +101,13 @@ new Vue({
     trackerService: () => trackerService,
     alertService: () => alertService,
     translationService: () => translationService,
+    ddUserService: () => new DdUserService(),
+    msgTaskService: () => new MsgTaskService(),
+    msgSubTaskService: () => new MsgSubTaskService(),
+    pdfFileService: () => new PdfFileService(),
+    pdfSignService: () => new PdfSignService(),
+    sealDataService: () => new SealDataService(),
+    eSignConfigService: () => new ESignConfigService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

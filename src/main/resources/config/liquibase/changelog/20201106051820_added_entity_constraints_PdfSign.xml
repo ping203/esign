@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity PdfSign.
+    -->
+    <changeSet id="20201106051820-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="dd_user_id"
+                                 baseTableName="pdf_sign"
+                                 constraintName="fk_pdf_sign_dd_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dd_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="pdf_file_id"
+                                 baseTableName="pdf_sign"
+                                 constraintName="fk_pdf_sign_pdf_file_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pdf_file"/>
+
+    </changeSet>
+</databaseChangeLog>

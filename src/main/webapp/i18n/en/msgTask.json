@@ -1,0 +1,31 @@
+{
+  "esignApp": {
+    "msgTask": {
+      "home": {
+        "title": "Msg Tasks",
+        "createLabel": "Create a new Msg Task",
+        "createOrEditLabel": "Create or edit a Msg Task",
+        "notFound": "No Msg Tasks found"
+      },
+      "created": "A new Msg Task is created with identifier {{ param }}",
+      "updated": "A Msg Task is updated with identifier {{ param }}",
+      "deleted": "A Msg Task is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Msg Task {{ id }}?"
+      },
+      "detail": {
+        "title": "Msg Task"
+      },
+      "title": "Title",
+      "deptIdList": "Dept Id List",
+      "useridList": "Userid List",
+      "toAllUser": "To All User",
+      "msg": "Msg",
+      "executeTime": "Execute Time",
+      "agentId": "Agent Id",
+      "type": "Type",
+      "status": "Status",
+      "msgSubTask": "Msg Sub Task"
+    }
+  }
+}

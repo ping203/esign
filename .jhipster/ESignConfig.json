@@ -1,0 +1,37 @@
+{
+  "name": "ESignConfig",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "time",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "channelNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "accessId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "accessKeySecret",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201106052020",
+  "entityTableName": "e_sign_config",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

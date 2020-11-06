@@ -1,0 +1,36 @@
+{
+  "esignApp": {
+    "pdfSign": {
+      "home": {
+        "title": "Pdf Signs",
+        "createLabel": "Create a new Pdf Sign",
+        "createOrEditLabel": "Create or edit a Pdf Sign",
+        "notFound": "No Pdf Signs found"
+      },
+      "created": "A new Pdf Sign is created with identifier {{ param }}",
+      "updated": "A Pdf Sign is updated with identifier {{ param }}",
+      "deleted": "A Pdf Sign is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pdf Sign {{ id }}?"
+      },
+      "detail": {
+        "title": "Pdf Sign"
+      },
+      "channelNo": "Channel No",
+      "accountId": "Account Id",
+      "pdfUrl": "Pdf Url",
+      "fileName": "File Name",
+      "key": "Key",
+      "posType": "Pos Type",
+      "posX": "Pos X",
+      "posY": "Pos Y",
+      "width": "Width",
+      "signType": "Sign Type",
+      "requestNo": "Request No",
+      "requestTime": "Request Time",
+      "sealData": "Seal Data",
+      "ddUser": "Dd User",
+      "pdfFile": "Pdf File"
+    }
+  }
+}

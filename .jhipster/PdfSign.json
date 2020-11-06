@@ -1,0 +1,86 @@
+{
+  "name": "PdfSign",
+  "fields": [
+    {
+      "fieldName": "channelNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "accountId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pdfUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fileName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "key",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "posType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "posX",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "posY",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "width",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "signType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "requestNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "requestTime",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "sealData",
+      "otherEntityRelationshipName": "pdfSign",
+      "relationshipName": "sealData"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ddUser",
+      "otherEntityRelationshipName": "pdfSign",
+      "relationshipName": "ddUser",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pdfFile",
+      "otherEntityRelationshipName": "pdfSign",
+      "relationshipName": "pdfFile",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201106051820",
+  "entityTableName": "pdf_sign",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

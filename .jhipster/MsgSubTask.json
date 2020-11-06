@@ -1,0 +1,41 @@
+{
+  "name": "MsgSubTask",
+  "fields": [
+    {
+      "fieldName": "useridList",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taskId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "time",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "rsp",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "msgTask",
+      "otherEntityRelationshipName": "msgSubTask",
+      "relationshipName": "msgTask",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201106051620",
+  "entityTableName": "msg_sub_task",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
