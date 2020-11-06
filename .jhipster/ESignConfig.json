@@ -27,7 +27,7 @@
   "entityTableName": "e_sign_config",
   "dto": "no",
   "pagination": "pagination",
-  "service": "serviceImpl",
+  "service": "serviceClass",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,
   "readOnly": false,

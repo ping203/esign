@@ -1,16 +1,31 @@
 package com.kyanite.esign.service;
 
 import com.kyanite.esign.domain.SealData;
+import com.kyanite.esign.repository.SealDataRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
 /**
- * Service Interface for managing {@link SealData}.
+ * Service Implementation for managing {@link SealData}.
  */
-public interface SealDataService {
+@Service
+@Transactional
+public class SealDataService {
+
+    private final Logger log = LoggerFactory.getLogger(SealDataService.class);
+
+    private final SealDataRepository sealDataRepository;
+
+    public SealDataService(SealDataRepository sealDataRepository) {
+        this.sealDataRepository = sealDataRepository;
+    }
 
     /**
      * Save a sealData.
@@ -18,7 +33,10 @@ public interface SealDataService {
      * @param sealData the entity to save.
      * @return the persisted entity.
      */
-    SealData save(SealData sealData);
+    public SealData save(SealData sealData) {
+        log.debug("Request to save SealData : {}", sealData);
+        return sealDataRepository.save(sealData);
+    }
 
     /**
      * Get all the sealData.
@@ -26,21 +44,32 @@ public interface SealDataService {
      * @param pageable the pagination information.
      * @return the list of entities.
      */
-    Page<SealData> findAll(Pageable pageable);
+    @Transactional(readOnly = true)
+    public Page<SealData> findAll(Pageable pageable) {
+        log.debug("Request to get all SealData");
+        return sealDataRepository.findAll(pageable);
+    }
 
 
     /**
-     * Get the "id" sealData.
+     * Get one sealData by id.
      *
      * @param id the id of the entity.
      * @return the entity.
      */
-    Optional<SealData> findOne(Long id);
+    @Transactional(readOnly = true)
+    public Optional<SealData> findOne(Long id) {
+        log.debug("Request to get SealData : {}", id);
+        return sealDataRepository.findById(id);
+    }
 
     /**
-     * Delete the "id" sealData.
+     * Delete the sealData by id.
      *
      * @param id the id of the entity.
      */
-    void delete(Long id);
+    public void delete(Long id) {
+        log.debug("Request to delete SealData : {}", id);
+        sealDataRepository.deleteById(id);
+    }
 }

@@ -31,7 +31,7 @@
   "entityTableName": "msg_sub_task",
   "dto": "no",
   "pagination": "pagination",
-  "service": "serviceImpl",
+  "service": "serviceClass",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,
   "readOnly": false,
