@@ -1,0 +1,26 @@
+{
+  "esignApp": {
+    "msgSubTask": {
+      "home": {
+        "title": "Msg Sub Tasks",
+        "createLabel": "Create a new Msg Sub Task",
+        "createOrEditLabel": "Create or edit a Msg Sub Task",
+        "notFound": "No Msg Sub Tasks found"
+      },
+      "created": "A new Msg Sub Task is created with identifier {{ param }}",
+      "updated": "A Msg Sub Task is updated with identifier {{ param }}",
+      "deleted": "A Msg Sub Task is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Msg Sub Task {{ id }}?"
+      },
+      "detail": {
+        "title": "Msg Sub Task"
+      },
+      "useridList": "Userid List",
+      "taskId": "Task Id",
+      "time": "Time",
+      "rsp": "Rsp",
+      "msgTask": "Msg Task"
+    }
+  }
+}

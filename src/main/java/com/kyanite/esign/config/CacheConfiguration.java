@@ -48,6 +48,17 @@ public class CacheConfiguration {
             createCache(cm, com.kyanite.esign.domain.User.class.getName());
             createCache(cm, com.kyanite.esign.domain.Authority.class.getName());
             createCache(cm, com.kyanite.esign.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.kyanite.esign.domain.DdUser.class.getName());
+            createCache(cm, com.kyanite.esign.domain.DdUser.class.getName() + ".pdfSigns");
+            createCache(cm, com.kyanite.esign.domain.MsgTask.class.getName());
+            createCache(cm, com.kyanite.esign.domain.MsgTask.class.getName() + ".msgSubTasks");
+            createCache(cm, com.kyanite.esign.domain.MsgSubTask.class.getName());
+            createCache(cm, com.kyanite.esign.domain.PdfFile.class.getName());
+            createCache(cm, com.kyanite.esign.domain.PdfFile.class.getName() + ".pdfSigns");
+            createCache(cm, com.kyanite.esign.domain.PdfSign.class.getName());
+            createCache(cm, com.kyanite.esign.domain.PdfSign.class.getName() + ".sealData");
+            createCache(cm, com.kyanite.esign.domain.SealData.class.getName());
+            createCache(cm, com.kyanite.esign.domain.ESignConfig.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

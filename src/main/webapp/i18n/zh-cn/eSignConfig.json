@@ -1,0 +1,26 @@
+{
+  "esignApp": {
+    "eSignConfig": {
+      "home": {
+        "title": "E Sign Configs",
+        "createLabel": "创建新 E Sign Config",
+        "createOrEditLabel": "创建或编辑 E Sign Config",
+        "notFound": "No E Sign Configs found"
+      },
+      "created": "E Sign Config {{ param }} 创建成功",
+      "updated": "E Sign Config {{ param }} 更新成功",
+      "deleted": "E Sign Config {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 E Sign Config {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "E Sign Config"
+      },
+      "name": "Name",
+      "time": "Time",
+      "channelNo": "Channel No",
+      "accessId": "Access Id",
+      "accessKeySecret": "Access Key Secret"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "esignApp": {
+    "pdfSign": {
+      "home": {
+        "title": "Pdf Signs",
+        "createLabel": "创建新 Pdf Sign",
+        "createOrEditLabel": "创建或编辑 Pdf Sign",
+        "notFound": "No Pdf Signs found"
+      },
+      "created": "Pdf Sign {{ param }} 创建成功",
+      "updated": "Pdf Sign {{ param }} 更新成功",
+      "deleted": "Pdf Sign {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Pdf Sign {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Pdf Sign"
+      },
+      "channelNo": "Channel No",
+      "accountId": "Account Id",
+      "pdfUrl": "Pdf Url",
+      "fileName": "File Name",
+      "key": "Key",
+      "posType": "Pos Type",
+      "posX": "Pos X",
+      "posY": "Pos Y",
+      "width": "Width",
+      "signType": "Sign Type",
+      "requestNo": "Request No",
+      "requestTime": "Request Time",
+      "sealData": "Seal Data",
+      "ddUser": "Dd User",
+      "pdfFile": "Pdf File"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "esignApp": {
+    "sealData": {
+      "home": {
+        "title": "Seal Data",
+        "createLabel": "创建新 Seal Data",
+        "createOrEditLabel": "创建或编辑 Seal Data",
+        "notFound": "No Seal Data found"
+      },
+      "created": "Seal Data {{ param }} 创建成功",
+      "updated": "Seal Data {{ param }} 更新成功",
+      "deleted": "Seal Data {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Seal Data {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Seal Data"
+      },
+      "base64Str": "Base 64 Str",
+      "pdfSign": "Pdf Sign"
+    }
+  }
+}

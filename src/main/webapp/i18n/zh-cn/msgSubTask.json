@@ -1,0 +1,26 @@
+{
+  "esignApp": {
+    "msgSubTask": {
+      "home": {
+        "title": "Msg Sub Tasks",
+        "createLabel": "创建新 Msg Sub Task",
+        "createOrEditLabel": "创建或编辑 Msg Sub Task",
+        "notFound": "No Msg Sub Tasks found"
+      },
+      "created": "Msg Sub Task {{ param }} 创建成功",
+      "updated": "Msg Sub Task {{ param }} 更新成功",
+      "deleted": "Msg Sub Task {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Msg Sub Task {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Msg Sub Task"
+      },
+      "useridList": "Userid List",
+      "taskId": "Task Id",
+      "time": "Time",
+      "rsp": "Rsp",
+      "msgTask": "Msg Task"
+    }
+  }
+}

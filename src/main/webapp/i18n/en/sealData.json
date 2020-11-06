@@ -1,0 +1,23 @@
+{
+  "esignApp": {
+    "sealData": {
+      "home": {
+        "title": "Seal Data",
+        "createLabel": "Create a new Seal Data",
+        "createOrEditLabel": "Create or edit a Seal Data",
+        "notFound": "No Seal Data found"
+      },
+      "created": "A new Seal Data is created with identifier {{ param }}",
+      "updated": "A Seal Data is updated with identifier {{ param }}",
+      "deleted": "A Seal Data is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Seal Data {{ id }}?"
+      },
+      "detail": {
+        "title": "Seal Data"
+      },
+      "base64Str": "Base 64 Str",
+      "pdfSign": "Pdf Sign"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "PdfFile",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mediaType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "objName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fileUrl",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "pdfSign",
+      "otherEntityRelationshipName": "pdfFile",
+      "relationshipName": "pdfSign"
+    }
+  ],
+  "changelogDate": "20201106051720",
+  "entityTableName": "pdf_file",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

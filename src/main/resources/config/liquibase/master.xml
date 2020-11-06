@@ -14,7 +14,17 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201106051420_added_entity_DdUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201106051520_added_entity_MsgTask.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201106051620_added_entity_MsgSubTask.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201106051720_added_entity_PdfFile.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201106051820_added_entity_PdfSign.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201106051920_added_entity_SealData.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201106052020_added_entity_ESignConfig.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20201106051620_added_entity_constraints_MsgSubTask.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201106051820_added_entity_constraints_PdfSign.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201106051920_added_entity_constraints_SealData.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

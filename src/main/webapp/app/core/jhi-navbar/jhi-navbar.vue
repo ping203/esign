@@ -32,6 +32,34 @@
                         <font-awesome-icon icon="th-list" />
                         <span v-text="$t('global.menu.entities.main')">Entities</span>
                     </span>
+                    <b-dropdown-item to="/dd-user">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.ddUser')">DdUser</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/msg-task">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.msgTask')">MsgTask</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/msg-sub-task">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.msgSubTask')">MsgSubTask</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/pdf-file">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.pdfFile')">PdfFile</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/pdf-sign">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.pdfSign')">PdfSign</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/seal-data">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.sealData')">SealData</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/e-sign-config">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.eSignConfig')">ESignConfig</span>
+                    </b-dropdown-item>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </b-nav-item-dropdown>
                 <b-nav-item-dropdown

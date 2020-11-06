@@ -1,0 +1,30 @@
+{
+  "name": "SealData",
+  "fields": [
+    {
+      "fieldName": "base64Str",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pdfSign",
+      "otherEntityRelationshipName": "sealData",
+      "relationshipName": "pdfSign",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201106051920",
+  "entityTableName": "seal_data",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

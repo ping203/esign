@@ -1,0 +1,26 @@
+{
+  "esignApp": {
+    "eSignConfig": {
+      "home": {
+        "title": "E Sign Configs",
+        "createLabel": "Create a new E Sign Config",
+        "createOrEditLabel": "Create or edit a E Sign Config",
+        "notFound": "No E Sign Configs found"
+      },
+      "created": "A new E Sign Config is created with identifier {{ param }}",
+      "updated": "A E Sign Config is updated with identifier {{ param }}",
+      "deleted": "A E Sign Config is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete E Sign Config {{ id }}?"
+      },
+      "detail": {
+        "title": "E Sign Config"
+      },
+      "name": "Name",
+      "time": "Time",
+      "channelNo": "Channel No",
+      "accessId": "Access Id",
+      "accessKeySecret": "Access Key Secret"
+    }
+  }
+}
