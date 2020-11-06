@@ -88,7 +88,7 @@ entity PdfSign{
 }
 
 entity SealData{
-	base64Str Blob
+	base64Str ImageBlob
 }
 
 
