@@ -31,6 +31,7 @@
       "agentId": "Agent Id",
       "type": "Type",
       "status": "Status",
+      "progressInPercent": "Progress In Percent",
       "msgSubTask": "Msg Sub Task"
     }
   }

@@ -99,6 +99,11 @@
                             <option value="NotSentYet" v-bind:label="$t('esignApp.MessageStatus.NotSentYet')">NotSentYet</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.msgTask.progressInPercent')" for="msg-task-progressInPercent">Progress In Percent</label>
+                        <input type="number" class="form-control" name="progressInPercent" id="msg-task-progressInPercent"
+                            :class="{'valid': !$v.msgTask.progressInPercent.$invalid, 'invalid': $v.msgTask.progressInPercent.$invalid }" v-model.number="$v.msgTask.progressInPercent.$model" />
+                    </div>
                 </div>
                 <div>
                     <button type="button" id="cancel-save" class="btn btn-secondary" v-on:click="previousState()">

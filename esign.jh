@@ -51,7 +51,8 @@ entity MsgTask{
     executeTime Instant,
     agentId Long,
     type DdMessageType,
-    status MessageStatus
+    status MessageStatus,
+    progressInPercent Long
 }
 
 entity MsgSubTask{

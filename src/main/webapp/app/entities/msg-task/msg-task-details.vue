@@ -94,6 +94,12 @@
                     <dd>
                         <span v-text="$t('esignApp.MessageStatus.' + msgTask.status)">{{msgTask.status}}</span>
                     </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgTask.progressInPercent')">Progress In Percent</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgTask.progressInPercent}}</span>
+                    </dd>
                 </dl>
                 <button type="submit"
                         v-on:click.prevent="previousState()"
