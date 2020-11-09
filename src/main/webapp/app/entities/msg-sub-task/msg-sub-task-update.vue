@@ -49,6 +49,7 @@
                             <option value="SentSuccessfully" v-bind:label="$t('esignApp.MessageStatus.SentSuccessfully')">SentSuccessfully</option>
                             <option value="Sending" v-bind:label="$t('esignApp.MessageStatus.Sending')">Sending</option>
                             <option value="NotSentYet" v-bind:label="$t('esignApp.MessageStatus.NotSentYet')">NotSentYet</option>
+                            <option value="Withdraw" v-bind:label="$t('esignApp.MessageStatus.Withdraw')">Withdraw</option>
                         </select>
                     </div>
                     <div class="form-group">

@@ -78,7 +78,7 @@ enum DdMessageType {
 }
 
 enum MessageStatus {
-	 SentSuccessfully , Sending, NotSentYet
+	 SentSuccessfully , Sending, NotSentYet , Withdraw
 }
 
 entity PdfFile{
@@ -135,6 +135,11 @@ relationship OneToMany {
     PdfFile to PdfSign,
     
     MsgTask to MsgSubTask
+}
+
+
+relationship ManyToOne {
+	MsgTask{sender} to DdUser
 }
 
 

@@ -61,7 +61,7 @@
     {
       "fieldName": "status",
       "fieldType": "MessageStatus",
-      "fieldValues": "SentSuccessfully,Sending,NotSentYet"
+      "fieldValues": "SentSuccessfully,Sending,NotSentYet,Withdraw"
     },
     {
       "fieldName": "progressInPercent",
@@ -74,6 +74,13 @@
       "otherEntityName": "msgSubTask",
       "otherEntityRelationshipName": "msgTask",
       "relationshipName": "msgSubTask"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ddUser",
+      "otherEntityRelationshipName": "msgTask",
+      "relationshipName": "sender",
+      "otherEntityField": "id"
     }
   ],
   "changelogDate": "20201106051520",

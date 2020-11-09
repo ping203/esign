@@ -28,7 +28,7 @@
     {
       "fieldName": "subTaskStatus",
       "fieldType": "MessageStatus",
-      "fieldValues": "SentSuccessfully,Sending,NotSentYet"
+      "fieldValues": "SentSuccessfully,Sending,NotSentYet,Withdraw"
     },
     {
       "fieldName": "invalidUserIdList",

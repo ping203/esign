@@ -9,6 +9,9 @@ import { DATE_TIME_LONG_FORMAT } from '@/shared/date/filters';
 import MsgSubTaskService from '../msg-sub-task/msg-sub-task.service';
 import { IMsgSubTask } from '@/shared/model/msg-sub-task.model';
 
+import DdUserService from '../dd-user/dd-user.service';
+import { IDdUser } from '@/shared/model/dd-user.model';
+
 import AlertService from '@/shared/alert/alert.service';
 import { IMsgTask, MsgTask } from '@/shared/model/msg-task.model';
 import MsgTaskService from './msg-task.service';
@@ -45,6 +48,10 @@ export default class MsgTaskUpdate extends Vue {
   @Inject('msgSubTaskService') private msgSubTaskService: () => MsgSubTaskService;
 
   public msgSubTasks: IMsgSubTask[] = [];
+
+  @Inject('ddUserService') private ddUserService: () => DdUserService;
+
+  public ddUsers: IDdUser[] = [];
   public isSaving = false;
   public currentLanguage = '';
 
@@ -131,6 +138,11 @@ export default class MsgTaskUpdate extends Vue {
       .retrieve()
       .then(res => {
         this.msgSubTasks = res.data;
+      });
+    this.ddUserService()
+      .retrieve()
+      .then(res => {
+        this.ddUsers = res.data;
       });
   }
 }
