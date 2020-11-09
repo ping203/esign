@@ -1,11 +1,11 @@
-id;title;dept_id_list;userid_list;to_all_user;markdown;single_title;single_url;cover_url;number_of_shards;complete_sharding;msg;execute_time;agent_id;type;status
-1;France Savings Account repurpose;indexing program;invoice stable;true;Guam panel;Summit reboot withdrawal;Incredible Fresh Keyboard;Brazilian Real;42354;true;sensor Philippine Peso dedicated;2020-11-05T15:00:02;51012;Image;NotSentYet
-2;paradigms Investment Account Refined;Health;Accountability;true;architectures Cook Islands transmitting;24 hour streamline;Montenegro;5th generation;30764;false;Chilean Peso Unidades de fomento;2020-11-05T09:27:52;65499;File;Sending
-3;Sleek Concrete Chips;embrace Buckinghamshire Administrator;Brand;true;California Wooden bypass;Incredible Niue;Program;Front-line Home Loan Account Avon;1588;true;Tools users;2020-11-05T12:11:18;20600;Voice;SentSuccessfully
-4;withdrawal Awesome Fresh Mouse;incremental;Bedfordshire;false;collaborative;sensor Personal Loan Account;Associate;1080p;84445;false;Technician transmitter capacitor;2020-11-05T14:34:26;60417;File;SentSuccessfully
-5;connecting Shoes Identity;Fall;payment;false;optical;pink parsing Steel;compressing deposit;SMS invoice;14157;true;systematic New Zealand haptic;2020-11-05T22:01:17;98391;Oa;SentSuccessfully
-6;innovative Alabama;Handcrafted Plastic Tuna Gibraltar Pound;Arizona clear-thinking;false;attitude Computers;Union US Dollar Cheese;invoice Dominican Republic;Sharable strategize;53073;true;parsing;2020-11-05T19:14:23;33975;Oa;Sending
-7;knowledge base Borders haptic;Land Throughway;Grocery eco-centric;false;Borders;Cameroon;Books Neck;neural;93758;true;Computers;2020-11-05T12:44:00;9410;Oa;Sending
-8;robust;Sleek Soft Sausages;Central Nepalese Rupee reboot;false;Port;Nevada Brunei Dollar;Salad;cyan RSS JSON;8283;true;hub back-end;2020-11-05T19:23:49;98119;Link;SentSuccessfully
-9;productize Computer;networks;maroon;true;California;unleash;Incredible;PNG Garden bleeding-edge;24243;false;interface SMS;2020-11-05T12:49:30;19062;Voice;NotSentYet
-10;Division portals Bahrain;Bacon;Buckinghamshire;true;Investment Account 24/365;Games;strategize Generic Soft Shoes;Curve quantify;50040;false;IB Legacy;2020-11-05T09:39:37;23017;File;SentSuccessfully
+id;title;dept_id_list;userid_list;to_all_user;markdown;single_title;single_url;cover_url;number_of_shards;complete_sharding;msg;execute_time;agent_id;type;status;progress_in_percent
+1;France Savings Account repurpose;indexing program;invoice stable;true;Guam panel;Summit reboot withdrawal;Incredible Fresh Keyboard;Brazilian Real;42354;true;sensor Philippine Peso dedicated;2020-11-05T15:00:02;51012;Image;NotSentYet;95672
+2;Generic Granite Computer hacking;Fort;SAS index Nebraska;false;AI 24 hour streamline;Montenegro;5th generation;Plastic;68470;false;withdrawal Lebanon US Dollar;2020-11-05T14:13:18;28625;Oa;Sending;13263
+3;matrix e-tailers;Unbranded Customer Ergonomic;bypass;true;knowledge user;Tasty Refined Concrete Gloves;Lebanon Steel;clicks-and-mortar strategize;78385;true;Holy See (Vatican City State);2020-11-05T16:26:17;1525;Oa;SentSuccessfully;57379
+4;orange incremental tan;web-readiness;Tactics sensor;true;silver Rustic Soft Fish compressing;Technician transmitter capacitor;Personal Loan Account deposit;Intelligent Frozen Tuna;39636;false;International Soft;2020-11-05T09:39:02;54532;Oa;SentSuccessfully;63822
+5;3rd generation optical overriding;parsing;Toys;true;deposit;SMS invoice;parse;COM;63837;true;website Associate;2020-11-05T09:20:19;61842;Oa;SentSuccessfully;62687
+6;Rubber Kids;Rupiah;Gibraltar Pound interfaces;false;Shoes;attitude Computers;Union US Dollar Cheese;invoice Dominican Republic;42912;false;strategize United States of America Sports;2020-11-05T06:04:57;41730;Voice;NotSentYet;62698
+7;knowledge base Borders haptic;Land Throughway;Grocery eco-centric;false;Borders;Cameroon;Books Neck;neural;93758;true;Computers;2020-11-05T12:44:00;9410;Oa;Sending;23611
+8;Rustic Steel Hat capacitor;Central Nepalese Rupee reboot;heuristic;true;Nevada Brunei Dollar;Salad;cyan RSS JSON;navigate;31290;false;Cotton Assistant feed;2020-11-05T10:05:57;41872;Voice;NotSentYet;17001
+9;Cotton;Intelligent engineer knowledge base;Graphic Interface;true;Incredible;PNG Garden bleeding-edge;Health;exploit feed tan;54230;false;California;2020-11-06T04:01:24;28809;Link;Sending;75914
+10;e-commerce action-items integrate;Table;web-readiness invoice;false;Curve quantify;Health IB;transmit Profit-focused invoice;Metal transform;66819;true;mint green;2020-11-05T08:19:19;62974;Voice;NotSentYet;35217

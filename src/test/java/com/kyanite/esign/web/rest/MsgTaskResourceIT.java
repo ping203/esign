@@ -79,6 +79,9 @@ public class MsgTaskResourceIT {
     private static final MessageStatus DEFAULT_STATUS = MessageStatus.SentSuccessfully;
     private static final MessageStatus UPDATED_STATUS = MessageStatus.Sending;
 
+    private static final Long DEFAULT_PROGRESS_IN_PERCENT = 1L;
+    private static final Long UPDATED_PROGRESS_IN_PERCENT = 2L;
+
     @Autowired
     private MsgTaskRepository msgTaskRepository;
 
@@ -115,7 +118,8 @@ public class MsgTaskResourceIT {
             .executeTime(DEFAULT_EXECUTE_TIME)
             .agentId(DEFAULT_AGENT_ID)
             .type(DEFAULT_TYPE)
-            .status(DEFAULT_STATUS);
+            .status(DEFAULT_STATUS)
+            .progressInPercent(DEFAULT_PROGRESS_IN_PERCENT);
         return msgTask;
     }
     /**
@@ -140,7 +144,8 @@ public class MsgTaskResourceIT {
             .executeTime(UPDATED_EXECUTE_TIME)
             .agentId(UPDATED_AGENT_ID)
             .type(UPDATED_TYPE)
-            .status(UPDATED_STATUS);
+            .status(UPDATED_STATUS)
+            .progressInPercent(UPDATED_PROGRESS_IN_PERCENT);
         return msgTask;
     }
 
@@ -178,6 +183,7 @@ public class MsgTaskResourceIT {
         assertThat(testMsgTask.getAgentId()).isEqualTo(DEFAULT_AGENT_ID);
         assertThat(testMsgTask.getType()).isEqualTo(DEFAULT_TYPE);
         assertThat(testMsgTask.getStatus()).isEqualTo(DEFAULT_STATUS);
+        assertThat(testMsgTask.getProgressInPercent()).isEqualTo(DEFAULT_PROGRESS_IN_PERCENT);
     }
 
     @Test
@@ -225,7 +231,8 @@ public class MsgTaskResourceIT {
             .andExpect(jsonPath("$.[*].executeTime").value(hasItem(DEFAULT_EXECUTE_TIME.toString())))
             .andExpect(jsonPath("$.[*].agentId").value(hasItem(DEFAULT_AGENT_ID.intValue())))
             .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE.toString())))
-            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())));
+            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
+            .andExpect(jsonPath("$.[*].progressInPercent").value(hasItem(DEFAULT_PROGRESS_IN_PERCENT.intValue())));
     }
     
     @Test
@@ -253,7 +260,8 @@ public class MsgTaskResourceIT {
             .andExpect(jsonPath("$.executeTime").value(DEFAULT_EXECUTE_TIME.toString()))
             .andExpect(jsonPath("$.agentId").value(DEFAULT_AGENT_ID.intValue()))
             .andExpect(jsonPath("$.type").value(DEFAULT_TYPE.toString()))
-            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()));
+            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
+            .andExpect(jsonPath("$.progressInPercent").value(DEFAULT_PROGRESS_IN_PERCENT.intValue()));
     }
     @Test
     @Transactional
@@ -290,7 +298,8 @@ public class MsgTaskResourceIT {
             .executeTime(UPDATED_EXECUTE_TIME)
             .agentId(UPDATED_AGENT_ID)
             .type(UPDATED_TYPE)
-            .status(UPDATED_STATUS);
+            .status(UPDATED_STATUS)
+            .progressInPercent(UPDATED_PROGRESS_IN_PERCENT);
 
         restMsgTaskMockMvc.perform(put("/api/msg-tasks")
             .contentType(MediaType.APPLICATION_JSON)
@@ -316,6 +325,7 @@ public class MsgTaskResourceIT {
         assertThat(testMsgTask.getAgentId()).isEqualTo(UPDATED_AGENT_ID);
         assertThat(testMsgTask.getType()).isEqualTo(UPDATED_TYPE);
         assertThat(testMsgTask.getStatus()).isEqualTo(UPDATED_STATUS);
+        assertThat(testMsgTask.getProgressInPercent()).isEqualTo(UPDATED_PROGRESS_IN_PERCENT);
     }
 
     @Test

@@ -34,6 +34,7 @@ export interface IMsgTask {
   agentId?: number;
   type?: DdMessageType;
   status?: MessageStatus;
+  progressInPercent?: number;
   msgSubTasks?: IMsgSubTask[];
 }
 
@@ -55,6 +56,7 @@ export class MsgTask implements IMsgTask {
     public agentId?: number,
     public type?: DdMessageType,
     public status?: MessageStatus,
+    public progressInPercent?: number,
     public msgSubTasks?: IMsgSubTask[]
   ) {
     this.toAllUser = this.toAllUser || false;

@@ -62,6 +62,10 @@
       "fieldName": "status",
       "fieldType": "MessageStatus",
       "fieldValues": "SentSuccessfully,Sending,NotSentYet"
+    },
+    {
+      "fieldName": "progressInPercent",
+      "fieldType": "Long"
     }
   ],
   "relationships": [

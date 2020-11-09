@@ -30,6 +30,7 @@ const validations: any = {
     agentId: {},
     type: {},
     status: {},
+    progressInPercent: {},
   },
 };
 

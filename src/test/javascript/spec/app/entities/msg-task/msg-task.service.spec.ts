@@ -49,7 +49,8 @@ describe('Service Tests', () => {
         currentDate,
         0,
         DdMessageType.Voice,
-        MessageStatus.SentSuccessfully
+        MessageStatus.SentSuccessfully,
+        0
       );
     });
 
@@ -128,6 +129,7 @@ describe('Service Tests', () => {
             agentId: 1,
             type: 'BBBBBB',
             status: 'BBBBBB',
+            progressInPercent: 1,
           },
           elemDefault
         );
@@ -174,6 +176,7 @@ describe('Service Tests', () => {
             agentId: 1,
             type: 'BBBBBB',
             status: 'BBBBBB',
+            progressInPercent: 1,
           },
           elemDefault
         );
