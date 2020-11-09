@@ -4,7 +4,8 @@
       "null": "",
       "SentSuccessfully": "SentSuccessfully",
       "Sending": "Sending",
-      "NotSentYet": "NotSentYet"
+      "NotSentYet": "NotSentYet",
+      "Withdraw": "Withdraw"
     }
   }
 }

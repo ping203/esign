@@ -1,5 +1,6 @@
 package com.kyanite.esign.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -81,6 +82,10 @@ public class MsgTask implements Serializable {
     @OneToMany(mappedBy = "msgTask")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<MsgSubTask> msgSubTasks = new HashSet<>();
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = "msgTasks", allowSetters = true)
+    private DdUser sender;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -322,6 +327,19 @@ public class MsgTask implements Serializable {
 
     public void setMsgSubTasks(Set<MsgSubTask> msgSubTasks) {
         this.msgSubTasks = msgSubTasks;
+    }
+
+    public DdUser getSender() {
+        return sender;
+    }
+
+    public MsgTask sender(DdUser ddUser) {
+        this.sender = ddUser;
+        return this;
+    }
+
+    public void setSender(DdUser ddUser) {
+        this.sender = ddUser;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

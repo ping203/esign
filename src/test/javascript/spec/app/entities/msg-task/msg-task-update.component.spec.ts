@@ -15,6 +15,8 @@ import MsgTaskService from '@/entities/msg-task/msg-task.service';
 
 import MsgSubTaskService from '@/entities/msg-sub-task/msg-sub-task.service';
 
+import DdUserService from '@/entities/dd-user/dd-user.service';
+
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
@@ -43,6 +45,8 @@ describe('Component Tests', () => {
           msgTaskService: () => msgTaskServiceStub,
 
           msgSubTaskService: () => new MsgSubTaskService(),
+
+          ddUserService: () => new DdUserService(),
         },
       });
       comp = wrapper.vm;

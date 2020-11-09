@@ -32,7 +32,8 @@
       "type": "Type",
       "status": "Status",
       "progressInPercent": "Progress In Percent",
-      "msgSubTask": "Msg Sub Task"
+      "msgSubTask": "Msg Sub Task",
+      "sender": "Sender"
     }
   }
 }

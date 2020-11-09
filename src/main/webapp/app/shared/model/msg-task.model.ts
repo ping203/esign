@@ -1,4 +1,5 @@
 import { IMsgSubTask } from '@/shared/model/msg-sub-task.model';
+import { IDdUser } from '@/shared/model/dd-user.model';
 
 export const enum DdMessageType {
   Voice = 'Voice',
@@ -15,6 +16,7 @@ export const enum MessageStatus {
   SentSuccessfully = 'SentSuccessfully',
   Sending = 'Sending',
   NotSentYet = 'NotSentYet',
+  Withdraw = 'Withdraw',
 }
 
 export interface IMsgTask {
@@ -36,6 +38,7 @@ export interface IMsgTask {
   status?: MessageStatus;
   progressInPercent?: number;
   msgSubTasks?: IMsgSubTask[];
+  sender?: IDdUser;
 }
 
 export class MsgTask implements IMsgTask {
@@ -57,7 +60,8 @@ export class MsgTask implements IMsgTask {
     public type?: DdMessageType,
     public status?: MessageStatus,
     public progressInPercent?: number,
-    public msgSubTasks?: IMsgSubTask[]
+    public msgSubTasks?: IMsgSubTask[],
+    public sender?: IDdUser
   ) {
     this.toAllUser = this.toAllUser || false;
     this.completeSharding = this.completeSharding || false;
