@@ -139,7 +139,8 @@ relationship OneToMany {
 
 
 relationship ManyToOne {
-	MsgTask{sender} to DdUser
+	MsgTask{sender} to DdUser,
+    MsgTask to PdfFile
 }
 
 
