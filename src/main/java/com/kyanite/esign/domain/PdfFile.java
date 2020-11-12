@@ -39,6 +39,10 @@ public class PdfFile implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<PdfSign> pdfSigns = new HashSet<>();
 
+    @OneToMany(mappedBy = "pdfFile")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    private Set<MsgTask> msgTasks = new HashSet<>();
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -123,6 +127,31 @@ public class PdfFile implements Serializable {
 
     public void setPdfSigns(Set<PdfSign> pdfSigns) {
         this.pdfSigns = pdfSigns;
+    }
+
+    public Set<MsgTask> getMsgTasks() {
+        return msgTasks;
+    }
+
+    public PdfFile msgTasks(Set<MsgTask> msgTasks) {
+        this.msgTasks = msgTasks;
+        return this;
+    }
+
+    public PdfFile addMsgTask(MsgTask msgTask) {
+        this.msgTasks.add(msgTask);
+        msgTask.setPdfFile(this);
+        return this;
+    }
+
+    public PdfFile removeMsgTask(MsgTask msgTask) {
+        this.msgTasks.remove(msgTask);
+        msgTask.setPdfFile(null);
+        return this;
+    }
+
+    public void setMsgTasks(Set<MsgTask> msgTasks) {
+        this.msgTasks = msgTasks;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

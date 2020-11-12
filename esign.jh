@@ -135,11 +135,14 @@ relationship OneToMany {
     PdfFile to PdfSign,
     
     MsgTask to MsgSubTask
+    
+    PdfFile to  MsgTask
 }
 
 
 relationship ManyToOne {
-	MsgTask{sender} to DdUser
+	MsgTask{sender} to DdUser,
+   
 }
 
 
