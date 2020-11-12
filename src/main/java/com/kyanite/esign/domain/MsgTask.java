@@ -87,6 +87,10 @@ public class MsgTask implements Serializable {
     @JsonIgnoreProperties(value = "msgTasks", allowSetters = true)
     private DdUser sender;
 
+    @ManyToOne
+    @JsonIgnoreProperties(value = "msgTasks", allowSetters = true)
+    private PdfFile pdfFile;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -340,6 +344,19 @@ public class MsgTask implements Serializable {
 
     public void setSender(DdUser ddUser) {
         this.sender = ddUser;
+    }
+
+    public PdfFile getPdfFile() {
+        return pdfFile;
+    }
+
+    public MsgTask pdfFile(PdfFile pdfFile) {
+        this.pdfFile = pdfFile;
+        return this;
+    }
+
+    public void setPdfFile(PdfFile pdfFile) {
+        this.pdfFile = pdfFile;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

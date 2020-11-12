@@ -81,6 +81,13 @@
       "otherEntityRelationshipName": "msgTask",
       "relationshipName": "sender",
       "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pdfFile",
+      "otherEntityRelationshipName": "msgTask",
+      "relationshipName": "pdfFile",
+      "otherEntityField": "id"
     }
   ],
   "changelogDate": "20201106051520",

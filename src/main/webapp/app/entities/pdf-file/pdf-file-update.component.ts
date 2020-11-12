@@ -5,6 +5,9 @@ import { numeric, required, minLength, maxLength, minValue, maxValue } from 'vue
 import PdfSignService from '../pdf-sign/pdf-sign.service';
 import { IPdfSign } from '@/shared/model/pdf-sign.model';
 
+import MsgTaskService from '../msg-task/msg-task.service';
+import { IMsgTask } from '@/shared/model/msg-task.model';
+
 import AlertService from '@/shared/alert/alert.service';
 import { IPdfFile, PdfFile } from '@/shared/model/pdf-file.model';
 import PdfFileService from './pdf-file.service';
@@ -29,6 +32,10 @@ export default class PdfFileUpdate extends Vue {
   @Inject('pdfSignService') private pdfSignService: () => PdfSignService;
 
   public pdfSigns: IPdfSign[] = [];
+
+  @Inject('msgTaskService') private msgTaskService: () => MsgTaskService;
+
+  public msgTasks: IMsgTask[] = [];
   public isSaving = false;
   public currentLanguage = '';
 
@@ -91,6 +98,11 @@ export default class PdfFileUpdate extends Vue {
       .retrieve()
       .then(res => {
         this.pdfSigns = res.data;
+      });
+    this.msgTaskService()
+      .retrieve()
+      .then(res => {
+        this.msgTasks = res.data;
       });
   }
 }

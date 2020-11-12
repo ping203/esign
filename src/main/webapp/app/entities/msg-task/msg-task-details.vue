@@ -108,6 +108,14 @@
                             <router-link :to="{name: 'DdUserView', params: {ddUserId: msgTask.sender.id}}">{{msgTask.sender.id}}</router-link>
                         </div>
                     </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgTask.pdfFile')">Pdf File</span>
+                    </dt>
+                    <dd>
+                        <div v-if="msgTask.pdfFile">
+                            <router-link :to="{name: 'PdfFileView', params: {pdfFileId: msgTask.pdfFile.id}}">{{msgTask.pdfFile.id}}</router-link>
+                        </div>
+                    </dd>
                 </dl>
                 <button type="submit"
                         v-on:click.prevent="previousState()"

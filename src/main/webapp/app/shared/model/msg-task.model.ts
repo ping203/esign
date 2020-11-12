@@ -1,5 +1,6 @@
 import { IMsgSubTask } from '@/shared/model/msg-sub-task.model';
 import { IDdUser } from '@/shared/model/dd-user.model';
+import { IPdfFile } from '@/shared/model/pdf-file.model';
 
 export const enum DdMessageType {
   Voice = 'Voice',
@@ -39,6 +40,7 @@ export interface IMsgTask {
   progressInPercent?: number;
   msgSubTasks?: IMsgSubTask[];
   sender?: IDdUser;
+  pdfFile?: IPdfFile;
 }
 
 export class MsgTask implements IMsgTask {
@@ -61,7 +63,8 @@ export class MsgTask implements IMsgTask {
     public status?: MessageStatus,
     public progressInPercent?: number,
     public msgSubTasks?: IMsgSubTask[],
-    public sender?: IDdUser
+    public sender?: IDdUser,
+    public pdfFile?: IPdfFile
   ) {
     this.toAllUser = this.toAllUser || false;
     this.completeSharding = this.completeSharding || false;
