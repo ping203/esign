@@ -17,6 +17,7 @@ const validations: any = {
   apiInvokeLog: {
     login: {},
     apiName: {},
+    method: {},
     httpStatusCode: {},
     time: {},
     reqeustData: {},

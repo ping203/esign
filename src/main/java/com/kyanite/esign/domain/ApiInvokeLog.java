@@ -8,6 +8,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
 
+import com.kyanite.esign.domain.enumeration.HttpMethod;
+
 /**
  * A ApiInvokeLog.
  */
@@ -27,6 +29,10 @@ public class ApiInvokeLog implements Serializable {
 
     @Column(name = "api_name")
     private String apiName;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "method")
+    private HttpMethod method;
 
     @Column(name = "http_status_code")
     private Integer httpStatusCode;
@@ -75,6 +81,19 @@ public class ApiInvokeLog implements Serializable {
 
     public void setApiName(String apiName) {
         this.apiName = apiName;
+    }
+
+    public HttpMethod getMethod() {
+        return method;
+    }
+
+    public ApiInvokeLog method(HttpMethod method) {
+        this.method = method;
+        return this;
+    }
+
+    public void setMethod(HttpMethod method) {
+        this.method = method;
     }
 
     public Integer getHttpStatusCode() {
@@ -153,6 +172,7 @@ public class ApiInvokeLog implements Serializable {
             "id=" + getId() +
             ", login='" + getLogin() + "'" +
             ", apiName='" + getApiName() + "'" +
+            ", method='" + getMethod() + "'" +
             ", httpStatusCode=" + getHttpStatusCode() +
             ", time='" + getTime() + "'" +
             ", reqeustData='" + getReqeustData() + "'" +

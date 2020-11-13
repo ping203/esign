@@ -25,6 +25,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import com.kyanite.esign.domain.enumeration.HttpMethod;
 /**
  * Integration tests for the {@link ApiInvokeLogResource} REST controller.
  */
@@ -38,6 +39,9 @@ public class ApiInvokeLogResourceIT {
 
     private static final String DEFAULT_API_NAME = "AAAAAAAAAA";
     private static final String UPDATED_API_NAME = "BBBBBBBBBB";
+
+    private static final HttpMethod DEFAULT_METHOD = HttpMethod.GET;
+    private static final HttpMethod UPDATED_METHOD = HttpMethod.HEAD;
 
     private static final Integer DEFAULT_HTTP_STATUS_CODE = 1;
     private static final Integer UPDATED_HTTP_STATUS_CODE = 2;
@@ -75,6 +79,7 @@ public class ApiInvokeLogResourceIT {
         ApiInvokeLog apiInvokeLog = new ApiInvokeLog()
             .login(DEFAULT_LOGIN)
             .apiName(DEFAULT_API_NAME)
+            .method(DEFAULT_METHOD)
             .httpStatusCode(DEFAULT_HTTP_STATUS_CODE)
             .time(DEFAULT_TIME)
             .reqeustData(DEFAULT_REQEUST_DATA)
@@ -91,6 +96,7 @@ public class ApiInvokeLogResourceIT {
         ApiInvokeLog apiInvokeLog = new ApiInvokeLog()
             .login(UPDATED_LOGIN)
             .apiName(UPDATED_API_NAME)
+            .method(UPDATED_METHOD)
             .httpStatusCode(UPDATED_HTTP_STATUS_CODE)
             .time(UPDATED_TIME)
             .reqeustData(UPDATED_REQEUST_DATA)
@@ -119,6 +125,7 @@ public class ApiInvokeLogResourceIT {
         ApiInvokeLog testApiInvokeLog = apiInvokeLogList.get(apiInvokeLogList.size() - 1);
         assertThat(testApiInvokeLog.getLogin()).isEqualTo(DEFAULT_LOGIN);
         assertThat(testApiInvokeLog.getApiName()).isEqualTo(DEFAULT_API_NAME);
+        assertThat(testApiInvokeLog.getMethod()).isEqualTo(DEFAULT_METHOD);
         assertThat(testApiInvokeLog.getHttpStatusCode()).isEqualTo(DEFAULT_HTTP_STATUS_CODE);
         assertThat(testApiInvokeLog.getTime()).isEqualTo(DEFAULT_TIME);
         assertThat(testApiInvokeLog.getReqeustData()).isEqualTo(DEFAULT_REQEUST_DATA);
@@ -158,6 +165,7 @@ public class ApiInvokeLogResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(apiInvokeLog.getId().intValue())))
             .andExpect(jsonPath("$.[*].login").value(hasItem(DEFAULT_LOGIN)))
             .andExpect(jsonPath("$.[*].apiName").value(hasItem(DEFAULT_API_NAME)))
+            .andExpect(jsonPath("$.[*].method").value(hasItem(DEFAULT_METHOD.toString())))
             .andExpect(jsonPath("$.[*].httpStatusCode").value(hasItem(DEFAULT_HTTP_STATUS_CODE)))
             .andExpect(jsonPath("$.[*].time").value(hasItem(DEFAULT_TIME.toString())))
             .andExpect(jsonPath("$.[*].reqeustData").value(hasItem(DEFAULT_REQEUST_DATA.toString())))
@@ -177,6 +185,7 @@ public class ApiInvokeLogResourceIT {
             .andExpect(jsonPath("$.id").value(apiInvokeLog.getId().intValue()))
             .andExpect(jsonPath("$.login").value(DEFAULT_LOGIN))
             .andExpect(jsonPath("$.apiName").value(DEFAULT_API_NAME))
+            .andExpect(jsonPath("$.method").value(DEFAULT_METHOD.toString()))
             .andExpect(jsonPath("$.httpStatusCode").value(DEFAULT_HTTP_STATUS_CODE))
             .andExpect(jsonPath("$.time").value(DEFAULT_TIME.toString()))
             .andExpect(jsonPath("$.reqeustData").value(DEFAULT_REQEUST_DATA.toString()))
@@ -205,6 +214,7 @@ public class ApiInvokeLogResourceIT {
         updatedApiInvokeLog
             .login(UPDATED_LOGIN)
             .apiName(UPDATED_API_NAME)
+            .method(UPDATED_METHOD)
             .httpStatusCode(UPDATED_HTTP_STATUS_CODE)
             .time(UPDATED_TIME)
             .reqeustData(UPDATED_REQEUST_DATA)
@@ -221,6 +231,7 @@ public class ApiInvokeLogResourceIT {
         ApiInvokeLog testApiInvokeLog = apiInvokeLogList.get(apiInvokeLogList.size() - 1);
         assertThat(testApiInvokeLog.getLogin()).isEqualTo(UPDATED_LOGIN);
         assertThat(testApiInvokeLog.getApiName()).isEqualTo(UPDATED_API_NAME);
+        assertThat(testApiInvokeLog.getMethod()).isEqualTo(UPDATED_METHOD);
         assertThat(testApiInvokeLog.getHttpStatusCode()).isEqualTo(UPDATED_HTTP_STATUS_CODE);
         assertThat(testApiInvokeLog.getTime()).isEqualTo(UPDATED_TIME);
         assertThat(testApiInvokeLog.getReqeustData()).isEqualTo(UPDATED_REQEUST_DATA);

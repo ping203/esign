@@ -17,6 +17,12 @@
                         <span>{{apiInvokeLog.apiName}}</span>
                     </dd>
                     <dt>
+                        <span v-text="$t('esignApp.apiInvokeLog.method')">Method</span>
+                    </dt>
+                    <dd>
+                        <span v-text="$t('esignApp.HttpMethod.' + apiInvokeLog.method)">{{apiInvokeLog.method}}</span>
+                    </dd>
+                    <dt>
                         <span v-text="$t('esignApp.apiInvokeLog.httpStatusCode')">Http Status Code</span>
                     </dt>
                     <dd>

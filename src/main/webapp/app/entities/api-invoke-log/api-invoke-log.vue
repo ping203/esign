@@ -27,6 +27,7 @@
                     <th v-on:click="changeOrder('id')"><span v-text="$t('global.field.id')">ID</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'id'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('login')"><span v-text="$t('esignApp.apiInvokeLog.login')">Login</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'login'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('apiName')"><span v-text="$t('esignApp.apiInvokeLog.apiName')">Api Name</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'apiName'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('method')"><span v-text="$t('esignApp.apiInvokeLog.method')">Method</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'method'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('httpStatusCode')"><span v-text="$t('esignApp.apiInvokeLog.httpStatusCode')">Http Status Code</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'httpStatusCode'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('time')"><span v-text="$t('esignApp.apiInvokeLog.time')">Time</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'time'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('reqeustData')"><span v-text="$t('esignApp.apiInvokeLog.reqeustData')">Reqeust Data</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'reqeustData'"></jhi-sort-indicator></th>
@@ -42,6 +43,7 @@
                     </td>
                     <td>{{apiInvokeLog.login}}</td>
                     <td>{{apiInvokeLog.apiName}}</td>
+                    <td v-text="$t('esignApp.HttpMethod.' + apiInvokeLog.method)">{{apiInvokeLog.method}}</td>
                     <td>{{apiInvokeLog.httpStatusCode}}</td>
                     <td>{{apiInvokeLog.time ? $d(Date.parse(apiInvokeLog.time), 'short') : ''}}</td>
                     <td>{{apiInvokeLog.reqeustData}}</td>
