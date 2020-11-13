@@ -60,6 +60,7 @@ public class CacheConfiguration {
             createCache(cm, com.kyanite.esign.domain.SealData.class.getName());
             createCache(cm, com.kyanite.esign.domain.ESignConfig.class.getName());
             createCache(cm, com.kyanite.esign.domain.PdfFile.class.getName() + ".msgTasks");
+            createCache(cm, com.kyanite.esign.domain.ApiInvokeLog.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
