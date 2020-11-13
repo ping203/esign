@@ -37,6 +37,9 @@
             <column name="single_url" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="pdf_url" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="cover_url" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -101,6 +104,7 @@
             <column name="markdown" type="string"/>
             <column name="single_title" type="string"/>
             <column name="single_url" type="string"/>
+            <column name="pdf_url" type="string"/>
             <column name="cover_url" type="string"/>
             <column name="number_of_shards" type="numeric"/>
             <column name="complete_sharding" type="boolean"/>

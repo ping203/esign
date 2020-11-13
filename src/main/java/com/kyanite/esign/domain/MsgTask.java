@@ -50,6 +50,9 @@ public class MsgTask implements Serializable {
     @Column(name = "single_url")
     private String singleUrl;
 
+    @Column(name = "pdf_url")
+    private String pdfUrl;
+
     @Column(name = "cover_url")
     private String coverUrl;
 
@@ -189,6 +192,19 @@ public class MsgTask implements Serializable {
 
     public void setSingleUrl(String singleUrl) {
         this.singleUrl = singleUrl;
+    }
+
+    public String getPdfUrl() {
+        return pdfUrl;
+    }
+
+    public MsgTask pdfUrl(String pdfUrl) {
+        this.pdfUrl = pdfUrl;
+        return this;
+    }
+
+    public void setPdfUrl(String pdfUrl) {
+        this.pdfUrl = pdfUrl;
     }
 
     public String getCoverUrl() {
@@ -388,6 +404,7 @@ public class MsgTask implements Serializable {
             ", markdown='" + getMarkdown() + "'" +
             ", singleTitle='" + getSingleTitle() + "'" +
             ", singleUrl='" + getSingleUrl() + "'" +
+            ", pdfUrl='" + getPdfUrl() + "'" +
             ", coverUrl='" + getCoverUrl() + "'" +
             ", numberOfShards=" + getNumberOfShards() +
             ", completeSharding='" + isCompleteSharding() + "'" +

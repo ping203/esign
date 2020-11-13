@@ -32,6 +32,7 @@
                     <th v-on:click="changeOrder('markdown')"><span v-text="$t('esignApp.msgTask.markdown')">Markdown</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'markdown'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('singleTitle')"><span v-text="$t('esignApp.msgTask.singleTitle')">Single Title</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'singleTitle'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('singleUrl')"><span v-text="$t('esignApp.msgTask.singleUrl')">Single Url</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'singleUrl'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('pdfUrl')"><span v-text="$t('esignApp.msgTask.pdfUrl')">Pdf Url</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'pdfUrl'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('coverUrl')"><span v-text="$t('esignApp.msgTask.coverUrl')">Cover Url</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'coverUrl'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('numberOfShards')"><span v-text="$t('esignApp.msgTask.numberOfShards')">Number Of Shards</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'numberOfShards'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('completeSharding')"><span v-text="$t('esignApp.msgTask.completeSharding')">Complete Sharding</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'completeSharding'"></jhi-sort-indicator></th>
@@ -59,6 +60,7 @@
                     <td>{{msgTask.markdown}}</td>
                     <td>{{msgTask.singleTitle}}</td>
                     <td>{{msgTask.singleUrl}}</td>
+                    <td>{{msgTask.pdfUrl}}</td>
                     <td>{{msgTask.coverUrl}}</td>
                     <td>{{msgTask.numberOfShards}}</td>
                     <td>{{msgTask.completeSharding}}</td>

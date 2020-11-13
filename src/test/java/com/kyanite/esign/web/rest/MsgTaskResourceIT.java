@@ -55,6 +55,9 @@ public class MsgTaskResourceIT {
     private static final String DEFAULT_SINGLE_URL = "AAAAAAAAAA";
     private static final String UPDATED_SINGLE_URL = "BBBBBBBBBB";
 
+    private static final String DEFAULT_PDF_URL = "AAAAAAAAAA";
+    private static final String UPDATED_PDF_URL = "BBBBBBBBBB";
+
     private static final String DEFAULT_COVER_URL = "AAAAAAAAAA";
     private static final String UPDATED_COVER_URL = "BBBBBBBBBB";
 
@@ -111,6 +114,7 @@ public class MsgTaskResourceIT {
             .markdown(DEFAULT_MARKDOWN)
             .singleTitle(DEFAULT_SINGLE_TITLE)
             .singleUrl(DEFAULT_SINGLE_URL)
+            .pdfUrl(DEFAULT_PDF_URL)
             .coverUrl(DEFAULT_COVER_URL)
             .numberOfShards(DEFAULT_NUMBER_OF_SHARDS)
             .completeSharding(DEFAULT_COMPLETE_SHARDING)
@@ -137,6 +141,7 @@ public class MsgTaskResourceIT {
             .markdown(UPDATED_MARKDOWN)
             .singleTitle(UPDATED_SINGLE_TITLE)
             .singleUrl(UPDATED_SINGLE_URL)
+            .pdfUrl(UPDATED_PDF_URL)
             .coverUrl(UPDATED_COVER_URL)
             .numberOfShards(UPDATED_NUMBER_OF_SHARDS)
             .completeSharding(UPDATED_COMPLETE_SHARDING)
@@ -175,6 +180,7 @@ public class MsgTaskResourceIT {
         assertThat(testMsgTask.getMarkdown()).isEqualTo(DEFAULT_MARKDOWN);
         assertThat(testMsgTask.getSingleTitle()).isEqualTo(DEFAULT_SINGLE_TITLE);
         assertThat(testMsgTask.getSingleUrl()).isEqualTo(DEFAULT_SINGLE_URL);
+        assertThat(testMsgTask.getPdfUrl()).isEqualTo(DEFAULT_PDF_URL);
         assertThat(testMsgTask.getCoverUrl()).isEqualTo(DEFAULT_COVER_URL);
         assertThat(testMsgTask.getNumberOfShards()).isEqualTo(DEFAULT_NUMBER_OF_SHARDS);
         assertThat(testMsgTask.isCompleteSharding()).isEqualTo(DEFAULT_COMPLETE_SHARDING);
@@ -224,6 +230,7 @@ public class MsgTaskResourceIT {
             .andExpect(jsonPath("$.[*].markdown").value(hasItem(DEFAULT_MARKDOWN)))
             .andExpect(jsonPath("$.[*].singleTitle").value(hasItem(DEFAULT_SINGLE_TITLE)))
             .andExpect(jsonPath("$.[*].singleUrl").value(hasItem(DEFAULT_SINGLE_URL)))
+            .andExpect(jsonPath("$.[*].pdfUrl").value(hasItem(DEFAULT_PDF_URL)))
             .andExpect(jsonPath("$.[*].coverUrl").value(hasItem(DEFAULT_COVER_URL)))
             .andExpect(jsonPath("$.[*].numberOfShards").value(hasItem(DEFAULT_NUMBER_OF_SHARDS.intValue())))
             .andExpect(jsonPath("$.[*].completeSharding").value(hasItem(DEFAULT_COMPLETE_SHARDING.booleanValue())))
@@ -253,6 +260,7 @@ public class MsgTaskResourceIT {
             .andExpect(jsonPath("$.markdown").value(DEFAULT_MARKDOWN))
             .andExpect(jsonPath("$.singleTitle").value(DEFAULT_SINGLE_TITLE))
             .andExpect(jsonPath("$.singleUrl").value(DEFAULT_SINGLE_URL))
+            .andExpect(jsonPath("$.pdfUrl").value(DEFAULT_PDF_URL))
             .andExpect(jsonPath("$.coverUrl").value(DEFAULT_COVER_URL))
             .andExpect(jsonPath("$.numberOfShards").value(DEFAULT_NUMBER_OF_SHARDS.intValue()))
             .andExpect(jsonPath("$.completeSharding").value(DEFAULT_COMPLETE_SHARDING.booleanValue()))
@@ -291,6 +299,7 @@ public class MsgTaskResourceIT {
             .markdown(UPDATED_MARKDOWN)
             .singleTitle(UPDATED_SINGLE_TITLE)
             .singleUrl(UPDATED_SINGLE_URL)
+            .pdfUrl(UPDATED_PDF_URL)
             .coverUrl(UPDATED_COVER_URL)
             .numberOfShards(UPDATED_NUMBER_OF_SHARDS)
             .completeSharding(UPDATED_COMPLETE_SHARDING)
@@ -317,6 +326,7 @@ public class MsgTaskResourceIT {
         assertThat(testMsgTask.getMarkdown()).isEqualTo(UPDATED_MARKDOWN);
         assertThat(testMsgTask.getSingleTitle()).isEqualTo(UPDATED_SINGLE_TITLE);
         assertThat(testMsgTask.getSingleUrl()).isEqualTo(UPDATED_SINGLE_URL);
+        assertThat(testMsgTask.getPdfUrl()).isEqualTo(UPDATED_PDF_URL);
         assertThat(testMsgTask.getCoverUrl()).isEqualTo(UPDATED_COVER_URL);
         assertThat(testMsgTask.getNumberOfShards()).isEqualTo(UPDATED_NUMBER_OF_SHARDS);
         assertThat(testMsgTask.isCompleteSharding()).isEqualTo(UPDATED_COMPLETE_SHARDING);

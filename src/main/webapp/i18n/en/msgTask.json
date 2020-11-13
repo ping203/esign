@@ -23,6 +23,7 @@
       "markdown": "Markdown",
       "singleTitle": "Single Title",
       "singleUrl": "Single Url",
+      "pdfUrl": "Pdf Url",
       "coverUrl": "Cover Url",
       "numberOfShards": "Number Of Shards",
       "completeSharding": "Complete Sharding",
