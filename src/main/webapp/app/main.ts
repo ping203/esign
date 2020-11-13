@@ -37,6 +37,7 @@ import PdfFileService from '@/entities/pdf-file/pdf-file.service';
 import PdfSignService from '@/entities/pdf-sign/pdf-sign.service';
 import SealDataService from '@/entities/seal-data/seal-data.service';
 import ESignConfigService from '@/entities/e-sign-config/e-sign-config.service';
+import ApiInvokeLogService from '@/entities/api-invoke-log/api-invoke-log.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -108,6 +109,7 @@ new Vue({
     pdfSignService: () => new PdfSignService(),
     sealDataService: () => new SealDataService(),
     eSignConfigService: () => new ESignConfigService(),
+    apiInvokeLogService: () => new ApiInvokeLogService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

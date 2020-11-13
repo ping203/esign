@@ -21,6 +21,7 @@
     <include file="config/liquibase/changelog/20201106051820_added_entity_PdfSign.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201106051920_added_entity_SealData.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201106052020_added_entity_ESignConfig.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201113063133_added_entity_ApiInvokeLog.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20201106051620_added_entity_constraints_MsgSubTask.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201106051820_added_entity_constraints_PdfSign.xml" relativeToChangelogFile="false"/>

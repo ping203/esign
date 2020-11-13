@@ -14,6 +14,7 @@
         "pdfSign": "Pdf Sign",
         "sealData": "Seal Data",
         "eSignConfig": "E Sign Config",
+        "apiInvokeLog": "Api Invoke Log",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

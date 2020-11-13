@@ -60,6 +60,10 @@
                         <font-awesome-icon icon="asterisk" />
                         <span v-text="$t('global.menu.entities.eSignConfig')">ESignConfig</span>
                     </b-dropdown-item>
+                    <b-dropdown-item to="/api-invoke-log">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.apiInvokeLog')">ApiInvokeLog</span>
+                    </b-dropdown-item>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </b-nav-item-dropdown>
                 <b-nav-item-dropdown
