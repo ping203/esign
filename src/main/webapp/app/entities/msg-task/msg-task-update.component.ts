@@ -28,6 +28,7 @@ const validations: any = {
     markdown: {},
     singleTitle: {},
     singleUrl: {},
+    pdfUrl: {},
     coverUrl: {},
     numberOfShards: {},
     completeSharding: {},

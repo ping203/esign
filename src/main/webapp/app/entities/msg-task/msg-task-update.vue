@@ -45,6 +45,11 @@
                             :class="{'valid': !$v.msgTask.singleUrl.$invalid, 'invalid': $v.msgTask.singleUrl.$invalid }" v-model="$v.msgTask.singleUrl.$model" />
                     </div>
                     <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.msgTask.pdfUrl')" for="msg-task-pdfUrl">Pdf Url</label>
+                        <input type="text" class="form-control" name="pdfUrl" id="msg-task-pdfUrl"
+                            :class="{'valid': !$v.msgTask.pdfUrl.$invalid, 'invalid': $v.msgTask.pdfUrl.$invalid }" v-model="$v.msgTask.pdfUrl.$model" />
+                    </div>
+                    <div class="form-group">
                         <label class="form-control-label" v-text="$t('esignApp.msgTask.coverUrl')" for="msg-task-coverUrl">Cover Url</label>
                         <input type="text" class="form-control" name="coverUrl" id="msg-task-coverUrl"
                             :class="{'valid': !$v.msgTask.coverUrl.$invalid, 'invalid': $v.msgTask.coverUrl.$invalid }" v-model="$v.msgTask.coverUrl.$model" />

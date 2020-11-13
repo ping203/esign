@@ -30,6 +30,10 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "pdfUrl",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "coverUrl",
       "fieldType": "String"
     },

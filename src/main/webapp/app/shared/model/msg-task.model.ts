@@ -29,6 +29,7 @@ export interface IMsgTask {
   markdown?: string;
   singleTitle?: string;
   singleUrl?: string;
+  pdfUrl?: string;
   coverUrl?: string;
   numberOfShards?: number;
   completeSharding?: boolean;
@@ -53,6 +54,7 @@ export class MsgTask implements IMsgTask {
     public markdown?: string,
     public singleTitle?: string,
     public singleUrl?: string,
+    public pdfUrl?: string,
     public coverUrl?: string,
     public numberOfShards?: number,
     public completeSharding?: boolean,

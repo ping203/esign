@@ -47,6 +47,12 @@
                         <span>{{msgTask.singleUrl}}</span>
                     </dd>
                     <dt>
+                        <span v-text="$t('esignApp.msgTask.pdfUrl')">Pdf Url</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgTask.pdfUrl}}</span>
+                    </dd>
+                    <dt>
                         <span v-text="$t('esignApp.msgTask.coverUrl')">Cover Url</span>
                     </dt>
                     <dd>
