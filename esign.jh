@@ -31,6 +31,17 @@ entity DdUser {
 
 
 
+entity ApiInvokeLog{
+	login String,
+	apiName String,
+    httpStatusCode Integer,
+    time Instant,
+    reqeustData TextBlob,
+    responseData TextBlob
+}
+
+
+
 
 
 
