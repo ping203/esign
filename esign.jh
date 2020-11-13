@@ -60,6 +60,7 @@ entity MsgTask{
     markdown String,
   singleTitle String,
   singleUrl String,
+  pdfUrl String,
   coverUrl String,
   numberOfShards Long,
   completeSharding Boolean,
