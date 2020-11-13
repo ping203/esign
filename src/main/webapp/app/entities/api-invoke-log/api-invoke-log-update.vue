@@ -20,6 +20,19 @@
                             :class="{'valid': !$v.apiInvokeLog.apiName.$invalid, 'invalid': $v.apiInvokeLog.apiName.$invalid }" v-model="$v.apiInvokeLog.apiName.$model" />
                     </div>
                     <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.apiInvokeLog.method')" for="api-invoke-log-method">Method</label>
+                        <select class="form-control" name="method" :class="{'valid': !$v.apiInvokeLog.method.$invalid, 'invalid': $v.apiInvokeLog.method.$invalid }" v-model="$v.apiInvokeLog.method.$model" id="api-invoke-log-method" >
+                            <option value="GET" v-bind:label="$t('esignApp.HttpMethod.GET')">GET</option>
+                            <option value="HEAD" v-bind:label="$t('esignApp.HttpMethod.HEAD')">HEAD</option>
+                            <option value="POST" v-bind:label="$t('esignApp.HttpMethod.POST')">POST</option>
+                            <option value="PUT" v-bind:label="$t('esignApp.HttpMethod.PUT')">PUT</option>
+                            <option value="PATCH" v-bind:label="$t('esignApp.HttpMethod.PATCH')">PATCH</option>
+                            <option value="DELETE" v-bind:label="$t('esignApp.HttpMethod.DELETE')">DELETE</option>
+                            <option value="OPTIONS" v-bind:label="$t('esignApp.HttpMethod.OPTIONS')">OPTIONS</option>
+                            <option value="TRACE" v-bind:label="$t('esignApp.HttpMethod.TRACE')">TRACE</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label class="form-control-label" v-text="$t('esignApp.apiInvokeLog.httpStatusCode')" for="api-invoke-log-httpStatusCode">Http Status Code</label>
                         <input type="number" class="form-control" name="httpStatusCode" id="api-invoke-log-httpStatusCode"
                             :class="{'valid': !$v.apiInvokeLog.httpStatusCode.$invalid, 'invalid': $v.apiInvokeLog.httpStatusCode.$invalid }" v-model.number="$v.apiInvokeLog.httpStatusCode.$model" />

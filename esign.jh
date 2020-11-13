@@ -34,10 +34,15 @@ entity DdUser {
 entity ApiInvokeLog{
 	login String,
 	apiName String,
+    method HttpMethod,
     httpStatusCode Integer,
     time Instant,
     reqeustData TextBlob,
     responseData TextBlob
+}
+
+enum HttpMethod{
+	GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS, TRACE
 }
 
 

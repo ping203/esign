@@ -22,6 +22,9 @@
             <column name="api_name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="method" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="http_status_code" type="integer">
                 <constraints nullable="true" />
             </column>
@@ -60,6 +63,7 @@
             <column name="id" type="numeric"/>
             <column name="login" type="string"/>
             <column name="api_name" type="string"/>
+            <column name="method" type="string"/>
             <column name="http_status_code" type="numeric"/>
             <column name="time" type="datetime"/>
             <column name="reqeust_data" type="clob"/>

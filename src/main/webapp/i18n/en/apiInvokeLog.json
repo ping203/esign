@@ -18,6 +18,7 @@
       },
       "login": "Login",
       "apiName": "Api Name",
+      "method": "Method",
       "httpStatusCode": "Http Status Code",
       "time": "Time",
       "reqeustData": "Reqeust Data",

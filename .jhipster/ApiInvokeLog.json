@@ -10,6 +10,11 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "method",
+      "fieldType": "HttpMethod",
+      "fieldValues": "GET,HEAD,POST,PUT,PATCH,DELETE,OPTIONS,TRACE"
+    },
+    {
       "fieldName": "httpStatusCode",
       "fieldType": "Integer"
     },

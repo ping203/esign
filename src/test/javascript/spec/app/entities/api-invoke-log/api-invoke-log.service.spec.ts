@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import * as config from '@/shared/config/config';
 import { DATE_TIME_FORMAT } from '@/shared/date/filters';
 import ApiInvokeLogService from '@/entities/api-invoke-log/api-invoke-log.service';
-import { ApiInvokeLog } from '@/shared/model/api-invoke-log.model';
+import { ApiInvokeLog, HttpMethod } from '@/shared/model/api-invoke-log.model';
 
 const mockedAxios: any = axios;
 const error = {
@@ -33,7 +33,7 @@ describe('Service Tests', () => {
       service = new ApiInvokeLogService();
       currentDate = new Date();
 
-      elemDefault = new ApiInvokeLog(0, 'AAAAAAA', 'AAAAAAA', 0, currentDate, 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new ApiInvokeLog(0, 'AAAAAAA', 'AAAAAAA', HttpMethod.GET, 0, currentDate, 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -98,6 +98,7 @@ describe('Service Tests', () => {
           {
             login: 'BBBBBB',
             apiName: 'BBBBBB',
+            method: 'BBBBBB',
             httpStatusCode: 1,
             time: format(currentDate, DATE_TIME_FORMAT),
             reqeustData: 'BBBBBB',
@@ -135,6 +136,7 @@ describe('Service Tests', () => {
           {
             login: 'BBBBBB',
             apiName: 'BBBBBB',
+            method: 'BBBBBB',
             httpStatusCode: 1,
             time: format(currentDate, DATE_TIME_FORMAT),
             reqeustData: 'BBBBBB',
