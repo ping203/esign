@@ -33,6 +33,7 @@
       "type": "Type",
       "status": "Status",
       "progressInPercent": "Progress In Percent",
+      "key": "Key",
       "msgSubTask": "Msg Sub Task",
       "pdfSign": "Pdf Sign",
       "sender": "Sender",

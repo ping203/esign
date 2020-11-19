@@ -51,7 +51,8 @@ describe('Service Tests', () => {
         0,
         DdMessageType.Voice,
         MessageStatus.SentSuccessfully,
-        0
+        0,
+        'AAAAAAA'
       );
     });
 
@@ -132,6 +133,7 @@ describe('Service Tests', () => {
             type: 'BBBBBB',
             status: 'BBBBBB',
             progressInPercent: 1,
+            key: 'BBBBBB',
           },
           elemDefault
         );
@@ -180,6 +182,7 @@ describe('Service Tests', () => {
             type: 'BBBBBB',
             status: 'BBBBBB',
             progressInPercent: 1,
+            key: 'BBBBBB',
           },
           elemDefault
         );

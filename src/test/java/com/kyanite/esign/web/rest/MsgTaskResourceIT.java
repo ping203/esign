@@ -85,6 +85,9 @@ public class MsgTaskResourceIT {
     private static final Long DEFAULT_PROGRESS_IN_PERCENT = 1L;
     private static final Long UPDATED_PROGRESS_IN_PERCENT = 2L;
 
+    private static final String DEFAULT_KEY = "AAAAAAAAAA";
+    private static final String UPDATED_KEY = "BBBBBBBBBB";
+
     @Autowired
     private MsgTaskRepository msgTaskRepository;
 
@@ -123,7 +126,8 @@ public class MsgTaskResourceIT {
             .agentId(DEFAULT_AGENT_ID)
             .type(DEFAULT_TYPE)
             .status(DEFAULT_STATUS)
-            .progressInPercent(DEFAULT_PROGRESS_IN_PERCENT);
+            .progressInPercent(DEFAULT_PROGRESS_IN_PERCENT)
+            .key(DEFAULT_KEY);
         return msgTask;
     }
     /**
@@ -150,7 +154,8 @@ public class MsgTaskResourceIT {
             .agentId(UPDATED_AGENT_ID)
             .type(UPDATED_TYPE)
             .status(UPDATED_STATUS)
-            .progressInPercent(UPDATED_PROGRESS_IN_PERCENT);
+            .progressInPercent(UPDATED_PROGRESS_IN_PERCENT)
+            .key(UPDATED_KEY);
         return msgTask;
     }
 
@@ -190,6 +195,7 @@ public class MsgTaskResourceIT {
         assertThat(testMsgTask.getType()).isEqualTo(DEFAULT_TYPE);
         assertThat(testMsgTask.getStatus()).isEqualTo(DEFAULT_STATUS);
         assertThat(testMsgTask.getProgressInPercent()).isEqualTo(DEFAULT_PROGRESS_IN_PERCENT);
+        assertThat(testMsgTask.getKey()).isEqualTo(DEFAULT_KEY);
     }
 
     @Test
@@ -239,7 +245,8 @@ public class MsgTaskResourceIT {
             .andExpect(jsonPath("$.[*].agentId").value(hasItem(DEFAULT_AGENT_ID.intValue())))
             .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE.toString())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
-            .andExpect(jsonPath("$.[*].progressInPercent").value(hasItem(DEFAULT_PROGRESS_IN_PERCENT.intValue())));
+            .andExpect(jsonPath("$.[*].progressInPercent").value(hasItem(DEFAULT_PROGRESS_IN_PERCENT.intValue())))
+            .andExpect(jsonPath("$.[*].key").value(hasItem(DEFAULT_KEY)));
     }
     
     @Test
@@ -269,7 +276,8 @@ public class MsgTaskResourceIT {
             .andExpect(jsonPath("$.agentId").value(DEFAULT_AGENT_ID.intValue()))
             .andExpect(jsonPath("$.type").value(DEFAULT_TYPE.toString()))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
-            .andExpect(jsonPath("$.progressInPercent").value(DEFAULT_PROGRESS_IN_PERCENT.intValue()));
+            .andExpect(jsonPath("$.progressInPercent").value(DEFAULT_PROGRESS_IN_PERCENT.intValue()))
+            .andExpect(jsonPath("$.key").value(DEFAULT_KEY));
     }
     @Test
     @Transactional
@@ -308,7 +316,8 @@ public class MsgTaskResourceIT {
             .agentId(UPDATED_AGENT_ID)
             .type(UPDATED_TYPE)
             .status(UPDATED_STATUS)
-            .progressInPercent(UPDATED_PROGRESS_IN_PERCENT);
+            .progressInPercent(UPDATED_PROGRESS_IN_PERCENT)
+            .key(UPDATED_KEY);
 
         restMsgTaskMockMvc.perform(put("/api/msg-tasks")
             .contentType(MediaType.APPLICATION_JSON)
@@ -336,6 +345,7 @@ public class MsgTaskResourceIT {
         assertThat(testMsgTask.getType()).isEqualTo(UPDATED_TYPE);
         assertThat(testMsgTask.getStatus()).isEqualTo(UPDATED_STATUS);
         assertThat(testMsgTask.getProgressInPercent()).isEqualTo(UPDATED_PROGRESS_IN_PERCENT);
+        assertThat(testMsgTask.getKey()).isEqualTo(UPDATED_KEY);
     }
 
     @Test

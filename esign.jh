@@ -69,7 +69,8 @@ entity MsgTask{
     agentId Long,
     type DdMessageType,
     status MessageStatus,
-    progressInPercent Long
+    progressInPercent Long,
+    key String
 }
 
 entity MsgSubTask{
@@ -124,7 +125,8 @@ entity PdfSign{
     cycle Long,
     cycleUnit CycleUnit,
     retry Long,
-    retrySwitch Boolean
+    retrySwitch Boolean,
+    key String
     
     
 }

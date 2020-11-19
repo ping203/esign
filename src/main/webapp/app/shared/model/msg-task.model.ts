@@ -40,6 +40,7 @@ export interface IMsgTask {
   type?: DdMessageType;
   status?: MessageStatus;
   progressInPercent?: number;
+  key?: string;
   msgSubTasks?: IMsgSubTask[];
   pdfSigns?: IPdfSign[];
   sender?: IDdUser;
@@ -66,6 +67,7 @@ export class MsgTask implements IMsgTask {
     public type?: DdMessageType,
     public status?: MessageStatus,
     public progressInPercent?: number,
+    public key?: string,
     public msgSubTasks?: IMsgSubTask[],
     public pdfSigns?: IPdfSign[],
     public sender?: IDdUser,

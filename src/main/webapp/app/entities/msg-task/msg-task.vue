@@ -42,6 +42,7 @@
                     <th v-on:click="changeOrder('type')"><span v-text="$t('esignApp.msgTask.type')">Type</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'type'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('status')"><span v-text="$t('esignApp.msgTask.status')">Status</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'status'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('progressInPercent')"><span v-text="$t('esignApp.msgTask.progressInPercent')">Progress In Percent</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'progressInPercent'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('key')"><span v-text="$t('esignApp.msgTask.key')">Key</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'key'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('sender.id')"><span v-text="$t('esignApp.msgTask.sender')">Sender</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'sender.id'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('pdfFile.id')"><span v-text="$t('esignApp.msgTask.pdfFile')">Pdf File</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'pdfFile.id'"></jhi-sort-indicator></th>
                     <th></th>
@@ -70,6 +71,7 @@
                     <td v-text="$t('esignApp.DdMessageType.' + msgTask.type)">{{msgTask.type}}</td>
                     <td v-text="$t('esignApp.MessageStatus.' + msgTask.status)">{{msgTask.status}}</td>
                     <td>{{msgTask.progressInPercent}}</td>
+                    <td>{{msgTask.key}}</td>
                     <td>
                         <div v-if="msgTask.sender">
                             <router-link :to="{name: 'DdUserView', params: {ddUserId: msgTask.sender.id}}">{{msgTask.sender.id}}</router-link>
