@@ -1,0 +1,11 @@
+{
+  "esignApp": {
+    "CycleUnit": {
+      "null": "",
+      "Hour": "Hour",
+      "Day": "Day",
+      "Week": "Week",
+      "Month": "Month"
+    }
+  }
+}

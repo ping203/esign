@@ -74,6 +74,37 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.pdfSign.status')" for="pdf-sign-status">Status</label>
+                        <select class="form-control" name="status" :class="{'valid': !$v.pdfSign.status.$invalid, 'invalid': $v.pdfSign.status.$invalid }" v-model="$v.pdfSign.status.$model" id="pdf-sign-status" >
+                            <option value="NotActive" v-bind:label="$t('esignApp.PdfSignStatus.NotActive')">NotActive</option>
+                            <option value="Effective" v-bind:label="$t('esignApp.PdfSignStatus.Effective')">Effective</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.pdfSign.cycle')" for="pdf-sign-cycle">Cycle</label>
+                        <input type="number" class="form-control" name="cycle" id="pdf-sign-cycle"
+                            :class="{'valid': !$v.pdfSign.cycle.$invalid, 'invalid': $v.pdfSign.cycle.$invalid }" v-model.number="$v.pdfSign.cycle.$model" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.pdfSign.cycleUnit')" for="pdf-sign-cycleUnit">Cycle Unit</label>
+                        <select class="form-control" name="cycleUnit" :class="{'valid': !$v.pdfSign.cycleUnit.$invalid, 'invalid': $v.pdfSign.cycleUnit.$invalid }" v-model="$v.pdfSign.cycleUnit.$model" id="pdf-sign-cycleUnit" >
+                            <option value="Hour" v-bind:label="$t('esignApp.CycleUnit.Hour')">Hour</option>
+                            <option value="Day" v-bind:label="$t('esignApp.CycleUnit.Day')">Day</option>
+                            <option value="Week" v-bind:label="$t('esignApp.CycleUnit.Week')">Week</option>
+                            <option value="Month" v-bind:label="$t('esignApp.CycleUnit.Month')">Month</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.pdfSign.retry')" for="pdf-sign-retry">Retry</label>
+                        <input type="number" class="form-control" name="retry" id="pdf-sign-retry"
+                            :class="{'valid': !$v.pdfSign.retry.$invalid, 'invalid': $v.pdfSign.retry.$invalid }" v-model.number="$v.pdfSign.retry.$model" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.pdfSign.retrySwitch')" for="pdf-sign-retrySwitch">Retry Switch</label>
+                        <input type="checkbox" class="form-check" name="retrySwitch" id="pdf-sign-retrySwitch"
+                            :class="{'valid': !$v.pdfSign.retrySwitch.$invalid, 'invalid': $v.pdfSign.retrySwitch.$invalid }" v-model="$v.pdfSign.retrySwitch.$model" />
+                    </div>
+                    <div class="form-group">
                         <label class="form-control-label" v-text="$t('esignApp.pdfSign.ddUser')" for="pdf-sign-ddUser">Dd User</label>
                         <select class="form-control" id="pdf-sign-ddUser" name="ddUser" v-model="pdfSign.ddUser">
                             <option v-bind:value="null"></option>
@@ -85,6 +116,13 @@
                         <select class="form-control" id="pdf-sign-pdfFile" name="pdfFile" v-model="pdfSign.pdfFile">
                             <option v-bind:value="null"></option>
                             <option v-bind:value="pdfSign.pdfFile && pdfFileOption.id === pdfSign.pdfFile.id ? pdfSign.pdfFile : pdfFileOption" v-for="pdfFileOption in pdfFiles" :key="pdfFileOption.id">{{pdfFileOption.id}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.pdfSign.msgTask')" for="pdf-sign-msgTask">Msg Task</label>
+                        <select class="form-control" id="pdf-sign-msgTask" name="msgTask" v-model="pdfSign.msgTask">
+                            <option v-bind:value="null"></option>
+                            <option v-bind:value="pdfSign.msgTask && msgTaskOption.id === pdfSign.msgTask.id ? pdfSign.msgTask : msgTaskOption" v-for="msgTaskOption in msgTasks" :key="msgTaskOption.id">{{msgTaskOption.id}}</option>
                         </select>
                     </div>
                 </div>

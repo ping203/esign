@@ -77,6 +77,36 @@
                         <span v-if="pdfSign.requestTime">{{$d(Date.parse(pdfSign.requestTime), 'long') }}</span>
                     </dd>
                     <dt>
+                        <span v-text="$t('esignApp.pdfSign.status')">Status</span>
+                    </dt>
+                    <dd>
+                        <span v-text="$t('esignApp.PdfSignStatus.' + pdfSign.status)">{{pdfSign.status}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.pdfSign.cycle')">Cycle</span>
+                    </dt>
+                    <dd>
+                        <span>{{pdfSign.cycle}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.pdfSign.cycleUnit')">Cycle Unit</span>
+                    </dt>
+                    <dd>
+                        <span v-text="$t('esignApp.CycleUnit.' + pdfSign.cycleUnit)">{{pdfSign.cycleUnit}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.pdfSign.retry')">Retry</span>
+                    </dt>
+                    <dd>
+                        <span>{{pdfSign.retry}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.pdfSign.retrySwitch')">Retry Switch</span>
+                    </dt>
+                    <dd>
+                        <span>{{pdfSign.retrySwitch}}</span>
+                    </dd>
+                    <dt>
                         <span v-text="$t('esignApp.pdfSign.ddUser')">Dd User</span>
                     </dt>
                     <dd>
@@ -90,6 +120,14 @@
                     <dd>
                         <div v-if="pdfSign.pdfFile">
                             <router-link :to="{name: 'PdfFileView', params: {pdfFileId: pdfSign.pdfFile.id}}">{{pdfSign.pdfFile.id}}</router-link>
+                        </div>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.pdfSign.msgTask')">Msg Task</span>
+                    </dt>
+                    <dd>
+                        <div v-if="pdfSign.msgTask">
+                            <router-link :to="{name: 'MsgTaskView', params: {msgTaskId: pdfSign.msgTask.id}}">{{pdfSign.msgTask.id}}</router-link>
                         </div>
                     </dd>
                 </dl>

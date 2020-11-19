@@ -28,9 +28,15 @@
       "signType": "Sign Type",
       "requestNo": "Request No",
       "requestTime": "Request Time",
+      "status": "Status",
+      "cycle": "Cycle",
+      "cycleUnit": "Cycle Unit",
+      "retry": "Retry",
+      "retrySwitch": "Retry Switch",
       "sealData": "Seal Data",
       "ddUser": "Dd User",
-      "pdfFile": "Pdf File"
+      "pdfFile": "Pdf File",
+      "msgTask": "Msg Task"
     }
   }
 }

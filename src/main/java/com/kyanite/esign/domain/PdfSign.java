@@ -11,6 +11,10 @@ import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.kyanite.esign.domain.enumeration.PdfSignStatus;
+
+import com.kyanite.esign.domain.enumeration.CycleUnit;
+
 /**
  * A PdfSign.
  */
@@ -61,6 +65,23 @@ public class PdfSign implements Serializable {
     @Column(name = "request_time")
     private Instant requestTime;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private PdfSignStatus status;
+
+    @Column(name = "cycle")
+    private Long cycle;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "cycle_unit")
+    private CycleUnit cycleUnit;
+
+    @Column(name = "retry")
+    private Long retry;
+
+    @Column(name = "retry_switch")
+    private Boolean retrySwitch;
+
     @OneToMany(mappedBy = "pdfSign")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<SealData> sealData = new HashSet<>();
@@ -72,6 +93,10 @@ public class PdfSign implements Serializable {
     @ManyToOne
     @JsonIgnoreProperties(value = "pdfSigns", allowSetters = true)
     private PdfFile pdfFile;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = "pdfSigns", allowSetters = true)
+    private MsgTask msgTask;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -238,6 +263,71 @@ public class PdfSign implements Serializable {
         this.requestTime = requestTime;
     }
 
+    public PdfSignStatus getStatus() {
+        return status;
+    }
+
+    public PdfSign status(PdfSignStatus status) {
+        this.status = status;
+        return this;
+    }
+
+    public void setStatus(PdfSignStatus status) {
+        this.status = status;
+    }
+
+    public Long getCycle() {
+        return cycle;
+    }
+
+    public PdfSign cycle(Long cycle) {
+        this.cycle = cycle;
+        return this;
+    }
+
+    public void setCycle(Long cycle) {
+        this.cycle = cycle;
+    }
+
+    public CycleUnit getCycleUnit() {
+        return cycleUnit;
+    }
+
+    public PdfSign cycleUnit(CycleUnit cycleUnit) {
+        this.cycleUnit = cycleUnit;
+        return this;
+    }
+
+    public void setCycleUnit(CycleUnit cycleUnit) {
+        this.cycleUnit = cycleUnit;
+    }
+
+    public Long getRetry() {
+        return retry;
+    }
+
+    public PdfSign retry(Long retry) {
+        this.retry = retry;
+        return this;
+    }
+
+    public void setRetry(Long retry) {
+        this.retry = retry;
+    }
+
+    public Boolean isRetrySwitch() {
+        return retrySwitch;
+    }
+
+    public PdfSign retrySwitch(Boolean retrySwitch) {
+        this.retrySwitch = retrySwitch;
+        return this;
+    }
+
+    public void setRetrySwitch(Boolean retrySwitch) {
+        this.retrySwitch = retrySwitch;
+    }
+
     public Set<SealData> getSealData() {
         return sealData;
     }
@@ -288,6 +378,19 @@ public class PdfSign implements Serializable {
     public void setPdfFile(PdfFile pdfFile) {
         this.pdfFile = pdfFile;
     }
+
+    public MsgTask getMsgTask() {
+        return msgTask;
+    }
+
+    public PdfSign msgTask(MsgTask msgTask) {
+        this.msgTask = msgTask;
+        return this;
+    }
+
+    public void setMsgTask(MsgTask msgTask) {
+        this.msgTask = msgTask;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -323,6 +426,11 @@ public class PdfSign implements Serializable {
             ", signType='" + getSignType() + "'" +
             ", requestNo='" + getRequestNo() + "'" +
             ", requestTime='" + getRequestTime() + "'" +
+            ", status='" + getStatus() + "'" +
+            ", cycle=" + getCycle() +
+            ", cycleUnit='" + getCycleUnit() + "'" +
+            ", retry=" + getRetry() +
+            ", retrySwitch='" + isRetrySwitch() + "'" +
             "}";
     }
 }
