@@ -61,6 +61,7 @@ public class CacheConfiguration {
             createCache(cm, com.kyanite.esign.domain.ESignConfig.class.getName());
             createCache(cm, com.kyanite.esign.domain.PdfFile.class.getName() + ".msgTasks");
             createCache(cm, com.kyanite.esign.domain.ApiInvokeLog.class.getName());
+            createCache(cm, com.kyanite.esign.domain.MsgTask.class.getName() + ".pdfSigns");
             // jhipster-needle-ehcache-add-entry
         };
     }

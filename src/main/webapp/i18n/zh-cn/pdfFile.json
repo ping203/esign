@@ -20,8 +20,7 @@
       "mediaType": "Media Type",
       "objName": "Obj Name",
       "fileUrl": "File Url",
-      "pdfSign": "Pdf Sign",
-      "msgTask": "Msg Task"
+      "pdfSign": "Pdf Sign"
     }
   }
 }

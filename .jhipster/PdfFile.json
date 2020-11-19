@@ -24,12 +24,6 @@
       "otherEntityName": "pdfSign",
       "otherEntityRelationshipName": "pdfFile",
       "relationshipName": "pdfSign"
-    },
-    {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "msgTask",
-      "otherEntityRelationshipName": "pdfFile",
-      "relationshipName": "msgTask"
     }
   ],
   "changelogDate": "20201106051720",

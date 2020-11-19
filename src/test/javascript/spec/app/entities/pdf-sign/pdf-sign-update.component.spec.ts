@@ -19,6 +19,8 @@ import DdUserService from '@/entities/dd-user/dd-user.service';
 
 import PdfFileService from '@/entities/pdf-file/pdf-file.service';
 
+import MsgTaskService from '@/entities/msg-task/msg-task.service';
+
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
@@ -51,6 +53,8 @@ describe('Component Tests', () => {
           ddUserService: () => new DdUserService(),
 
           pdfFileService: () => new PdfFileService(),
+
+          msgTaskService: () => new MsgTaskService(),
         },
       });
       comp = wrapper.vm;

@@ -1,5 +1,4 @@
 import { IPdfSign } from '@/shared/model/pdf-sign.model';
-import { IMsgTask } from '@/shared/model/msg-task.model';
 
 export interface IPdfFile {
   id?: number;
@@ -8,7 +7,6 @@ export interface IPdfFile {
   objName?: string;
   fileUrl?: string;
   pdfSigns?: IPdfSign[];
-  msgTasks?: IMsgTask[];
 }
 
 export class PdfFile implements IPdfFile {
@@ -18,7 +16,6 @@ export class PdfFile implements IPdfFile {
     public mediaType?: string,
     public objName?: string,
     public fileUrl?: string,
-    public pdfSigns?: IPdfSign[],
-    public msgTasks?: IMsgTask[]
+    public pdfSigns?: IPdfSign[]
   ) {}
 }

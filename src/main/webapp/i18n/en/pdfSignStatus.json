@@ -1,0 +1,9 @@
+{
+  "esignApp": {
+    "PdfSignStatus": {
+      "null": "",
+      "NotActive": "NotActive",
+      "Effective": "Effective"
+    }
+  }
+}

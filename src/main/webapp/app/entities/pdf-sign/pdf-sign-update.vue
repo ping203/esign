@@ -74,6 +74,13 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.pdfSign.status')" for="pdf-sign-status">Status</label>
+                        <select class="form-control" name="status" :class="{'valid': !$v.pdfSign.status.$invalid, 'invalid': $v.pdfSign.status.$invalid }" v-model="$v.pdfSign.status.$model" id="pdf-sign-status" >
+                            <option value="NotActive" v-bind:label="$t('esignApp.PdfSignStatus.NotActive')">NotActive</option>
+                            <option value="Effective" v-bind:label="$t('esignApp.PdfSignStatus.Effective')">Effective</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label class="form-control-label" v-text="$t('esignApp.pdfSign.ddUser')" for="pdf-sign-ddUser">Dd User</label>
                         <select class="form-control" id="pdf-sign-ddUser" name="ddUser" v-model="pdfSign.ddUser">
                             <option v-bind:value="null"></option>
@@ -85,6 +92,13 @@
                         <select class="form-control" id="pdf-sign-pdfFile" name="pdfFile" v-model="pdfSign.pdfFile">
                             <option v-bind:value="null"></option>
                             <option v-bind:value="pdfSign.pdfFile && pdfFileOption.id === pdfSign.pdfFile.id ? pdfSign.pdfFile : pdfFileOption" v-for="pdfFileOption in pdfFiles" :key="pdfFileOption.id">{{pdfFileOption.id}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.pdfSign.msgTask')" for="pdf-sign-msgTask">Msg Task</label>
+                        <select class="form-control" id="pdf-sign-msgTask" name="msgTask" v-model="pdfSign.msgTask">
+                            <option v-bind:value="null"></option>
+                            <option v-bind:value="pdfSign.msgTask && msgTaskOption.id === pdfSign.msgTask.id ? pdfSign.msgTask : msgTaskOption" v-for="msgTaskOption in msgTasks" :key="msgTaskOption.id">{{msgTaskOption.id}}</option>
                         </select>
                     </div>
                 </div>
