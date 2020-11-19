@@ -168,12 +168,10 @@ relationship OneToMany {
     PdfFile to PdfSign,
     
     MsgTask to MsgSubTask,
-    MsgTask to PdfSign
+    MsgTask to PdfSign,
+    PdfFile to MsgTask
     
-
 }
-
-
 
 
 
