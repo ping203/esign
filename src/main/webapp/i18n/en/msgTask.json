@@ -35,7 +35,8 @@
       "progressInPercent": "Progress In Percent",
       "msgSubTask": "Msg Sub Task",
       "pdfSign": "Pdf Sign",
-      "sender": "Sender"
+      "sender": "Sender",
+      "pdfFile": "Pdf File"
     }
   }
 }
