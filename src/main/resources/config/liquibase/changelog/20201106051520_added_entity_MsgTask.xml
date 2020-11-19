@@ -67,6 +67,18 @@
             <column name="progress_in_percent" type="bigint">
                 <constraints nullable="true" />
             </column>
+            <column name="cycle" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="cycle_unit" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="retry" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="retry_switch" type="boolean">
+                <constraints nullable="true" />
+            </column>
             <column name="jhi_key" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -117,6 +129,10 @@
             <column name="type" type="string"/>
             <column name="status" type="string"/>
             <column name="progress_in_percent" type="numeric"/>
+            <column name="cycle" type="numeric"/>
+            <column name="cycle_unit" type="string"/>
+            <column name="retry" type="numeric"/>
+            <column name="retry_switch" type="boolean"/>
             <column name="jhi_key" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>

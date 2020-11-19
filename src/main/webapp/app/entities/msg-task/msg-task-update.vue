@@ -111,6 +111,30 @@
                             :class="{'valid': !$v.msgTask.progressInPercent.$invalid, 'invalid': $v.msgTask.progressInPercent.$invalid }" v-model.number="$v.msgTask.progressInPercent.$model" />
                     </div>
                     <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.msgTask.cycle')" for="msg-task-cycle">Cycle</label>
+                        <input type="number" class="form-control" name="cycle" id="msg-task-cycle"
+                            :class="{'valid': !$v.msgTask.cycle.$invalid, 'invalid': $v.msgTask.cycle.$invalid }" v-model.number="$v.msgTask.cycle.$model" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.msgTask.cycleUnit')" for="msg-task-cycleUnit">Cycle Unit</label>
+                        <select class="form-control" name="cycleUnit" :class="{'valid': !$v.msgTask.cycleUnit.$invalid, 'invalid': $v.msgTask.cycleUnit.$invalid }" v-model="$v.msgTask.cycleUnit.$model" id="msg-task-cycleUnit" >
+                            <option value="Hour" v-bind:label="$t('esignApp.CycleUnit.Hour')">Hour</option>
+                            <option value="Day" v-bind:label="$t('esignApp.CycleUnit.Day')">Day</option>
+                            <option value="Week" v-bind:label="$t('esignApp.CycleUnit.Week')">Week</option>
+                            <option value="Month" v-bind:label="$t('esignApp.CycleUnit.Month')">Month</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.msgTask.retry')" for="msg-task-retry">Retry</label>
+                        <input type="number" class="form-control" name="retry" id="msg-task-retry"
+                            :class="{'valid': !$v.msgTask.retry.$invalid, 'invalid': $v.msgTask.retry.$invalid }" v-model.number="$v.msgTask.retry.$model" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.msgTask.retrySwitch')" for="msg-task-retrySwitch">Retry Switch</label>
+                        <input type="checkbox" class="form-check" name="retrySwitch" id="msg-task-retrySwitch"
+                            :class="{'valid': !$v.msgTask.retrySwitch.$invalid, 'invalid': $v.msgTask.retrySwitch.$invalid }" v-model="$v.msgTask.retrySwitch.$model" />
+                    </div>
+                    <div class="form-group">
                         <label class="form-control-label" v-text="$t('esignApp.msgTask.key')" for="msg-task-key">Key</label>
                         <input type="text" class="form-control" name="key" id="msg-task-key"
                             :class="{'valid': !$v.msgTask.key.$invalid, 'invalid': $v.msgTask.key.$invalid }" v-model="$v.msgTask.key.$model" />
