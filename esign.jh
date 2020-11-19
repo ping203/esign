@@ -162,7 +162,7 @@ entity ESignConfig{
 relationship OneToMany {
 	DdUser to PdfSign,
   
-
+	DdUser to MsgTask{sender},
 	PdfSign to SealData,
     
     PdfFile to PdfSign,

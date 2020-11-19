@@ -108,6 +108,12 @@
       "otherEntityName": "pdfSign",
       "otherEntityRelationshipName": "ddUser",
       "relationshipName": "pdfSign"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "msgTask",
+      "otherEntityRelationshipName": "sender",
+      "relationshipName": "msgTask"
     }
   ],
   "changelogDate": "20201106051420",

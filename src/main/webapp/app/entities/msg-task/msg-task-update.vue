@@ -110,6 +110,13 @@
                         <input type="number" class="form-control" name="progressInPercent" id="msg-task-progressInPercent"
                             :class="{'valid': !$v.msgTask.progressInPercent.$invalid, 'invalid': $v.msgTask.progressInPercent.$invalid }" v-model.number="$v.msgTask.progressInPercent.$model" />
                     </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.msgTask.sender')" for="msg-task-sender">Sender</label>
+                        <select class="form-control" id="msg-task-sender" name="sender" v-model="msgTask.sender">
+                            <option v-bind:value="null"></option>
+                            <option v-bind:value="msgTask.sender && ddUserOption.id === msgTask.sender.id ? msgTask.sender : ddUserOption" v-for="ddUserOption in ddUsers" :key="ddUserOption.id">{{ddUserOption.id}}</option>
+                        </select>
+                    </div>
                 </div>
                 <div>
                     <button type="button" id="cancel-save" class="btn btn-secondary" v-on:click="previousState()">
