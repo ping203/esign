@@ -80,18 +80,10 @@
       "relationshipName": "msgSubTask"
     },
     {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "ddUser",
+      "relationshipType": "one-to-many",
+      "otherEntityName": "pdfSign",
       "otherEntityRelationshipName": "msgTask",
-      "relationshipName": "sender",
-      "otherEntityField": "id"
-    },
-    {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "pdfFile",
-      "otherEntityRelationshipName": "msgTask",
-      "relationshipName": "pdfFile",
-      "otherEntityField": "id"
+      "relationshipName": "pdfSign"
     }
   ],
   "changelogDate": "20201106051520",

@@ -24,6 +24,8 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import com.kyanite.esign.domain.enumeration.PdfSignStatus;
+import com.kyanite.esign.domain.enumeration.CycleUnit;
 /**
  * Integration tests for the {@link PdfSignResource} REST controller.
  */
@@ -68,6 +70,21 @@ public class PdfSignResourceIT {
     private static final Instant DEFAULT_REQUEST_TIME = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_REQUEST_TIME = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
+    private static final PdfSignStatus DEFAULT_STATUS = PdfSignStatus.NotActive;
+    private static final PdfSignStatus UPDATED_STATUS = PdfSignStatus.Effective;
+
+    private static final Long DEFAULT_CYCLE = 1L;
+    private static final Long UPDATED_CYCLE = 2L;
+
+    private static final CycleUnit DEFAULT_CYCLE_UNIT = CycleUnit.Hour;
+    private static final CycleUnit UPDATED_CYCLE_UNIT = CycleUnit.Day;
+
+    private static final Long DEFAULT_RETRY = 1L;
+    private static final Long UPDATED_RETRY = 2L;
+
+    private static final Boolean DEFAULT_RETRY_SWITCH = false;
+    private static final Boolean UPDATED_RETRY_SWITCH = true;
+
     @Autowired
     private PdfSignRepository pdfSignRepository;
 
@@ -101,7 +118,12 @@ public class PdfSignResourceIT {
             .width(DEFAULT_WIDTH)
             .signType(DEFAULT_SIGN_TYPE)
             .requestNo(DEFAULT_REQUEST_NO)
-            .requestTime(DEFAULT_REQUEST_TIME);
+            .requestTime(DEFAULT_REQUEST_TIME)
+            .status(DEFAULT_STATUS)
+            .cycle(DEFAULT_CYCLE)
+            .cycleUnit(DEFAULT_CYCLE_UNIT)
+            .retry(DEFAULT_RETRY)
+            .retrySwitch(DEFAULT_RETRY_SWITCH);
         return pdfSign;
     }
     /**
@@ -123,7 +145,12 @@ public class PdfSignResourceIT {
             .width(UPDATED_WIDTH)
             .signType(UPDATED_SIGN_TYPE)
             .requestNo(UPDATED_REQUEST_NO)
-            .requestTime(UPDATED_REQUEST_TIME);
+            .requestTime(UPDATED_REQUEST_TIME)
+            .status(UPDATED_STATUS)
+            .cycle(UPDATED_CYCLE)
+            .cycleUnit(UPDATED_CYCLE_UNIT)
+            .retry(UPDATED_RETRY)
+            .retrySwitch(UPDATED_RETRY_SWITCH);
         return pdfSign;
     }
 
@@ -158,6 +185,11 @@ public class PdfSignResourceIT {
         assertThat(testPdfSign.getSignType()).isEqualTo(DEFAULT_SIGN_TYPE);
         assertThat(testPdfSign.getRequestNo()).isEqualTo(DEFAULT_REQUEST_NO);
         assertThat(testPdfSign.getRequestTime()).isEqualTo(DEFAULT_REQUEST_TIME);
+        assertThat(testPdfSign.getStatus()).isEqualTo(DEFAULT_STATUS);
+        assertThat(testPdfSign.getCycle()).isEqualTo(DEFAULT_CYCLE);
+        assertThat(testPdfSign.getCycleUnit()).isEqualTo(DEFAULT_CYCLE_UNIT);
+        assertThat(testPdfSign.getRetry()).isEqualTo(DEFAULT_RETRY);
+        assertThat(testPdfSign.isRetrySwitch()).isEqualTo(DEFAULT_RETRY_SWITCH);
     }
 
     @Test
@@ -202,7 +234,12 @@ public class PdfSignResourceIT {
             .andExpect(jsonPath("$.[*].width").value(hasItem(DEFAULT_WIDTH.intValue())))
             .andExpect(jsonPath("$.[*].signType").value(hasItem(DEFAULT_SIGN_TYPE)))
             .andExpect(jsonPath("$.[*].requestNo").value(hasItem(DEFAULT_REQUEST_NO)))
-            .andExpect(jsonPath("$.[*].requestTime").value(hasItem(DEFAULT_REQUEST_TIME.toString())));
+            .andExpect(jsonPath("$.[*].requestTime").value(hasItem(DEFAULT_REQUEST_TIME.toString())))
+            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
+            .andExpect(jsonPath("$.[*].cycle").value(hasItem(DEFAULT_CYCLE.intValue())))
+            .andExpect(jsonPath("$.[*].cycleUnit").value(hasItem(DEFAULT_CYCLE_UNIT.toString())))
+            .andExpect(jsonPath("$.[*].retry").value(hasItem(DEFAULT_RETRY.intValue())))
+            .andExpect(jsonPath("$.[*].retrySwitch").value(hasItem(DEFAULT_RETRY_SWITCH.booleanValue())));
     }
     
     @Test
@@ -227,7 +264,12 @@ public class PdfSignResourceIT {
             .andExpect(jsonPath("$.width").value(DEFAULT_WIDTH.intValue()))
             .andExpect(jsonPath("$.signType").value(DEFAULT_SIGN_TYPE))
             .andExpect(jsonPath("$.requestNo").value(DEFAULT_REQUEST_NO))
-            .andExpect(jsonPath("$.requestTime").value(DEFAULT_REQUEST_TIME.toString()));
+            .andExpect(jsonPath("$.requestTime").value(DEFAULT_REQUEST_TIME.toString()))
+            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
+            .andExpect(jsonPath("$.cycle").value(DEFAULT_CYCLE.intValue()))
+            .andExpect(jsonPath("$.cycleUnit").value(DEFAULT_CYCLE_UNIT.toString()))
+            .andExpect(jsonPath("$.retry").value(DEFAULT_RETRY.intValue()))
+            .andExpect(jsonPath("$.retrySwitch").value(DEFAULT_RETRY_SWITCH.booleanValue()));
     }
     @Test
     @Transactional
@@ -261,7 +303,12 @@ public class PdfSignResourceIT {
             .width(UPDATED_WIDTH)
             .signType(UPDATED_SIGN_TYPE)
             .requestNo(UPDATED_REQUEST_NO)
-            .requestTime(UPDATED_REQUEST_TIME);
+            .requestTime(UPDATED_REQUEST_TIME)
+            .status(UPDATED_STATUS)
+            .cycle(UPDATED_CYCLE)
+            .cycleUnit(UPDATED_CYCLE_UNIT)
+            .retry(UPDATED_RETRY)
+            .retrySwitch(UPDATED_RETRY_SWITCH);
 
         restPdfSignMockMvc.perform(put("/api/pdf-signs")
             .contentType(MediaType.APPLICATION_JSON)
@@ -284,6 +331,11 @@ public class PdfSignResourceIT {
         assertThat(testPdfSign.getSignType()).isEqualTo(UPDATED_SIGN_TYPE);
         assertThat(testPdfSign.getRequestNo()).isEqualTo(UPDATED_REQUEST_NO);
         assertThat(testPdfSign.getRequestTime()).isEqualTo(UPDATED_REQUEST_TIME);
+        assertThat(testPdfSign.getStatus()).isEqualTo(UPDATED_STATUS);
+        assertThat(testPdfSign.getCycle()).isEqualTo(UPDATED_CYCLE);
+        assertThat(testPdfSign.getCycleUnit()).isEqualTo(UPDATED_CYCLE_UNIT);
+        assertThat(testPdfSign.getRetry()).isEqualTo(UPDATED_RETRY);
+        assertThat(testPdfSign.isRetrySwitch()).isEqualTo(UPDATED_RETRY_SWITCH);
     }
 
     @Test

@@ -15,9 +15,7 @@ import MsgTaskService from '@/entities/msg-task/msg-task.service';
 
 import MsgSubTaskService from '@/entities/msg-sub-task/msg-sub-task.service';
 
-import DdUserService from '@/entities/dd-user/dd-user.service';
-
-import PdfFileService from '@/entities/pdf-file/pdf-file.service';
+import PdfSignService from '@/entities/pdf-sign/pdf-sign.service';
 
 const localVue = createLocalVue();
 
@@ -48,9 +46,7 @@ describe('Component Tests', () => {
 
           msgSubTaskService: () => new MsgSubTaskService(),
 
-          ddUserService: () => new DdUserService(),
-
-          pdfFileService: () => new PdfFileService(),
+          pdfSignService: () => new PdfSignService(),
         },
       });
       comp = wrapper.vm;

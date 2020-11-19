@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import * as config from '@/shared/config/config';
 import { DATE_TIME_FORMAT } from '@/shared/date/filters';
 import PdfSignService from '@/entities/pdf-sign/pdf-sign.service';
-import { PdfSign } from '@/shared/model/pdf-sign.model';
+import { PdfSign, PdfSignStatus, CycleUnit } from '@/shared/model/pdf-sign.model';
 
 const mockedAxios: any = axios;
 const error = {
@@ -46,7 +46,12 @@ describe('Service Tests', () => {
         0,
         'AAAAAAA',
         'AAAAAAA',
-        currentDate
+        currentDate,
+        PdfSignStatus.NotActive,
+        0,
+        CycleUnit.Hour,
+        0,
+        false
       );
     });
 
@@ -122,6 +127,11 @@ describe('Service Tests', () => {
             signType: 'BBBBBB',
             requestNo: 'BBBBBB',
             requestTime: format(currentDate, DATE_TIME_FORMAT),
+            status: 'BBBBBB',
+            cycle: 1,
+            cycleUnit: 'BBBBBB',
+            retry: 1,
+            retrySwitch: true,
           },
           elemDefault
         );
@@ -165,6 +175,11 @@ describe('Service Tests', () => {
             signType: 'BBBBBB',
             requestNo: 'BBBBBB',
             requestTime: format(currentDate, DATE_TIME_FORMAT),
+            status: 'BBBBBB',
+            cycle: 1,
+            cycleUnit: 'BBBBBB',
+            retry: 1,
+            retrySwitch: true,
           },
           elemDefault
         );

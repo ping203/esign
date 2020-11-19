@@ -9,11 +9,8 @@ import { DATE_TIME_LONG_FORMAT } from '@/shared/date/filters';
 import MsgSubTaskService from '../msg-sub-task/msg-sub-task.service';
 import { IMsgSubTask } from '@/shared/model/msg-sub-task.model';
 
-import DdUserService from '../dd-user/dd-user.service';
-import { IDdUser } from '@/shared/model/dd-user.model';
-
-import PdfFileService from '../pdf-file/pdf-file.service';
-import { IPdfFile } from '@/shared/model/pdf-file.model';
+import PdfSignService from '../pdf-sign/pdf-sign.service';
+import { IPdfSign } from '@/shared/model/pdf-sign.model';
 
 import AlertService from '@/shared/alert/alert.service';
 import { IMsgTask, MsgTask } from '@/shared/model/msg-task.model';
@@ -53,13 +50,9 @@ export default class MsgTaskUpdate extends Vue {
 
   public msgSubTasks: IMsgSubTask[] = [];
 
-  @Inject('ddUserService') private ddUserService: () => DdUserService;
+  @Inject('pdfSignService') private pdfSignService: () => PdfSignService;
 
-  public ddUsers: IDdUser[] = [];
-
-  @Inject('pdfFileService') private pdfFileService: () => PdfFileService;
-
-  public pdfFiles: IPdfFile[] = [];
+  public pdfSigns: IPdfSign[] = [];
   public isSaving = false;
   public currentLanguage = '';
 
@@ -147,15 +140,10 @@ export default class MsgTaskUpdate extends Vue {
       .then(res => {
         this.msgSubTasks = res.data;
       });
-    this.ddUserService()
+    this.pdfSignService()
       .retrieve()
       .then(res => {
-        this.ddUsers = res.data;
-      });
-    this.pdfFileService()
-      .retrieve()
-      .then(res => {
-        this.pdfFiles = res.data;
+        this.pdfSigns = res.data;
       });
   }
 }

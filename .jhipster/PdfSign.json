@@ -48,6 +48,28 @@
     {
       "fieldName": "requestTime",
       "fieldType": "Instant"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "PdfSignStatus",
+      "fieldValues": "NotActive,Effective"
+    },
+    {
+      "fieldName": "cycle",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cycleUnit",
+      "fieldType": "CycleUnit",
+      "fieldValues": "Hour,Day,Week,Month"
+    },
+    {
+      "fieldName": "retry",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "retrySwitch",
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [
@@ -69,6 +91,13 @@
       "otherEntityName": "pdfFile",
       "otherEntityRelationshipName": "pdfSign",
       "relationshipName": "pdfFile",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "msgTask",
+      "otherEntityRelationshipName": "pdfSign",
+      "relationshipName": "msgTask",
       "otherEntityField": "id"
     }
   ],
