@@ -41,7 +41,8 @@
       "roles": "Roles",
       "accountId": "Account Id",
       "idNumber": "Id Number",
-      "pdfSign": "Pdf Sign"
+      "pdfSign": "Pdf Sign",
+      "msgTask": "Msg Task"
     }
   }
 }

@@ -84,6 +84,13 @@
       "otherEntityName": "pdfSign",
       "otherEntityRelationshipName": "msgTask",
       "relationshipName": "pdfSign"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ddUser",
+      "otherEntityRelationshipName": "msgTask",
+      "relationshipName": "sender",
+      "otherEntityField": "id"
     }
   ],
   "changelogDate": "20201106051520",

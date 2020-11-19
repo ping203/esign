@@ -1,4 +1,5 @@
 import { IPdfSign } from '@/shared/model/pdf-sign.model';
+import { IMsgTask } from '@/shared/model/msg-task.model';
 
 export interface IDdUser {
   id?: number;
@@ -28,6 +29,7 @@ export interface IDdUser {
   accountId?: string;
   idNumber?: string;
   pdfSigns?: IPdfSign[];
+  msgTasks?: IMsgTask[];
 }
 
 export class DdUser implements IDdUser {
@@ -58,7 +60,8 @@ export class DdUser implements IDdUser {
     public roles?: string,
     public accountId?: string,
     public idNumber?: string,
-    public pdfSigns?: IPdfSign[]
+    public pdfSigns?: IPdfSign[],
+    public msgTasks?: IMsgTask[]
   ) {
     this.isBoss = this.isBoss || false;
     this.isSenior = this.isSenior || false;

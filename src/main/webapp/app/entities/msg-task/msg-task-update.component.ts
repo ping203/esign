@@ -12,6 +12,9 @@ import { IMsgSubTask } from '@/shared/model/msg-sub-task.model';
 import PdfSignService from '../pdf-sign/pdf-sign.service';
 import { IPdfSign } from '@/shared/model/pdf-sign.model';
 
+import DdUserService from '../dd-user/dd-user.service';
+import { IDdUser } from '@/shared/model/dd-user.model';
+
 import AlertService from '@/shared/alert/alert.service';
 import { IMsgTask, MsgTask } from '@/shared/model/msg-task.model';
 import MsgTaskService from './msg-task.service';
@@ -53,6 +56,10 @@ export default class MsgTaskUpdate extends Vue {
   @Inject('pdfSignService') private pdfSignService: () => PdfSignService;
 
   public pdfSigns: IPdfSign[] = [];
+
+  @Inject('ddUserService') private ddUserService: () => DdUserService;
+
+  public ddUsers: IDdUser[] = [];
   public isSaving = false;
   public currentLanguage = '';
 
@@ -144,6 +151,11 @@ export default class MsgTaskUpdate extends Vue {
       .retrieve()
       .then(res => {
         this.pdfSigns = res.data;
+      });
+    this.ddUserService()
+      .retrieve()
+      .then(res => {
+        this.ddUsers = res.data;
       });
   }
 }

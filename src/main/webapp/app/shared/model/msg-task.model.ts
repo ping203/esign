@@ -1,5 +1,6 @@
 import { IMsgSubTask } from '@/shared/model/msg-sub-task.model';
 import { IPdfSign } from '@/shared/model/pdf-sign.model';
+import { IDdUser } from '@/shared/model/dd-user.model';
 
 export const enum DdMessageType {
   Voice = 'Voice',
@@ -40,6 +41,7 @@ export interface IMsgTask {
   progressInPercent?: number;
   msgSubTasks?: IMsgSubTask[];
   pdfSigns?: IPdfSign[];
+  sender?: IDdUser;
 }
 
 export class MsgTask implements IMsgTask {
@@ -63,7 +65,8 @@ export class MsgTask implements IMsgTask {
     public status?: MessageStatus,
     public progressInPercent?: number,
     public msgSubTasks?: IMsgSubTask[],
-    public pdfSigns?: IPdfSign[]
+    public pdfSigns?: IPdfSign[],
+    public sender?: IDdUser
   ) {
     this.toAllUser = this.toAllUser || false;
     this.completeSharding = this.completeSharding || false;

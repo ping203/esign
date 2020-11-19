@@ -14,11 +14,5 @@
                                  referencedColumnNames="id"
                                  referencedTableName="dd_user"/>
 
-        <addForeignKeyConstraint baseColumnNames="pdf_file_id"
-                                 baseTableName="msg_task"
-                                 constraintName="fk_msg_task_pdf_file_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="pdf_file"/>
-
     </changeSet>
 </databaseChangeLog>
