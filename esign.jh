@@ -58,12 +58,12 @@ entity MsgTask{
     useridList String,
     toAllUser Boolean,
     markdown String,
-  singleTitle String,
-  singleUrl String,
-  pdfUrl String,
-  coverUrl String,
-  numberOfShards Long,
-  completeSharding Boolean,
+    singleTitle String,
+    singleUrl String,
+    pdfUrl String,
+    coverUrl String,
+    numberOfShards Long,
+    completeSharding Boolean,
     msg String,
     executeTime Instant,
     agentId Long,
@@ -119,7 +119,22 @@ entity PdfSign{
     width Long,
     signType String,
     requestNo String,
-    requestTime Instant
+    requestTime Instant,
+    status PdfSignStatus,
+    cycle Long,
+    cycleUnit CycleUnit,
+    retry Long,
+    retrySwitch Boolean
+    
+    
+}
+
+enum CycleUnit{
+		Hour , Day , Week , Month
+}
+
+enum PdfSignStatus{
+		NotActive , Effective
 }
 
 entity SealData{
@@ -146,21 +161,21 @@ entity ESignConfig{
 // defining multiple OneToMany relationships with comments
 relationship OneToMany {
 	DdUser to PdfSign,
+  
 
 	PdfSign to SealData,
     
     PdfFile to PdfSign,
     
-    MsgTask to MsgSubTask
+    MsgTask to MsgSubTask,
+    MsgTask to PdfSign
     
-    PdfFile to  MsgTask
+
 }
 
 
-relationship ManyToOne {
-	MsgTask{sender} to DdUser,
-   
-}
+
+
 
 
 
