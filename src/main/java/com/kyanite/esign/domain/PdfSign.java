@@ -11,6 +11,8 @@ import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.kyanite.esign.domain.enumeration.PdfSignStatus;
+
 /**
  * A PdfSign.
  */
@@ -61,6 +63,10 @@ public class PdfSign implements Serializable {
     @Column(name = "request_time")
     private Instant requestTime;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private PdfSignStatus status;
+
     @OneToMany(mappedBy = "pdfSign")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<SealData> sealData = new HashSet<>();
@@ -72,6 +78,10 @@ public class PdfSign implements Serializable {
     @ManyToOne
     @JsonIgnoreProperties(value = "pdfSigns", allowSetters = true)
     private PdfFile pdfFile;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = "pdfSigns", allowSetters = true)
+    private MsgTask msgTask;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -238,6 +248,19 @@ public class PdfSign implements Serializable {
         this.requestTime = requestTime;
     }
 
+    public PdfSignStatus getStatus() {
+        return status;
+    }
+
+    public PdfSign status(PdfSignStatus status) {
+        this.status = status;
+        return this;
+    }
+
+    public void setStatus(PdfSignStatus status) {
+        this.status = status;
+    }
+
     public Set<SealData> getSealData() {
         return sealData;
     }
@@ -288,6 +311,19 @@ public class PdfSign implements Serializable {
     public void setPdfFile(PdfFile pdfFile) {
         this.pdfFile = pdfFile;
     }
+
+    public MsgTask getMsgTask() {
+        return msgTask;
+    }
+
+    public PdfSign msgTask(MsgTask msgTask) {
+        this.msgTask = msgTask;
+        return this;
+    }
+
+    public void setMsgTask(MsgTask msgTask) {
+        this.msgTask = msgTask;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -323,6 +359,7 @@ public class PdfSign implements Serializable {
             ", signType='" + getSignType() + "'" +
             ", requestNo='" + getRequestNo() + "'" +
             ", requestTime='" + getRequestTime() + "'" +
+            ", status='" + getStatus() + "'" +
             "}";
     }
 }

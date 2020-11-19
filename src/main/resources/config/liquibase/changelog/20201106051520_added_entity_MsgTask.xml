@@ -67,12 +67,6 @@
             <column name="progress_in_percent" type="bigint">
                 <constraints nullable="true" />
             </column>
-            <column name="sender_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
-            <column name="pdf_file_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
         <dropDefaultValue tableName="msg_task" columnName="execute_time" columnDataType="datetime"/>

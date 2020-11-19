@@ -48,6 +48,11 @@
     {
       "fieldName": "requestTime",
       "fieldType": "Instant"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "PdfSignStatus",
+      "fieldValues": "NotActive,Effective"
     }
   ],
   "relationships": [
@@ -69,6 +74,13 @@
       "otherEntityName": "pdfFile",
       "otherEntityRelationshipName": "pdfSign",
       "relationshipName": "pdfFile",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "msgTask",
+      "otherEntityRelationshipName": "pdfSign",
+      "relationshipName": "msgTask",
       "otherEntityField": "id"
     }
   ],

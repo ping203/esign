@@ -1,6 +1,12 @@
 import { ISealData } from '@/shared/model/seal-data.model';
 import { IDdUser } from '@/shared/model/dd-user.model';
 import { IPdfFile } from '@/shared/model/pdf-file.model';
+import { IMsgTask } from '@/shared/model/msg-task.model';
+
+export const enum PdfSignStatus {
+  NotActive = 'NotActive',
+  Effective = 'Effective',
+}
 
 export interface IPdfSign {
   id?: number;
@@ -16,9 +22,11 @@ export interface IPdfSign {
   signType?: string;
   requestNo?: string;
   requestTime?: Date;
+  status?: PdfSignStatus;
   sealData?: ISealData[];
   ddUser?: IDdUser;
   pdfFile?: IPdfFile;
+  msgTask?: IMsgTask;
 }
 
 export class PdfSign implements IPdfSign {
@@ -36,8 +44,10 @@ export class PdfSign implements IPdfSign {
     public signType?: string,
     public requestNo?: string,
     public requestTime?: Date,
+    public status?: PdfSignStatus,
     public sealData?: ISealData[],
     public ddUser?: IDdUser,
-    public pdfFile?: IPdfFile
+    public pdfFile?: IPdfFile,
+    public msgTask?: IMsgTask
   ) {}
 }

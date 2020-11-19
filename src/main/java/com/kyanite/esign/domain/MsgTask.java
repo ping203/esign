@@ -1,6 +1,5 @@
 package com.kyanite.esign.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -86,13 +85,9 @@ public class MsgTask implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<MsgSubTask> msgSubTasks = new HashSet<>();
 
-    @ManyToOne
-    @JsonIgnoreProperties(value = "msgTasks", allowSetters = true)
-    private DdUser sender;
-
-    @ManyToOne
-    @JsonIgnoreProperties(value = "msgTasks", allowSetters = true)
-    private PdfFile pdfFile;
+    @OneToMany(mappedBy = "msgTask")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    private Set<PdfSign> pdfSigns = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -349,30 +344,29 @@ public class MsgTask implements Serializable {
         this.msgSubTasks = msgSubTasks;
     }
 
-    public DdUser getSender() {
-        return sender;
+    public Set<PdfSign> getPdfSigns() {
+        return pdfSigns;
     }
 
-    public MsgTask sender(DdUser ddUser) {
-        this.sender = ddUser;
+    public MsgTask pdfSigns(Set<PdfSign> pdfSigns) {
+        this.pdfSigns = pdfSigns;
         return this;
     }
 
-    public void setSender(DdUser ddUser) {
-        this.sender = ddUser;
-    }
-
-    public PdfFile getPdfFile() {
-        return pdfFile;
-    }
-
-    public MsgTask pdfFile(PdfFile pdfFile) {
-        this.pdfFile = pdfFile;
+    public MsgTask addPdfSign(PdfSign pdfSign) {
+        this.pdfSigns.add(pdfSign);
+        pdfSign.setMsgTask(this);
         return this;
     }
 
-    public void setPdfFile(PdfFile pdfFile) {
-        this.pdfFile = pdfFile;
+    public MsgTask removePdfSign(PdfSign pdfSign) {
+        this.pdfSigns.remove(pdfSign);
+        pdfSign.setMsgTask(null);
+        return this;
+    }
+
+    public void setPdfSigns(Set<PdfSign> pdfSigns) {
+        this.pdfSigns = pdfSigns;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

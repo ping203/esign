@@ -24,6 +24,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import com.kyanite.esign.domain.enumeration.PdfSignStatus;
 /**
  * Integration tests for the {@link PdfSignResource} REST controller.
  */
@@ -68,6 +69,9 @@ public class PdfSignResourceIT {
     private static final Instant DEFAULT_REQUEST_TIME = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_REQUEST_TIME = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
+    private static final PdfSignStatus DEFAULT_STATUS = PdfSignStatus.NotActive;
+    private static final PdfSignStatus UPDATED_STATUS = PdfSignStatus.Effective;
+
     @Autowired
     private PdfSignRepository pdfSignRepository;
 
@@ -101,7 +105,8 @@ public class PdfSignResourceIT {
             .width(DEFAULT_WIDTH)
             .signType(DEFAULT_SIGN_TYPE)
             .requestNo(DEFAULT_REQUEST_NO)
-            .requestTime(DEFAULT_REQUEST_TIME);
+            .requestTime(DEFAULT_REQUEST_TIME)
+            .status(DEFAULT_STATUS);
         return pdfSign;
     }
     /**
@@ -123,7 +128,8 @@ public class PdfSignResourceIT {
             .width(UPDATED_WIDTH)
             .signType(UPDATED_SIGN_TYPE)
             .requestNo(UPDATED_REQUEST_NO)
-            .requestTime(UPDATED_REQUEST_TIME);
+            .requestTime(UPDATED_REQUEST_TIME)
+            .status(UPDATED_STATUS);
         return pdfSign;
     }
 
@@ -158,6 +164,7 @@ public class PdfSignResourceIT {
         assertThat(testPdfSign.getSignType()).isEqualTo(DEFAULT_SIGN_TYPE);
         assertThat(testPdfSign.getRequestNo()).isEqualTo(DEFAULT_REQUEST_NO);
         assertThat(testPdfSign.getRequestTime()).isEqualTo(DEFAULT_REQUEST_TIME);
+        assertThat(testPdfSign.getStatus()).isEqualTo(DEFAULT_STATUS);
     }
 
     @Test
@@ -202,7 +209,8 @@ public class PdfSignResourceIT {
             .andExpect(jsonPath("$.[*].width").value(hasItem(DEFAULT_WIDTH.intValue())))
             .andExpect(jsonPath("$.[*].signType").value(hasItem(DEFAULT_SIGN_TYPE)))
             .andExpect(jsonPath("$.[*].requestNo").value(hasItem(DEFAULT_REQUEST_NO)))
-            .andExpect(jsonPath("$.[*].requestTime").value(hasItem(DEFAULT_REQUEST_TIME.toString())));
+            .andExpect(jsonPath("$.[*].requestTime").value(hasItem(DEFAULT_REQUEST_TIME.toString())))
+            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())));
     }
     
     @Test
@@ -227,7 +235,8 @@ public class PdfSignResourceIT {
             .andExpect(jsonPath("$.width").value(DEFAULT_WIDTH.intValue()))
             .andExpect(jsonPath("$.signType").value(DEFAULT_SIGN_TYPE))
             .andExpect(jsonPath("$.requestNo").value(DEFAULT_REQUEST_NO))
-            .andExpect(jsonPath("$.requestTime").value(DEFAULT_REQUEST_TIME.toString()));
+            .andExpect(jsonPath("$.requestTime").value(DEFAULT_REQUEST_TIME.toString()))
+            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()));
     }
     @Test
     @Transactional
@@ -261,7 +270,8 @@ public class PdfSignResourceIT {
             .width(UPDATED_WIDTH)
             .signType(UPDATED_SIGN_TYPE)
             .requestNo(UPDATED_REQUEST_NO)
-            .requestTime(UPDATED_REQUEST_TIME);
+            .requestTime(UPDATED_REQUEST_TIME)
+            .status(UPDATED_STATUS);
 
         restPdfSignMockMvc.perform(put("/api/pdf-signs")
             .contentType(MediaType.APPLICATION_JSON)
@@ -284,6 +294,7 @@ public class PdfSignResourceIT {
         assertThat(testPdfSign.getSignType()).isEqualTo(UPDATED_SIGN_TYPE);
         assertThat(testPdfSign.getRequestNo()).isEqualTo(UPDATED_REQUEST_NO);
         assertThat(testPdfSign.getRequestTime()).isEqualTo(UPDATED_REQUEST_TIME);
+        assertThat(testPdfSign.getStatus()).isEqualTo(UPDATED_STATUS);
     }
 
     @Test

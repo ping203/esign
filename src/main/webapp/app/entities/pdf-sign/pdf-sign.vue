@@ -37,8 +37,10 @@
                     <th v-on:click="changeOrder('signType')"><span v-text="$t('esignApp.pdfSign.signType')">Sign Type</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'signType'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('requestNo')"><span v-text="$t('esignApp.pdfSign.requestNo')">Request No</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'requestNo'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('requestTime')"><span v-text="$t('esignApp.pdfSign.requestTime')">Request Time</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'requestTime'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('status')"><span v-text="$t('esignApp.pdfSign.status')">Status</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'status'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('ddUser.id')"><span v-text="$t('esignApp.pdfSign.ddUser')">Dd User</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'ddUser.id'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('pdfFile.id')"><span v-text="$t('esignApp.pdfSign.pdfFile')">Pdf File</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'pdfFile.id'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('msgTask.id')"><span v-text="$t('esignApp.pdfSign.msgTask')">Msg Task</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'msgTask.id'"></jhi-sort-indicator></th>
                     <th></th>
                 </tr>
                 </thead>
@@ -60,6 +62,7 @@
                     <td>{{pdfSign.signType}}</td>
                     <td>{{pdfSign.requestNo}}</td>
                     <td>{{pdfSign.requestTime ? $d(Date.parse(pdfSign.requestTime), 'short') : ''}}</td>
+                    <td v-text="$t('esignApp.PdfSignStatus.' + pdfSign.status)">{{pdfSign.status}}</td>
                     <td>
                         <div v-if="pdfSign.ddUser">
                             <router-link :to="{name: 'DdUserView', params: {ddUserId: pdfSign.ddUser.id}}">{{pdfSign.ddUser.id}}</router-link>
@@ -68,6 +71,11 @@
                     <td>
                         <div v-if="pdfSign.pdfFile">
                             <router-link :to="{name: 'PdfFileView', params: {pdfFileId: pdfSign.pdfFile.id}}">{{pdfSign.pdfFile.id}}</router-link>
+                        </div>
+                    </td>
+                    <td>
+                        <div v-if="pdfSign.msgTask">
+                            <router-link :to="{name: 'MsgTaskView', params: {msgTaskId: pdfSign.msgTask.id}}">{{pdfSign.msgTask.id}}</router-link>
                         </div>
                     </td>
                     <td class="text-right">

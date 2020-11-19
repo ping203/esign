@@ -20,5 +20,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="pdf_file"/>
 
+        <addForeignKeyConstraint baseColumnNames="msg_task_id"
+                                 baseTableName="pdf_sign"
+                                 constraintName="fk_pdf_sign_msg_task_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="msg_task"/>
+
     </changeSet>
 </databaseChangeLog>
