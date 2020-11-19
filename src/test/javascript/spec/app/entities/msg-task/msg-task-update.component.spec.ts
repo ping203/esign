@@ -19,6 +19,8 @@ import PdfSignService from '@/entities/pdf-sign/pdf-sign.service';
 
 import DdUserService from '@/entities/dd-user/dd-user.service';
 
+import PdfFileService from '@/entities/pdf-file/pdf-file.service';
+
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
@@ -51,6 +53,8 @@ describe('Component Tests', () => {
           pdfSignService: () => new PdfSignService(),
 
           ddUserService: () => new DdUserService(),
+
+          pdfFileService: () => new PdfFileService(),
         },
       });
       comp = wrapper.vm;
