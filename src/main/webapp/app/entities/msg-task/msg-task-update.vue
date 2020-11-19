@@ -111,6 +111,11 @@
                             :class="{'valid': !$v.msgTask.progressInPercent.$invalid, 'invalid': $v.msgTask.progressInPercent.$invalid }" v-model.number="$v.msgTask.progressInPercent.$model" />
                     </div>
                     <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.msgTask.key')" for="msg-task-key">Key</label>
+                        <input type="text" class="form-control" name="key" id="msg-task-key"
+                            :class="{'valid': !$v.msgTask.key.$invalid, 'invalid': $v.msgTask.key.$invalid }" v-model="$v.msgTask.key.$model" />
+                    </div>
+                    <div class="form-group">
                         <label class="form-control-label" v-text="$t('esignApp.msgTask.sender')" for="msg-task-sender">Sender</label>
                         <select class="form-control" id="msg-task-sender" name="sender" v-model="msgTask.sender">
                             <option v-bind:value="null"></option>

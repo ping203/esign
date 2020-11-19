@@ -41,6 +41,7 @@ const validations: any = {
     type: {},
     status: {},
     progressInPercent: {},
+    key: {},
   },
 };
 

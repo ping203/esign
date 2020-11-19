@@ -107,6 +107,12 @@
                         <span>{{msgTask.progressInPercent}}</span>
                     </dd>
                     <dt>
+                        <span v-text="$t('esignApp.msgTask.key')">Key</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgTask.key}}</span>
+                    </dd>
+                    <dt>
                         <span v-text="$t('esignApp.msgTask.sender')">Sender</span>
                     </dt>
                     <dd>

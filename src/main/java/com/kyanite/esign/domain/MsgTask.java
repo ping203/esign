@@ -82,6 +82,9 @@ public class MsgTask implements Serializable {
     @Column(name = "progress_in_percent")
     private Long progressInPercent;
 
+    @Column(name = "jhi_key")
+    private String key;
+
     @OneToMany(mappedBy = "msgTask")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<MsgSubTask> msgSubTasks = new HashSet<>();
@@ -328,6 +331,19 @@ public class MsgTask implements Serializable {
         this.progressInPercent = progressInPercent;
     }
 
+    public String getKey() {
+        return key;
+    }
+
+    public MsgTask key(String key) {
+        this.key = key;
+        return this;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     public Set<MsgSubTask> getMsgSubTasks() {
         return msgSubTasks;
     }
@@ -443,6 +459,7 @@ public class MsgTask implements Serializable {
             ", type='" + getType() + "'" +
             ", status='" + getStatus() + "'" +
             ", progressInPercent=" + getProgressInPercent() +
+            ", key='" + getKey() + "'" +
             "}";
     }
 }
