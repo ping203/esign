@@ -170,10 +170,11 @@ relationship OneToMany {
     MsgTask to MsgSubTask,
     MsgTask to PdfSign
     
-
 }
 
-
+relationship ManyToOne {
+    MsgTask to PdfFile
+}
 
 
 
