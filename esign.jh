@@ -119,7 +119,12 @@ entity PdfSign{
     width Long,
     signType String,
     requestNo String,
-    requestTime Instant
+    requestTime Instant,
+    status PdfSignStatus
+}
+
+enum PdfSignStatus{
+		NotActive , Effective
 }
 
 entity SealData{
@@ -146,21 +151,23 @@ entity ESignConfig{
 // defining multiple OneToMany relationships with comments
 relationship OneToMany {
 	DdUser to PdfSign,
+  
 
 	PdfSign to SealData,
     
     PdfFile to PdfSign,
     
-    MsgTask to MsgSubTask
+    MsgTask to MsgSubTask,
     
-    PdfFile to  MsgTask
+    
+    
 }
 
 
-relationship ManyToOne {
-	MsgTask{sender} to DdUser,
-   
+relationship ManyToOne{
+	PdfSign to MsgTask  
 }
+
 
 
 
