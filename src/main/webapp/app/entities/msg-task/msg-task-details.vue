@@ -107,6 +107,30 @@
                         <span>{{msgTask.progressInPercent}}</span>
                     </dd>
                     <dt>
+                        <span v-text="$t('esignApp.msgTask.cycle')">Cycle</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgTask.cycle}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgTask.cycleUnit')">Cycle Unit</span>
+                    </dt>
+                    <dd>
+                        <span v-text="$t('esignApp.CycleUnit.' + msgTask.cycleUnit)">{{msgTask.cycleUnit}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgTask.retry')">Retry</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgTask.retry}}</span>
+                    </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.msgTask.retrySwitch')">Retry Switch</span>
+                    </dt>
+                    <dd>
+                        <span>{{msgTask.retrySwitch}}</span>
+                    </dd>
+                    <dt>
                         <span v-text="$t('esignApp.msgTask.key')">Key</span>
                     </dt>
                     <dd>

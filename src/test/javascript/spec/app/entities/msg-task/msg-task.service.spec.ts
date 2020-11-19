@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import * as config from '@/shared/config/config';
 import { DATE_TIME_FORMAT } from '@/shared/date/filters';
 import MsgTaskService from '@/entities/msg-task/msg-task.service';
-import { MsgTask, DdMessageType, MessageStatus } from '@/shared/model/msg-task.model';
+import { MsgTask, DdMessageType, MessageStatus, CycleUnit } from '@/shared/model/msg-task.model';
 
 const mockedAxios: any = axios;
 const error = {
@@ -52,6 +52,10 @@ describe('Service Tests', () => {
         DdMessageType.Voice,
         MessageStatus.SentSuccessfully,
         0,
+        0,
+        CycleUnit.Hour,
+        0,
+        false,
         'AAAAAAA'
       );
     });
@@ -133,6 +137,10 @@ describe('Service Tests', () => {
             type: 'BBBBBB',
             status: 'BBBBBB',
             progressInPercent: 1,
+            cycle: 1,
+            cycleUnit: 'BBBBBB',
+            retry: 1,
+            retrySwitch: true,
             key: 'BBBBBB',
           },
           elemDefault
@@ -182,6 +190,10 @@ describe('Service Tests', () => {
             type: 'BBBBBB',
             status: 'BBBBBB',
             progressInPercent: 1,
+            cycle: 1,
+            cycleUnit: 'BBBBBB',
+            retry: 1,
+            retrySwitch: true,
             key: 'BBBBBB',
           },
           elemDefault

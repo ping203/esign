@@ -41,6 +41,10 @@ const validations: any = {
     type: {},
     status: {},
     progressInPercent: {},
+    cycle: {},
+    cycleUnit: {},
+    retry: {},
+    retrySwitch: {},
     key: {},
   },
 };

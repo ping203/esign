@@ -26,6 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.kyanite.esign.domain.enumeration.DdMessageType;
 import com.kyanite.esign.domain.enumeration.MessageStatus;
+import com.kyanite.esign.domain.enumeration.CycleUnit;
 /**
  * Integration tests for the {@link MsgTaskResource} REST controller.
  */
@@ -85,6 +86,18 @@ public class MsgTaskResourceIT {
     private static final Long DEFAULT_PROGRESS_IN_PERCENT = 1L;
     private static final Long UPDATED_PROGRESS_IN_PERCENT = 2L;
 
+    private static final Long DEFAULT_CYCLE = 1L;
+    private static final Long UPDATED_CYCLE = 2L;
+
+    private static final CycleUnit DEFAULT_CYCLE_UNIT = CycleUnit.Hour;
+    private static final CycleUnit UPDATED_CYCLE_UNIT = CycleUnit.Day;
+
+    private static final Long DEFAULT_RETRY = 1L;
+    private static final Long UPDATED_RETRY = 2L;
+
+    private static final Boolean DEFAULT_RETRY_SWITCH = false;
+    private static final Boolean UPDATED_RETRY_SWITCH = true;
+
     private static final String DEFAULT_KEY = "AAAAAAAAAA";
     private static final String UPDATED_KEY = "BBBBBBBBBB";
 
@@ -127,6 +140,10 @@ public class MsgTaskResourceIT {
             .type(DEFAULT_TYPE)
             .status(DEFAULT_STATUS)
             .progressInPercent(DEFAULT_PROGRESS_IN_PERCENT)
+            .cycle(DEFAULT_CYCLE)
+            .cycleUnit(DEFAULT_CYCLE_UNIT)
+            .retry(DEFAULT_RETRY)
+            .retrySwitch(DEFAULT_RETRY_SWITCH)
             .key(DEFAULT_KEY);
         return msgTask;
     }
@@ -155,6 +172,10 @@ public class MsgTaskResourceIT {
             .type(UPDATED_TYPE)
             .status(UPDATED_STATUS)
             .progressInPercent(UPDATED_PROGRESS_IN_PERCENT)
+            .cycle(UPDATED_CYCLE)
+            .cycleUnit(UPDATED_CYCLE_UNIT)
+            .retry(UPDATED_RETRY)
+            .retrySwitch(UPDATED_RETRY_SWITCH)
             .key(UPDATED_KEY);
         return msgTask;
     }
@@ -195,6 +216,10 @@ public class MsgTaskResourceIT {
         assertThat(testMsgTask.getType()).isEqualTo(DEFAULT_TYPE);
         assertThat(testMsgTask.getStatus()).isEqualTo(DEFAULT_STATUS);
         assertThat(testMsgTask.getProgressInPercent()).isEqualTo(DEFAULT_PROGRESS_IN_PERCENT);
+        assertThat(testMsgTask.getCycle()).isEqualTo(DEFAULT_CYCLE);
+        assertThat(testMsgTask.getCycleUnit()).isEqualTo(DEFAULT_CYCLE_UNIT);
+        assertThat(testMsgTask.getRetry()).isEqualTo(DEFAULT_RETRY);
+        assertThat(testMsgTask.isRetrySwitch()).isEqualTo(DEFAULT_RETRY_SWITCH);
         assertThat(testMsgTask.getKey()).isEqualTo(DEFAULT_KEY);
     }
 
@@ -246,6 +271,10 @@ public class MsgTaskResourceIT {
             .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE.toString())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
             .andExpect(jsonPath("$.[*].progressInPercent").value(hasItem(DEFAULT_PROGRESS_IN_PERCENT.intValue())))
+            .andExpect(jsonPath("$.[*].cycle").value(hasItem(DEFAULT_CYCLE.intValue())))
+            .andExpect(jsonPath("$.[*].cycleUnit").value(hasItem(DEFAULT_CYCLE_UNIT.toString())))
+            .andExpect(jsonPath("$.[*].retry").value(hasItem(DEFAULT_RETRY.intValue())))
+            .andExpect(jsonPath("$.[*].retrySwitch").value(hasItem(DEFAULT_RETRY_SWITCH.booleanValue())))
             .andExpect(jsonPath("$.[*].key").value(hasItem(DEFAULT_KEY)));
     }
     
@@ -277,6 +306,10 @@ public class MsgTaskResourceIT {
             .andExpect(jsonPath("$.type").value(DEFAULT_TYPE.toString()))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
             .andExpect(jsonPath("$.progressInPercent").value(DEFAULT_PROGRESS_IN_PERCENT.intValue()))
+            .andExpect(jsonPath("$.cycle").value(DEFAULT_CYCLE.intValue()))
+            .andExpect(jsonPath("$.cycleUnit").value(DEFAULT_CYCLE_UNIT.toString()))
+            .andExpect(jsonPath("$.retry").value(DEFAULT_RETRY.intValue()))
+            .andExpect(jsonPath("$.retrySwitch").value(DEFAULT_RETRY_SWITCH.booleanValue()))
             .andExpect(jsonPath("$.key").value(DEFAULT_KEY));
     }
     @Test
@@ -317,6 +350,10 @@ public class MsgTaskResourceIT {
             .type(UPDATED_TYPE)
             .status(UPDATED_STATUS)
             .progressInPercent(UPDATED_PROGRESS_IN_PERCENT)
+            .cycle(UPDATED_CYCLE)
+            .cycleUnit(UPDATED_CYCLE_UNIT)
+            .retry(UPDATED_RETRY)
+            .retrySwitch(UPDATED_RETRY_SWITCH)
             .key(UPDATED_KEY);
 
         restMsgTaskMockMvc.perform(put("/api/msg-tasks")
@@ -345,6 +382,10 @@ public class MsgTaskResourceIT {
         assertThat(testMsgTask.getType()).isEqualTo(UPDATED_TYPE);
         assertThat(testMsgTask.getStatus()).isEqualTo(UPDATED_STATUS);
         assertThat(testMsgTask.getProgressInPercent()).isEqualTo(UPDATED_PROGRESS_IN_PERCENT);
+        assertThat(testMsgTask.getCycle()).isEqualTo(UPDATED_CYCLE);
+        assertThat(testMsgTask.getCycleUnit()).isEqualTo(UPDATED_CYCLE_UNIT);
+        assertThat(testMsgTask.getRetry()).isEqualTo(UPDATED_RETRY);
+        assertThat(testMsgTask.isRetrySwitch()).isEqualTo(UPDATED_RETRY_SWITCH);
         assertThat(testMsgTask.getKey()).isEqualTo(UPDATED_KEY);
     }
 

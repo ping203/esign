@@ -15,6 +15,8 @@ import com.kyanite.esign.domain.enumeration.DdMessageType;
 
 import com.kyanite.esign.domain.enumeration.MessageStatus;
 
+import com.kyanite.esign.domain.enumeration.CycleUnit;
+
 /**
  * A MsgTask.
  */
@@ -81,6 +83,19 @@ public class MsgTask implements Serializable {
 
     @Column(name = "progress_in_percent")
     private Long progressInPercent;
+
+    @Column(name = "cycle")
+    private Long cycle;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "cycle_unit")
+    private CycleUnit cycleUnit;
+
+    @Column(name = "retry")
+    private Long retry;
+
+    @Column(name = "retry_switch")
+    private Boolean retrySwitch;
 
     @Column(name = "jhi_key")
     private String key;
@@ -331,6 +346,58 @@ public class MsgTask implements Serializable {
         this.progressInPercent = progressInPercent;
     }
 
+    public Long getCycle() {
+        return cycle;
+    }
+
+    public MsgTask cycle(Long cycle) {
+        this.cycle = cycle;
+        return this;
+    }
+
+    public void setCycle(Long cycle) {
+        this.cycle = cycle;
+    }
+
+    public CycleUnit getCycleUnit() {
+        return cycleUnit;
+    }
+
+    public MsgTask cycleUnit(CycleUnit cycleUnit) {
+        this.cycleUnit = cycleUnit;
+        return this;
+    }
+
+    public void setCycleUnit(CycleUnit cycleUnit) {
+        this.cycleUnit = cycleUnit;
+    }
+
+    public Long getRetry() {
+        return retry;
+    }
+
+    public MsgTask retry(Long retry) {
+        this.retry = retry;
+        return this;
+    }
+
+    public void setRetry(Long retry) {
+        this.retry = retry;
+    }
+
+    public Boolean isRetrySwitch() {
+        return retrySwitch;
+    }
+
+    public MsgTask retrySwitch(Boolean retrySwitch) {
+        this.retrySwitch = retrySwitch;
+        return this;
+    }
+
+    public void setRetrySwitch(Boolean retrySwitch) {
+        this.retrySwitch = retrySwitch;
+    }
+
     public String getKey() {
         return key;
     }
@@ -459,6 +526,10 @@ public class MsgTask implements Serializable {
             ", type='" + getType() + "'" +
             ", status='" + getStatus() + "'" +
             ", progressInPercent=" + getProgressInPercent() +
+            ", cycle=" + getCycle() +
+            ", cycleUnit='" + getCycleUnit() + "'" +
+            ", retry=" + getRetry() +
+            ", retrySwitch='" + isRetrySwitch() + "'" +
             ", key='" + getKey() + "'" +
             "}";
     }

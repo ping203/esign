@@ -70,6 +70,10 @@ entity MsgTask{
     type DdMessageType,
     status MessageStatus,
     progressInPercent Long,
+    cycle Long,
+    cycleUnit CycleUnit,
+    retry Long,
+    retrySwitch Boolean,
     key String
 }
 

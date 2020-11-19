@@ -21,6 +21,13 @@ export const enum MessageStatus {
   Withdraw = 'Withdraw',
 }
 
+export const enum CycleUnit {
+  Hour = 'Hour',
+  Day = 'Day',
+  Week = 'Week',
+  Month = 'Month',
+}
+
 export interface IMsgTask {
   id?: number;
   title?: string;
@@ -40,6 +47,10 @@ export interface IMsgTask {
   type?: DdMessageType;
   status?: MessageStatus;
   progressInPercent?: number;
+  cycle?: number;
+  cycleUnit?: CycleUnit;
+  retry?: number;
+  retrySwitch?: boolean;
   key?: string;
   msgSubTasks?: IMsgSubTask[];
   pdfSigns?: IPdfSign[];
@@ -67,6 +78,10 @@ export class MsgTask implements IMsgTask {
     public type?: DdMessageType,
     public status?: MessageStatus,
     public progressInPercent?: number,
+    public cycle?: number,
+    public cycleUnit?: CycleUnit,
+    public retry?: number,
+    public retrySwitch?: boolean,
     public key?: string,
     public msgSubTasks?: IMsgSubTask[],
     public pdfSigns?: IPdfSign[],
@@ -75,5 +90,6 @@ export class MsgTask implements IMsgTask {
   ) {
     this.toAllUser = this.toAllUser || false;
     this.completeSharding = this.completeSharding || false;
+    this.retrySwitch = this.retrySwitch || false;
   }
 }

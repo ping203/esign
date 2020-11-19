@@ -72,6 +72,23 @@
       "fieldType": "Long"
     },
     {
+      "fieldName": "cycle",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cycleUnit",
+      "fieldType": "CycleUnit",
+      "fieldValues": "Hour,Day,Week,Month"
+    },
+    {
+      "fieldName": "retry",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "retrySwitch",
+      "fieldType": "Boolean"
+    },
+    {
       "fieldName": "key",
       "fieldType": "String"
     }
