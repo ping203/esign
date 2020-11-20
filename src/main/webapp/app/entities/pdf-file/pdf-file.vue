@@ -29,6 +29,7 @@
                     <th v-on:click="changeOrder('mediaType')"><span v-text="$t('esignApp.pdfFile.mediaType')">Media Type</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'mediaType'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('objName')"><span v-text="$t('esignApp.pdfFile.objName')">Obj Name</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'objName'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('fileUrl')"><span v-text="$t('esignApp.pdfFile.fileUrl')">File Url</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'fileUrl'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('creator.id')"><span v-text="$t('esignApp.pdfFile.creator')">Creator</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'creator.id'"></jhi-sort-indicator></th>
                     <th></th>
                 </tr>
                 </thead>
@@ -42,6 +43,11 @@
                     <td>{{pdfFile.mediaType}}</td>
                     <td>{{pdfFile.objName}}</td>
                     <td>{{pdfFile.fileUrl}}</td>
+                    <td>
+                        <div v-if="pdfFile.creator">
+                            <router-link :to="{name: 'DdUserView', params: {ddUserId: pdfFile.creator.id}}">{{pdfFile.creator.id}}</router-link>
+                        </div>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group">
                             <router-link :to="{name: 'PdfFileView', params: {pdfFileId: pdfFile.id}}" tag="button" class="btn btn-info btn-sm details">

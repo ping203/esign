@@ -28,6 +28,14 @@
                     <dd>
                         <span>{{pdfFile.fileUrl}}</span>
                     </dd>
+                    <dt>
+                        <span v-text="$t('esignApp.pdfFile.creator')">Creator</span>
+                    </dt>
+                    <dd>
+                        <div v-if="pdfFile.creator">
+                            <router-link :to="{name: 'DdUserView', params: {ddUserId: pdfFile.creator.id}}">{{pdfFile.creator.id}}</router-link>
+                        </div>
+                    </dd>
                 </dl>
                 <button type="submit"
                         v-on:click.prevent="previousState()"

@@ -42,7 +42,8 @@
       "accountId": "Account Id",
       "idNumber": "Id Number",
       "pdfSign": "Pdf Sign",
-      "msgTask": "Msg Task"
+      "msgTask": "Msg Task",
+      "pdfFile": "Pdf File"
     }
   }
 }

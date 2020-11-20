@@ -107,6 +107,10 @@ public class DdUser implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<MsgTask> msgTasks = new HashSet<>();
 
+    @OneToMany(mappedBy = "creator")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    private Set<PdfFile> pdfFiles = new HashSet<>();
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -489,6 +493,31 @@ public class DdUser implements Serializable {
 
     public void setMsgTasks(Set<MsgTask> msgTasks) {
         this.msgTasks = msgTasks;
+    }
+
+    public Set<PdfFile> getPdfFiles() {
+        return pdfFiles;
+    }
+
+    public DdUser pdfFiles(Set<PdfFile> pdfFiles) {
+        this.pdfFiles = pdfFiles;
+        return this;
+    }
+
+    public DdUser addPdfFile(PdfFile pdfFile) {
+        this.pdfFiles.add(pdfFile);
+        pdfFile.setCreator(this);
+        return this;
+    }
+
+    public DdUser removePdfFile(PdfFile pdfFile) {
+        this.pdfFiles.remove(pdfFile);
+        pdfFile.setCreator(null);
+        return this;
+    }
+
+    public void setPdfFiles(Set<PdfFile> pdfFiles) {
+        this.pdfFiles = pdfFiles;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

@@ -30,6 +30,13 @@
       "otherEntityName": "msgTask",
       "otherEntityRelationshipName": "pdfFile",
       "relationshipName": "msgTask"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ddUser",
+      "otherEntityRelationshipName": "pdfFile",
+      "relationshipName": "creator",
+      "otherEntityField": "id"
     }
   ],
   "changelogDate": "20201106051720",

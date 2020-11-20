@@ -21,7 +21,8 @@
       "objName": "Obj Name",
       "fileUrl": "File Url",
       "pdfSign": "Pdf Sign",
-      "msgTask": "Msg Task"
+      "msgTask": "Msg Task",
+      "creator": "Creator"
     }
   }
 }

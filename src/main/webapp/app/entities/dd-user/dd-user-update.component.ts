@@ -8,6 +8,9 @@ import { IPdfSign } from '@/shared/model/pdf-sign.model';
 import MsgTaskService from '../msg-task/msg-task.service';
 import { IMsgTask } from '@/shared/model/msg-task.model';
 
+import PdfFileService from '../pdf-file/pdf-file.service';
+import { IPdfFile } from '@/shared/model/pdf-file.model';
+
 import AlertService from '@/shared/alert/alert.service';
 import { IDdUser, DdUser } from '@/shared/model/dd-user.model';
 import DdUserService from './dd-user.service';
@@ -57,6 +60,10 @@ export default class DdUserUpdate extends Vue {
   @Inject('msgTaskService') private msgTaskService: () => MsgTaskService;
 
   public msgTasks: IMsgTask[] = [];
+
+  @Inject('pdfFileService') private pdfFileService: () => PdfFileService;
+
+  public pdfFiles: IPdfFile[] = [];
   public isSaving = false;
   public currentLanguage = '';
 
@@ -124,6 +131,11 @@ export default class DdUserUpdate extends Vue {
       .retrieve()
       .then(res => {
         this.msgTasks = res.data;
+      });
+    this.pdfFileService()
+      .retrieve()
+      .then(res => {
+        this.pdfFiles = res.data;
       });
   }
 }
