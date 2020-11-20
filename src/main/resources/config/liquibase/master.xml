@@ -27,6 +27,7 @@
     <include file="config/liquibase/changelog/20201106051820_added_entity_constraints_PdfSign.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201106051920_added_entity_constraints_SealData.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201106051520_added_entity_constraints_MsgTask.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201106051720_added_entity_constraints_PdfFile.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

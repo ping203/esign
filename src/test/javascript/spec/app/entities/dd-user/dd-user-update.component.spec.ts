@@ -13,6 +13,8 @@ import PdfSignService from '@/entities/pdf-sign/pdf-sign.service';
 
 import MsgTaskService from '@/entities/msg-task/msg-task.service';
 
+import PdfFileService from '@/entities/pdf-file/pdf-file.service';
+
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
@@ -43,6 +45,8 @@ describe('Component Tests', () => {
           pdfSignService: () => new PdfSignService(),
 
           msgTaskService: () => new MsgTaskService(),
+
+          pdfFileService: () => new PdfFileService(),
         },
       });
       comp = wrapper.vm;

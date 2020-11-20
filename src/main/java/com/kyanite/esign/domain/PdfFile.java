@@ -1,5 +1,6 @@
 package com.kyanite.esign.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -42,6 +43,10 @@ public class PdfFile implements Serializable {
     @OneToMany(mappedBy = "pdfFile")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<MsgTask> msgTasks = new HashSet<>();
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = "pdfFiles", allowSetters = true)
+    private DdUser creator;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -152,6 +157,19 @@ public class PdfFile implements Serializable {
 
     public void setMsgTasks(Set<MsgTask> msgTasks) {
         this.msgTasks = msgTasks;
+    }
+
+    public DdUser getCreator() {
+        return creator;
+    }
+
+    public PdfFile creator(DdUser ddUser) {
+        this.creator = ddUser;
+        return this;
+    }
+
+    public void setCreator(DdUser ddUser) {
+        this.creator = ddUser;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

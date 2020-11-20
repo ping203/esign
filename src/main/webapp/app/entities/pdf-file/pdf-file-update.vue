@@ -29,6 +29,13 @@
                         <input type="text" class="form-control" name="fileUrl" id="pdf-file-fileUrl"
                             :class="{'valid': !$v.pdfFile.fileUrl.$invalid, 'invalid': $v.pdfFile.fileUrl.$invalid }" v-model="$v.pdfFile.fileUrl.$model" />
                     </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.pdfFile.creator')" for="pdf-file-creator">Creator</label>
+                        <select class="form-control" id="pdf-file-creator" name="creator" v-model="pdfFile.creator">
+                            <option v-bind:value="null"></option>
+                            <option v-bind:value="pdfFile.creator && ddUserOption.id === pdfFile.creator.id ? pdfFile.creator : ddUserOption" v-for="ddUserOption in ddUsers" :key="ddUserOption.id">{{ddUserOption.id}}</option>
+                        </select>
+                    </div>
                 </div>
                 <div>
                     <button type="button" id="cancel-save" class="btn btn-secondary" v-on:click="previousState()">
