@@ -169,6 +169,7 @@ relationship OneToMany {
 	DdUser to PdfSign,
   
 	DdUser to MsgTask{sender},
+    DdUser to PdfFile{creator},
 	PdfSign to SealData,
     
     PdfFile to PdfSign,
@@ -176,6 +177,7 @@ relationship OneToMany {
     MsgTask to MsgSubTask,
     MsgTask to PdfSign,
     PdfFile to MsgTask
+    
     
 }
 
