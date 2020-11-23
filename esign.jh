@@ -131,7 +131,8 @@ entity PdfSign{
     retry Long,
     retrySwitch Boolean,
     key String,
-    retryCount Long
+    retryCount Long,
+    retryTime Instant
     
     
 }

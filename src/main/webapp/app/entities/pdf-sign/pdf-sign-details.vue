@@ -113,6 +113,12 @@
                         <span>{{pdfSign.retryCount}}</span>
                     </dd>
                     <dt>
+                        <span v-text="$t('esignApp.pdfSign.retryTime')">Retry Time</span>
+                    </dt>
+                    <dd>
+                        <span v-if="pdfSign.retryTime">{{$d(Date.parse(pdfSign.retryTime), 'long') }}</span>
+                    </dd>
+                    <dt>
                         <span v-text="$t('esignApp.pdfSign.ddUser')">Dd User</span>
                     </dt>
                     <dd>

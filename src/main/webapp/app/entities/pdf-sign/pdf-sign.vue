@@ -43,6 +43,7 @@
                     <th v-on:click="changeOrder('retry')"><span v-text="$t('esignApp.pdfSign.retry')">Retry</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'retry'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('retrySwitch')"><span v-text="$t('esignApp.pdfSign.retrySwitch')">Retry Switch</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'retrySwitch'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('retryCount')"><span v-text="$t('esignApp.pdfSign.retryCount')">Retry Count</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'retryCount'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('retryTime')"><span v-text="$t('esignApp.pdfSign.retryTime')">Retry Time</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'retryTime'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('ddUser.id')"><span v-text="$t('esignApp.pdfSign.ddUser')">Dd User</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'ddUser.id'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('pdfFile.id')"><span v-text="$t('esignApp.pdfSign.pdfFile')">Pdf File</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'pdfFile.id'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('msgTask.id')"><span v-text="$t('esignApp.pdfSign.msgTask')">Msg Task</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'msgTask.id'"></jhi-sort-indicator></th>
@@ -73,6 +74,7 @@
                     <td>{{pdfSign.retry}}</td>
                     <td>{{pdfSign.retrySwitch}}</td>
                     <td>{{pdfSign.retryCount}}</td>
+                    <td>{{pdfSign.retryTime ? $d(Date.parse(pdfSign.retryTime), 'short') : ''}}</td>
                     <td>
                         <div v-if="pdfSign.ddUser">
                             <router-link :to="{name: 'DdUserView', params: {ddUserId: pdfSign.ddUser.id}}">{{pdfSign.ddUser.id}}</router-link>

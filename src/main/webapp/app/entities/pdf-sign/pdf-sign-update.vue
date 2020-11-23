@@ -111,6 +111,15 @@
                             :class="{'valid': !$v.pdfSign.retryCount.$invalid, 'invalid': $v.pdfSign.retryCount.$invalid }" v-model.number="$v.pdfSign.retryCount.$model" />
                     </div>
                     <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.pdfSign.retryTime')" for="pdf-sign-retryTime">Retry Time</label>
+                        <div class="d-flex">
+                            <input id="pdf-sign-retryTime" type="datetime-local" class="form-control" name="retryTime" :class="{'valid': !$v.pdfSign.retryTime.$invalid, 'invalid': $v.pdfSign.retryTime.$invalid }"
+                            
+                            :value="convertDateTimeFromServer($v.pdfSign.retryTime.$model)"
+                            @change="updateInstantField('retryTime', $event)"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="form-control-label" v-text="$t('esignApp.pdfSign.ddUser')" for="pdf-sign-ddUser">Dd User</label>
                         <select class="form-control" id="pdf-sign-ddUser" name="ddUser" v-model="pdfSign.ddUser">
                             <option v-bind:value="null"></option>

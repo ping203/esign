@@ -88,6 +88,9 @@ public class PdfSignResourceIT {
     private static final Long DEFAULT_RETRY_COUNT = 1L;
     private static final Long UPDATED_RETRY_COUNT = 2L;
 
+    private static final Instant DEFAULT_RETRY_TIME = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_RETRY_TIME = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+
     @Autowired
     private PdfSignRepository pdfSignRepository;
 
@@ -127,7 +130,8 @@ public class PdfSignResourceIT {
             .cycleUnit(DEFAULT_CYCLE_UNIT)
             .retry(DEFAULT_RETRY)
             .retrySwitch(DEFAULT_RETRY_SWITCH)
-            .retryCount(DEFAULT_RETRY_COUNT);
+            .retryCount(DEFAULT_RETRY_COUNT)
+            .retryTime(DEFAULT_RETRY_TIME);
         return pdfSign;
     }
     /**
@@ -155,7 +159,8 @@ public class PdfSignResourceIT {
             .cycleUnit(UPDATED_CYCLE_UNIT)
             .retry(UPDATED_RETRY)
             .retrySwitch(UPDATED_RETRY_SWITCH)
-            .retryCount(UPDATED_RETRY_COUNT);
+            .retryCount(UPDATED_RETRY_COUNT)
+            .retryTime(UPDATED_RETRY_TIME);
         return pdfSign;
     }
 
@@ -196,6 +201,7 @@ public class PdfSignResourceIT {
         assertThat(testPdfSign.getRetry()).isEqualTo(DEFAULT_RETRY);
         assertThat(testPdfSign.isRetrySwitch()).isEqualTo(DEFAULT_RETRY_SWITCH);
         assertThat(testPdfSign.getRetryCount()).isEqualTo(DEFAULT_RETRY_COUNT);
+        assertThat(testPdfSign.getRetryTime()).isEqualTo(DEFAULT_RETRY_TIME);
     }
 
     @Test
@@ -246,7 +252,8 @@ public class PdfSignResourceIT {
             .andExpect(jsonPath("$.[*].cycleUnit").value(hasItem(DEFAULT_CYCLE_UNIT.toString())))
             .andExpect(jsonPath("$.[*].retry").value(hasItem(DEFAULT_RETRY.intValue())))
             .andExpect(jsonPath("$.[*].retrySwitch").value(hasItem(DEFAULT_RETRY_SWITCH.booleanValue())))
-            .andExpect(jsonPath("$.[*].retryCount").value(hasItem(DEFAULT_RETRY_COUNT.intValue())));
+            .andExpect(jsonPath("$.[*].retryCount").value(hasItem(DEFAULT_RETRY_COUNT.intValue())))
+            .andExpect(jsonPath("$.[*].retryTime").value(hasItem(DEFAULT_RETRY_TIME.toString())));
     }
     
     @Test
@@ -277,7 +284,8 @@ public class PdfSignResourceIT {
             .andExpect(jsonPath("$.cycleUnit").value(DEFAULT_CYCLE_UNIT.toString()))
             .andExpect(jsonPath("$.retry").value(DEFAULT_RETRY.intValue()))
             .andExpect(jsonPath("$.retrySwitch").value(DEFAULT_RETRY_SWITCH.booleanValue()))
-            .andExpect(jsonPath("$.retryCount").value(DEFAULT_RETRY_COUNT.intValue()));
+            .andExpect(jsonPath("$.retryCount").value(DEFAULT_RETRY_COUNT.intValue()))
+            .andExpect(jsonPath("$.retryTime").value(DEFAULT_RETRY_TIME.toString()));
     }
     @Test
     @Transactional
@@ -317,7 +325,8 @@ public class PdfSignResourceIT {
             .cycleUnit(UPDATED_CYCLE_UNIT)
             .retry(UPDATED_RETRY)
             .retrySwitch(UPDATED_RETRY_SWITCH)
-            .retryCount(UPDATED_RETRY_COUNT);
+            .retryCount(UPDATED_RETRY_COUNT)
+            .retryTime(UPDATED_RETRY_TIME);
 
         restPdfSignMockMvc.perform(put("/api/pdf-signs")
             .contentType(MediaType.APPLICATION_JSON)
@@ -346,6 +355,7 @@ public class PdfSignResourceIT {
         assertThat(testPdfSign.getRetry()).isEqualTo(UPDATED_RETRY);
         assertThat(testPdfSign.isRetrySwitch()).isEqualTo(UPDATED_RETRY_SWITCH);
         assertThat(testPdfSign.getRetryCount()).isEqualTo(UPDATED_RETRY_COUNT);
+        assertThat(testPdfSign.getRetryTime()).isEqualTo(UPDATED_RETRY_TIME);
     }
 
     @Test
