@@ -36,6 +36,7 @@ export interface IPdfSign {
   retry?: number;
   retrySwitch?: boolean;
   retryCount?: number;
+  retryTime?: Date;
   sealData?: ISealData[];
   ddUser?: IDdUser;
   pdfFile?: IPdfFile;
@@ -63,6 +64,7 @@ export class PdfSign implements IPdfSign {
     public retry?: number,
     public retrySwitch?: boolean,
     public retryCount?: number,
+    public retryTime?: Date,
     public sealData?: ISealData[],
     public ddUser?: IDdUser,
     public pdfFile?: IPdfFile,

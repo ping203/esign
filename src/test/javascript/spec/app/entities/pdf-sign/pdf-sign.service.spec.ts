@@ -52,7 +52,8 @@ describe('Service Tests', () => {
         CycleUnit.Hour,
         0,
         false,
-        0
+        0,
+        currentDate
       );
     });
 
@@ -61,6 +62,7 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             requestTime: format(currentDate, DATE_TIME_FORMAT),
+            retryTime: format(currentDate, DATE_TIME_FORMAT),
           },
           elemDefault
         );
@@ -86,12 +88,14 @@ describe('Service Tests', () => {
           {
             id: 0,
             requestTime: format(currentDate, DATE_TIME_FORMAT),
+            retryTime: format(currentDate, DATE_TIME_FORMAT),
           },
           elemDefault
         );
         const expected = Object.assign(
           {
             requestTime: currentDate,
+            retryTime: currentDate,
           },
           returnedFromService
         );
@@ -134,6 +138,7 @@ describe('Service Tests', () => {
             retry: 1,
             retrySwitch: true,
             retryCount: 1,
+            retryTime: format(currentDate, DATE_TIME_FORMAT),
           },
           elemDefault
         );
@@ -141,6 +146,7 @@ describe('Service Tests', () => {
         const expected = Object.assign(
           {
             requestTime: currentDate,
+            retryTime: currentDate,
           },
           returnedFromService
         );
@@ -183,12 +189,14 @@ describe('Service Tests', () => {
             retry: 1,
             retrySwitch: true,
             retryCount: 1,
+            retryTime: format(currentDate, DATE_TIME_FORMAT),
           },
           elemDefault
         );
         const expected = Object.assign(
           {
             requestTime: currentDate,
+            retryTime: currentDate,
           },
           returnedFromService
         );

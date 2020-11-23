@@ -74,6 +74,10 @@
     {
       "fieldName": "retryCount",
       "fieldType": "Long"
+    },
+    {
+      "fieldName": "retryTime",
+      "fieldType": "Instant"
     }
   ],
   "relationships": [
