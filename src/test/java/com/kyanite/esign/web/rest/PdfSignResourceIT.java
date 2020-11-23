@@ -73,6 +73,9 @@ public class PdfSignResourceIT {
     private static final PdfSignStatus DEFAULT_STATUS = PdfSignStatus.NotActive;
     private static final PdfSignStatus UPDATED_STATUS = PdfSignStatus.Effective;
 
+    private static final Instant DEFAULT_SIGNED_TIME = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_SIGNED_TIME = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+
     private static final Long DEFAULT_CYCLE = 1L;
     private static final Long UPDATED_CYCLE = 2L;
 
@@ -126,6 +129,7 @@ public class PdfSignResourceIT {
             .requestNo(DEFAULT_REQUEST_NO)
             .requestTime(DEFAULT_REQUEST_TIME)
             .status(DEFAULT_STATUS)
+            .signedTime(DEFAULT_SIGNED_TIME)
             .cycle(DEFAULT_CYCLE)
             .cycleUnit(DEFAULT_CYCLE_UNIT)
             .retry(DEFAULT_RETRY)
@@ -155,6 +159,7 @@ public class PdfSignResourceIT {
             .requestNo(UPDATED_REQUEST_NO)
             .requestTime(UPDATED_REQUEST_TIME)
             .status(UPDATED_STATUS)
+            .signedTime(UPDATED_SIGNED_TIME)
             .cycle(UPDATED_CYCLE)
             .cycleUnit(UPDATED_CYCLE_UNIT)
             .retry(UPDATED_RETRY)
@@ -196,6 +201,7 @@ public class PdfSignResourceIT {
         assertThat(testPdfSign.getRequestNo()).isEqualTo(DEFAULT_REQUEST_NO);
         assertThat(testPdfSign.getRequestTime()).isEqualTo(DEFAULT_REQUEST_TIME);
         assertThat(testPdfSign.getStatus()).isEqualTo(DEFAULT_STATUS);
+        assertThat(testPdfSign.getSignedTime()).isEqualTo(DEFAULT_SIGNED_TIME);
         assertThat(testPdfSign.getCycle()).isEqualTo(DEFAULT_CYCLE);
         assertThat(testPdfSign.getCycleUnit()).isEqualTo(DEFAULT_CYCLE_UNIT);
         assertThat(testPdfSign.getRetry()).isEqualTo(DEFAULT_RETRY);
@@ -248,6 +254,7 @@ public class PdfSignResourceIT {
             .andExpect(jsonPath("$.[*].requestNo").value(hasItem(DEFAULT_REQUEST_NO)))
             .andExpect(jsonPath("$.[*].requestTime").value(hasItem(DEFAULT_REQUEST_TIME.toString())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
+            .andExpect(jsonPath("$.[*].signedTime").value(hasItem(DEFAULT_SIGNED_TIME.toString())))
             .andExpect(jsonPath("$.[*].cycle").value(hasItem(DEFAULT_CYCLE.intValue())))
             .andExpect(jsonPath("$.[*].cycleUnit").value(hasItem(DEFAULT_CYCLE_UNIT.toString())))
             .andExpect(jsonPath("$.[*].retry").value(hasItem(DEFAULT_RETRY.intValue())))
@@ -280,6 +287,7 @@ public class PdfSignResourceIT {
             .andExpect(jsonPath("$.requestNo").value(DEFAULT_REQUEST_NO))
             .andExpect(jsonPath("$.requestTime").value(DEFAULT_REQUEST_TIME.toString()))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
+            .andExpect(jsonPath("$.signedTime").value(DEFAULT_SIGNED_TIME.toString()))
             .andExpect(jsonPath("$.cycle").value(DEFAULT_CYCLE.intValue()))
             .andExpect(jsonPath("$.cycleUnit").value(DEFAULT_CYCLE_UNIT.toString()))
             .andExpect(jsonPath("$.retry").value(DEFAULT_RETRY.intValue()))
@@ -321,6 +329,7 @@ public class PdfSignResourceIT {
             .requestNo(UPDATED_REQUEST_NO)
             .requestTime(UPDATED_REQUEST_TIME)
             .status(UPDATED_STATUS)
+            .signedTime(UPDATED_SIGNED_TIME)
             .cycle(UPDATED_CYCLE)
             .cycleUnit(UPDATED_CYCLE_UNIT)
             .retry(UPDATED_RETRY)
@@ -350,6 +359,7 @@ public class PdfSignResourceIT {
         assertThat(testPdfSign.getRequestNo()).isEqualTo(UPDATED_REQUEST_NO);
         assertThat(testPdfSign.getRequestTime()).isEqualTo(UPDATED_REQUEST_TIME);
         assertThat(testPdfSign.getStatus()).isEqualTo(UPDATED_STATUS);
+        assertThat(testPdfSign.getSignedTime()).isEqualTo(UPDATED_SIGNED_TIME);
         assertThat(testPdfSign.getCycle()).isEqualTo(UPDATED_CYCLE);
         assertThat(testPdfSign.getCycleUnit()).isEqualTo(UPDATED_CYCLE_UNIT);
         assertThat(testPdfSign.getRetry()).isEqualTo(UPDATED_RETRY);

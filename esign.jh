@@ -126,6 +126,7 @@ entity PdfSign{
     requestNo String,
     requestTime Instant,
     status PdfSignStatus,
+    signedTime Instant,
     cycle Long,
     cycleUnit CycleUnit,
     retry Long,

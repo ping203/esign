@@ -83,6 +83,12 @@
                         <span v-text="$t('esignApp.PdfSignStatus.' + pdfSign.status)">{{pdfSign.status}}</span>
                     </dd>
                     <dt>
+                        <span v-text="$t('esignApp.pdfSign.signedTime')">Signed Time</span>
+                    </dt>
+                    <dd>
+                        <span v-if="pdfSign.signedTime">{{$d(Date.parse(pdfSign.signedTime), 'long') }}</span>
+                    </dd>
+                    <dt>
                         <span v-text="$t('esignApp.pdfSign.cycle')">Cycle</span>
                     </dt>
                     <dd>

@@ -29,6 +29,7 @@
       "requestNo": "Request No",
       "requestTime": "Request Time",
       "status": "Status",
+      "signedTime": "Signed Time",
       "cycle": "Cycle",
       "cycleUnit": "Cycle Unit",
       "retry": "Retry",

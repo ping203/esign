@@ -69,6 +69,9 @@ public class PdfSign implements Serializable {
     @Column(name = "status")
     private PdfSignStatus status;
 
+    @Column(name = "signed_time")
+    private Instant signedTime;
+
     @Column(name = "cycle")
     private Long cycle;
 
@@ -282,6 +285,19 @@ public class PdfSign implements Serializable {
         this.status = status;
     }
 
+    public Instant getSignedTime() {
+        return signedTime;
+    }
+
+    public PdfSign signedTime(Instant signedTime) {
+        this.signedTime = signedTime;
+        return this;
+    }
+
+    public void setSignedTime(Instant signedTime) {
+        this.signedTime = signedTime;
+    }
+
     public Long getCycle() {
         return cycle;
     }
@@ -459,6 +475,7 @@ public class PdfSign implements Serializable {
             ", requestNo='" + getRequestNo() + "'" +
             ", requestTime='" + getRequestTime() + "'" +
             ", status='" + getStatus() + "'" +
+            ", signedTime='" + getSignedTime() + "'" +
             ", cycle=" + getCycle() +
             ", cycleUnit='" + getCycleUnit() + "'" +
             ", retry=" + getRetry() +

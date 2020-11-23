@@ -55,6 +55,9 @@
             <column name="status" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="signed_time" type="datetime">
+                <constraints nullable="true" />
+            </column>
             <column name="cycle" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -85,6 +88,7 @@
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
         <dropDefaultValue tableName="pdf_sign" columnName="request_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="pdf_sign" columnName="signed_time" columnDataType="datetime"/>
         <dropDefaultValue tableName="pdf_sign" columnName="retry_time" columnDataType="datetime"/>
     </changeSet>
 
@@ -120,6 +124,7 @@
             <column name="request_no" type="string"/>
             <column name="request_time" type="datetime"/>
             <column name="status" type="string"/>
+            <column name="signed_time" type="datetime"/>
             <column name="cycle" type="numeric"/>
             <column name="cycle_unit" type="string"/>
             <column name="retry" type="numeric"/>

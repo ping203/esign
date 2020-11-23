@@ -48,6 +48,7 @@ describe('Service Tests', () => {
         'AAAAAAA',
         currentDate,
         PdfSignStatus.NotActive,
+        currentDate,
         0,
         CycleUnit.Hour,
         0,
@@ -62,6 +63,7 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             requestTime: format(currentDate, DATE_TIME_FORMAT),
+            signedTime: format(currentDate, DATE_TIME_FORMAT),
             retryTime: format(currentDate, DATE_TIME_FORMAT),
           },
           elemDefault
@@ -88,6 +90,7 @@ describe('Service Tests', () => {
           {
             id: 0,
             requestTime: format(currentDate, DATE_TIME_FORMAT),
+            signedTime: format(currentDate, DATE_TIME_FORMAT),
             retryTime: format(currentDate, DATE_TIME_FORMAT),
           },
           elemDefault
@@ -95,6 +98,7 @@ describe('Service Tests', () => {
         const expected = Object.assign(
           {
             requestTime: currentDate,
+            signedTime: currentDate,
             retryTime: currentDate,
           },
           returnedFromService
@@ -133,6 +137,7 @@ describe('Service Tests', () => {
             requestNo: 'BBBBBB',
             requestTime: format(currentDate, DATE_TIME_FORMAT),
             status: 'BBBBBB',
+            signedTime: format(currentDate, DATE_TIME_FORMAT),
             cycle: 1,
             cycleUnit: 'BBBBBB',
             retry: 1,
@@ -146,6 +151,7 @@ describe('Service Tests', () => {
         const expected = Object.assign(
           {
             requestTime: currentDate,
+            signedTime: currentDate,
             retryTime: currentDate,
           },
           returnedFromService
@@ -184,6 +190,7 @@ describe('Service Tests', () => {
             requestNo: 'BBBBBB',
             requestTime: format(currentDate, DATE_TIME_FORMAT),
             status: 'BBBBBB',
+            signedTime: format(currentDate, DATE_TIME_FORMAT),
             cycle: 1,
             cycleUnit: 'BBBBBB',
             retry: 1,
@@ -196,6 +203,7 @@ describe('Service Tests', () => {
         const expected = Object.assign(
           {
             requestTime: currentDate,
+            signedTime: currentDate,
             retryTime: currentDate,
           },
           returnedFromService

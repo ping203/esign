@@ -37,6 +37,7 @@ const validations: any = {
     requestNo: {},
     requestTime: {},
     status: {},
+    signedTime: {},
     cycle: {},
     cycleUnit: {},
     retry: {},
@@ -142,6 +143,7 @@ export default class PdfSignUpdate extends Vue {
       .find(pdfSignId)
       .then(res => {
         res.requestTime = new Date(res.requestTime);
+        res.signedTime = new Date(res.signedTime);
         res.retryTime = new Date(res.retryTime);
         this.pdfSign = res;
       });
