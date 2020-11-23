@@ -78,6 +78,7 @@
                         <select class="form-control" name="status" :class="{'valid': !$v.pdfSign.status.$invalid, 'invalid': $v.pdfSign.status.$invalid }" v-model="$v.pdfSign.status.$model" id="pdf-sign-status" >
                             <option value="NotActive" v-bind:label="$t('esignApp.PdfSignStatus.NotActive')">NotActive</option>
                             <option value="Effective" v-bind:label="$t('esignApp.PdfSignStatus.Effective')">Effective</option>
+                            <option value="Reminded" v-bind:label="$t('esignApp.PdfSignStatus.Reminded')">Reminded</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -103,6 +104,11 @@
                         <label class="form-control-label" v-text="$t('esignApp.pdfSign.retrySwitch')" for="pdf-sign-retrySwitch">Retry Switch</label>
                         <input type="checkbox" class="form-check" name="retrySwitch" id="pdf-sign-retrySwitch"
                             :class="{'valid': !$v.pdfSign.retrySwitch.$invalid, 'invalid': $v.pdfSign.retrySwitch.$invalid }" v-model="$v.pdfSign.retrySwitch.$model" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.pdfSign.retryCount')" for="pdf-sign-retryCount">Retry Count</label>
+                        <input type="number" class="form-control" name="retryCount" id="pdf-sign-retryCount"
+                            :class="{'valid': !$v.pdfSign.retryCount.$invalid, 'invalid': $v.pdfSign.retryCount.$invalid }" v-model.number="$v.pdfSign.retryCount.$model" />
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" v-text="$t('esignApp.pdfSign.ddUser')" for="pdf-sign-ddUser">Dd User</label>

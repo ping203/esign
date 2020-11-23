@@ -82,6 +82,9 @@ public class PdfSign implements Serializable {
     @Column(name = "retry_switch")
     private Boolean retrySwitch;
 
+    @Column(name = "retry_count")
+    private Long retryCount;
+
     @OneToMany(mappedBy = "pdfSign")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<SealData> sealData = new HashSet<>();
@@ -328,6 +331,19 @@ public class PdfSign implements Serializable {
         this.retrySwitch = retrySwitch;
     }
 
+    public Long getRetryCount() {
+        return retryCount;
+    }
+
+    public PdfSign retryCount(Long retryCount) {
+        this.retryCount = retryCount;
+        return this;
+    }
+
+    public void setRetryCount(Long retryCount) {
+        this.retryCount = retryCount;
+    }
+
     public Set<SealData> getSealData() {
         return sealData;
     }
@@ -431,6 +447,7 @@ public class PdfSign implements Serializable {
             ", cycleUnit='" + getCycleUnit() + "'" +
             ", retry=" + getRetry() +
             ", retrySwitch='" + isRetrySwitch() + "'" +
+            ", retryCount=" + getRetryCount() +
             "}";
     }
 }

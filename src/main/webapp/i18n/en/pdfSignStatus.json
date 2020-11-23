@@ -3,7 +3,8 @@
     "PdfSignStatus": {
       "null": "",
       "NotActive": "NotActive",
-      "Effective": "Effective"
+      "Effective": "Effective",
+      "Reminded": "Reminded"
     }
   }
 }

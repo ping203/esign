@@ -67,6 +67,9 @@
             <column name="retry_switch" type="boolean">
                 <constraints nullable="true" />
             </column>
+            <column name="retry_count" type="bigint">
+                <constraints nullable="true" />
+            </column>
             <column name="dd_user_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -117,6 +120,7 @@
             <column name="cycle_unit" type="string"/>
             <column name="retry" type="numeric"/>
             <column name="retry_switch" type="boolean"/>
+            <column name="retry_count" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

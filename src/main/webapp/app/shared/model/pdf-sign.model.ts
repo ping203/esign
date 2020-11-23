@@ -6,6 +6,7 @@ import { IMsgTask } from '@/shared/model/msg-task.model';
 export const enum PdfSignStatus {
   NotActive = 'NotActive',
   Effective = 'Effective',
+  Reminded = 'Reminded',
 }
 
 export const enum CycleUnit {
@@ -34,6 +35,7 @@ export interface IPdfSign {
   cycleUnit?: CycleUnit;
   retry?: number;
   retrySwitch?: boolean;
+  retryCount?: number;
   sealData?: ISealData[];
   ddUser?: IDdUser;
   pdfFile?: IPdfFile;
@@ -60,6 +62,7 @@ export class PdfSign implements IPdfSign {
     public cycleUnit?: CycleUnit,
     public retry?: number,
     public retrySwitch?: boolean,
+    public retryCount?: number,
     public sealData?: ISealData[],
     public ddUser?: IDdUser,
     public pdfFile?: IPdfFile,
