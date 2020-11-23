@@ -55,6 +55,10 @@
       "fieldValues": "NotActive,Effective,Reminded"
     },
     {
+      "fieldName": "signedTime",
+      "fieldType": "Instant"
+    },
+    {
       "fieldName": "cycle",
       "fieldType": "Long"
     },

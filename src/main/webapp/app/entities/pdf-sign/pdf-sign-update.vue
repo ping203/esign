@@ -82,6 +82,15 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.pdfSign.signedTime')" for="pdf-sign-signedTime">Signed Time</label>
+                        <div class="d-flex">
+                            <input id="pdf-sign-signedTime" type="datetime-local" class="form-control" name="signedTime" :class="{'valid': !$v.pdfSign.signedTime.$invalid, 'invalid': $v.pdfSign.signedTime.$invalid }"
+                            
+                            :value="convertDateTimeFromServer($v.pdfSign.signedTime.$model)"
+                            @change="updateInstantField('signedTime', $event)"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="form-control-label" v-text="$t('esignApp.pdfSign.cycle')" for="pdf-sign-cycle">Cycle</label>
                         <input type="number" class="form-control" name="cycle" id="pdf-sign-cycle"
                             :class="{'valid': !$v.pdfSign.cycle.$invalid, 'invalid': $v.pdfSign.cycle.$invalid }" v-model.number="$v.pdfSign.cycle.$model" />

@@ -38,6 +38,7 @@
                     <th v-on:click="changeOrder('requestNo')"><span v-text="$t('esignApp.pdfSign.requestNo')">Request No</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'requestNo'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('requestTime')"><span v-text="$t('esignApp.pdfSign.requestTime')">Request Time</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'requestTime'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('status')"><span v-text="$t('esignApp.pdfSign.status')">Status</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'status'"></jhi-sort-indicator></th>
+                    <th v-on:click="changeOrder('signedTime')"><span v-text="$t('esignApp.pdfSign.signedTime')">Signed Time</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'signedTime'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('cycle')"><span v-text="$t('esignApp.pdfSign.cycle')">Cycle</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'cycle'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('cycleUnit')"><span v-text="$t('esignApp.pdfSign.cycleUnit')">Cycle Unit</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'cycleUnit'"></jhi-sort-indicator></th>
                     <th v-on:click="changeOrder('retry')"><span v-text="$t('esignApp.pdfSign.retry')">Retry</span> <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'retry'"></jhi-sort-indicator></th>
@@ -69,6 +70,7 @@
                     <td>{{pdfSign.requestNo}}</td>
                     <td>{{pdfSign.requestTime ? $d(Date.parse(pdfSign.requestTime), 'short') : ''}}</td>
                     <td v-text="$t('esignApp.PdfSignStatus.' + pdfSign.status)">{{pdfSign.status}}</td>
+                    <td>{{pdfSign.signedTime ? $d(Date.parse(pdfSign.signedTime), 'short') : ''}}</td>
                     <td>{{pdfSign.cycle}}</td>
                     <td v-text="$t('esignApp.CycleUnit.' + pdfSign.cycleUnit)">{{pdfSign.cycleUnit}}</td>
                     <td>{{pdfSign.retry}}</td>

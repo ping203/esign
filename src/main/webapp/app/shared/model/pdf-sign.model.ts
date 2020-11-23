@@ -31,6 +31,7 @@ export interface IPdfSign {
   requestNo?: string;
   requestTime?: Date;
   status?: PdfSignStatus;
+  signedTime?: Date;
   cycle?: number;
   cycleUnit?: CycleUnit;
   retry?: number;
@@ -59,6 +60,7 @@ export class PdfSign implements IPdfSign {
     public requestNo?: string,
     public requestTime?: Date,
     public status?: PdfSignStatus,
+    public signedTime?: Date,
     public cycle?: number,
     public cycleUnit?: CycleUnit,
     public retry?: number,
