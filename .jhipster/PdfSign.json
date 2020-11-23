@@ -52,7 +52,7 @@
     {
       "fieldName": "status",
       "fieldType": "PdfSignStatus",
-      "fieldValues": "NotActive,Effective"
+      "fieldValues": "NotActive,Effective,Reminded"
     },
     {
       "fieldName": "cycle",
@@ -70,6 +70,10 @@
     {
       "fieldName": "retrySwitch",
       "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "retryCount",
+      "fieldType": "Long"
     }
   ],
   "relationships": [

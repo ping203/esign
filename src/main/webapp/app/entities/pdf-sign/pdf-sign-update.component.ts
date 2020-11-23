@@ -41,6 +41,7 @@ const validations: any = {
     cycleUnit: {},
     retry: {},
     retrySwitch: {},
+    retryCount: {},
   },
 };
 

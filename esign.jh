@@ -130,7 +130,8 @@ entity PdfSign{
     cycleUnit CycleUnit,
     retry Long,
     retrySwitch Boolean,
-    key String
+    key String,
+    retryCount Long
     
     
 }
@@ -140,7 +141,7 @@ enum CycleUnit{
 }
 
 enum PdfSignStatus{
-		NotActive , Effective
+		NotActive , Effective , Reminded 
 }
 
 entity SealData{

@@ -51,7 +51,8 @@ describe('Service Tests', () => {
         0,
         CycleUnit.Hour,
         0,
-        false
+        false,
+        0
       );
     });
 
@@ -132,6 +133,7 @@ describe('Service Tests', () => {
             cycleUnit: 'BBBBBB',
             retry: 1,
             retrySwitch: true,
+            retryCount: 1,
           },
           elemDefault
         );
@@ -180,6 +182,7 @@ describe('Service Tests', () => {
             cycleUnit: 'BBBBBB',
             retry: 1,
             retrySwitch: true,
+            retryCount: 1,
           },
           elemDefault
         );

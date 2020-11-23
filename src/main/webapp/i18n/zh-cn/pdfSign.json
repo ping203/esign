@@ -33,6 +33,7 @@
       "cycleUnit": "Cycle Unit",
       "retry": "Retry",
       "retrySwitch": "Retry Switch",
+      "retryCount": "Retry Count",
       "sealData": "Seal Data",
       "ddUser": "Dd User",
       "pdfFile": "Pdf File",
