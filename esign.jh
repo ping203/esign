@@ -107,7 +107,8 @@ entity PdfFile{
 	name String,
     mediaType String,
     objName String,
-    fileUrl String
+    fileUrl String,
+    key String
 
 }
 
