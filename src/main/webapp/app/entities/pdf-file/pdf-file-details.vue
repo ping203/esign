@@ -29,6 +29,12 @@
                         <span>{{pdfFile.fileUrl}}</span>
                     </dd>
                     <dt>
+                        <span v-text="$t('esignApp.pdfFile.key')">Key</span>
+                    </dt>
+                    <dd>
+                        <span>{{pdfFile.key}}</span>
+                    </dd>
+                    <dt>
                         <span v-text="$t('esignApp.pdfFile.creator')">Creator</span>
                     </dt>
                     <dd>

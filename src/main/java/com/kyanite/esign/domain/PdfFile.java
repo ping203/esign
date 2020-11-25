@@ -36,6 +36,9 @@ public class PdfFile implements Serializable {
     @Column(name = "file_url")
     private String fileUrl;
 
+    @Column(name = "jhi_key")
+    private String key;
+
     @OneToMany(mappedBy = "pdfFile")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<PdfSign> pdfSigns = new HashSet<>();
@@ -107,6 +110,19 @@ public class PdfFile implements Serializable {
 
     public void setFileUrl(String fileUrl) {
         this.fileUrl = fileUrl;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public PdfFile key(String key) {
+        this.key = key;
+        return this;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public Set<PdfSign> getPdfSigns() {
@@ -198,6 +214,7 @@ public class PdfFile implements Serializable {
             ", mediaType='" + getMediaType() + "'" +
             ", objName='" + getObjName() + "'" +
             ", fileUrl='" + getFileUrl() + "'" +
+            ", key='" + getKey() + "'" +
             "}";
     }
 }

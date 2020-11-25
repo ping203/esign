@@ -21,6 +21,7 @@ const validations: any = {
     mediaType: {},
     objName: {},
     fileUrl: {},
+    key: {},
   },
 };
 

@@ -42,6 +42,9 @@ public class PdfFileResourceIT {
     private static final String DEFAULT_FILE_URL = "AAAAAAAAAA";
     private static final String UPDATED_FILE_URL = "BBBBBBBBBB";
 
+    private static final String DEFAULT_KEY = "AAAAAAAAAA";
+    private static final String UPDATED_KEY = "BBBBBBBBBB";
+
     @Autowired
     private PdfFileRepository pdfFileRepository;
 
@@ -67,7 +70,8 @@ public class PdfFileResourceIT {
             .name(DEFAULT_NAME)
             .mediaType(DEFAULT_MEDIA_TYPE)
             .objName(DEFAULT_OBJ_NAME)
-            .fileUrl(DEFAULT_FILE_URL);
+            .fileUrl(DEFAULT_FILE_URL)
+            .key(DEFAULT_KEY);
         return pdfFile;
     }
     /**
@@ -81,7 +85,8 @@ public class PdfFileResourceIT {
             .name(UPDATED_NAME)
             .mediaType(UPDATED_MEDIA_TYPE)
             .objName(UPDATED_OBJ_NAME)
-            .fileUrl(UPDATED_FILE_URL);
+            .fileUrl(UPDATED_FILE_URL)
+            .key(UPDATED_KEY);
         return pdfFile;
     }
 
@@ -108,6 +113,7 @@ public class PdfFileResourceIT {
         assertThat(testPdfFile.getMediaType()).isEqualTo(DEFAULT_MEDIA_TYPE);
         assertThat(testPdfFile.getObjName()).isEqualTo(DEFAULT_OBJ_NAME);
         assertThat(testPdfFile.getFileUrl()).isEqualTo(DEFAULT_FILE_URL);
+        assertThat(testPdfFile.getKey()).isEqualTo(DEFAULT_KEY);
     }
 
     @Test
@@ -144,7 +150,8 @@ public class PdfFileResourceIT {
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].mediaType").value(hasItem(DEFAULT_MEDIA_TYPE)))
             .andExpect(jsonPath("$.[*].objName").value(hasItem(DEFAULT_OBJ_NAME)))
-            .andExpect(jsonPath("$.[*].fileUrl").value(hasItem(DEFAULT_FILE_URL)));
+            .andExpect(jsonPath("$.[*].fileUrl").value(hasItem(DEFAULT_FILE_URL)))
+            .andExpect(jsonPath("$.[*].key").value(hasItem(DEFAULT_KEY)));
     }
     
     @Test
@@ -161,7 +168,8 @@ public class PdfFileResourceIT {
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
             .andExpect(jsonPath("$.mediaType").value(DEFAULT_MEDIA_TYPE))
             .andExpect(jsonPath("$.objName").value(DEFAULT_OBJ_NAME))
-            .andExpect(jsonPath("$.fileUrl").value(DEFAULT_FILE_URL));
+            .andExpect(jsonPath("$.fileUrl").value(DEFAULT_FILE_URL))
+            .andExpect(jsonPath("$.key").value(DEFAULT_KEY));
     }
     @Test
     @Transactional
@@ -187,7 +195,8 @@ public class PdfFileResourceIT {
             .name(UPDATED_NAME)
             .mediaType(UPDATED_MEDIA_TYPE)
             .objName(UPDATED_OBJ_NAME)
-            .fileUrl(UPDATED_FILE_URL);
+            .fileUrl(UPDATED_FILE_URL)
+            .key(UPDATED_KEY);
 
         restPdfFileMockMvc.perform(put("/api/pdf-files")
             .contentType(MediaType.APPLICATION_JSON)
@@ -202,6 +211,7 @@ public class PdfFileResourceIT {
         assertThat(testPdfFile.getMediaType()).isEqualTo(UPDATED_MEDIA_TYPE);
         assertThat(testPdfFile.getObjName()).isEqualTo(UPDATED_OBJ_NAME);
         assertThat(testPdfFile.getFileUrl()).isEqualTo(UPDATED_FILE_URL);
+        assertThat(testPdfFile.getKey()).isEqualTo(UPDATED_KEY);
     }
 
     @Test
