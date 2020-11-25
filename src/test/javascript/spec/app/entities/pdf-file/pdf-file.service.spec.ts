@@ -30,7 +30,7 @@ describe('Service Tests', () => {
     beforeEach(() => {
       service = new PdfFileService();
 
-      elemDefault = new PdfFile(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new PdfFile(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -86,6 +86,7 @@ describe('Service Tests', () => {
             mediaType: 'BBBBBB',
             objName: 'BBBBBB',
             fileUrl: 'BBBBBB',
+            key: 'BBBBBB',
           },
           elemDefault
         );
@@ -116,6 +117,7 @@ describe('Service Tests', () => {
             mediaType: 'BBBBBB',
             objName: 'BBBBBB',
             fileUrl: 'BBBBBB',
+            key: 'BBBBBB',
           },
           elemDefault
         );

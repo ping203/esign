@@ -30,6 +30,11 @@
                             :class="{'valid': !$v.pdfFile.fileUrl.$invalid, 'invalid': $v.pdfFile.fileUrl.$invalid }" v-model="$v.pdfFile.fileUrl.$model" />
                     </div>
                     <div class="form-group">
+                        <label class="form-control-label" v-text="$t('esignApp.pdfFile.key')" for="pdf-file-key">Key</label>
+                        <input type="text" class="form-control" name="key" id="pdf-file-key"
+                            :class="{'valid': !$v.pdfFile.key.$invalid, 'invalid': $v.pdfFile.key.$invalid }" v-model="$v.pdfFile.key.$model" />
+                    </div>
+                    <div class="form-group">
                         <label class="form-control-label" v-text="$t('esignApp.pdfFile.creator')" for="pdf-file-creator">Creator</label>
                         <select class="form-control" id="pdf-file-creator" name="creator" v-model="pdfFile.creator">
                             <option v-bind:value="null"></option>

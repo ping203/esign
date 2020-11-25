@@ -20,6 +20,7 @@
       "mediaType": "Media Type",
       "objName": "Obj Name",
       "fileUrl": "File Url",
+      "key": "Key",
       "pdfSign": "Pdf Sign",
       "msgTask": "Msg Task",
       "creator": "Creator"

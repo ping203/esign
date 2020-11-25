@@ -16,6 +16,10 @@
     {
       "fieldName": "fileUrl",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "key",
+      "fieldType": "String"
     }
   ],
   "relationships": [
